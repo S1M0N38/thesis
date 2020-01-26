@@ -23,6 +23,7 @@
   \begin{abstract}
     \lipsum[1]
   \end{abstract}
+  \newpage
 
 
   \section{Euler–Lagrange equation}
@@ -34,9 +35,14 @@
   manifold $M$ and $\dot{x^{\mu}}$ as the componet of the tangent vector (at
   p $\in M$) in the choosen chart.
 
-  Historically *** can came up with the study of problems about
-  variation\footnote{in particoular thetautochrone curve} but an eqivalent
-  derivation can be done starting from Newtown motion equations.
+  \begin{equation} \label{eq:Euler-Lagrange eq}
+    \frac{\partial\Lagr}{\partial f} -
+    \frac{d}{dt}\left(\frac{\partial\Lagr}{\partial f'}\right) = 0
+  \end{equation}
+
+  Historically \eqref{eq:Euler-Lagrange eq} can came up with the study of
+  problems about variation\footnote{in particoular thetautochrone curve} but
+  an eqivalent derivation can be done starting from Newtown motion equations.
   Eventhough the two approces led to same result, the one
   propose originally by Lagrange it's easy to generalize:\footnote{The
   stationar action principle is used broadly used in other braches of physics:
@@ -56,8 +62,7 @@
 
   \begin{gather*}
     f:  \R \rightarrow M: t \mapsto f(t) \qquad
-    \tilde{f} : \R \rightarrow M: t \mapsto f(t) + \epsilon\eta(t) \\
-    \\
+    \tilde{f} : \R \rightarrow M: t \mapsto f(t) + \epsilon\eta(t) \\ \\
     f(a) = \tilde{f}(a) \implies \eta(a) = \eta'(a) = \ldots = \eta^{(n)}(a) = 0 \\
     f(b) = \tilde{f}(b) \implies \eta(b) = \eta'(b) = \ldots = \eta^{(n)}(b) = 0
   \end{gather*}
@@ -89,29 +94,21 @@
 
   \begin{equation} \label{eq:kth-term Liebniz rule}
     \int_{a}^{b} \frac{\partial\Lagr}{\partial\tilde{f}^{(k)}}\eta^{(k)}(t) dt
-    = (-1)^{(k)}\int_{a}^{b}
-    \frac{\partial^{k+1}\Lagr}{(\partial\tilde{f}^{(k)})^{(k+1)}}\eta(t) dt
+    = (-1)^{(k)}\int_{a}^{b} \frac{d^k}{dt^k}\left(
+    \frac{\partial\Lagr}{\partial\tilde{f}^{(k)}}\right)\eta(t) dt
   \end{equation}
 
   Writing \eqref{eq:first-derviate-wrt-epslion} using \eqref{eq:kth-term Liebniz
-  rule} $\eta(t)$ can be collected from each term and evaluating at $\epsilon=0$
+  rule}, $\eta(t)$ can be collected from each term and evaluating at $\epsilon=0$
   follows the \emph{generalized Euler-Lagrange equation}:
 
-  \begin{equation}
-    \
+  \begin{equation} \label{eq:Euler-Lagrange eq generalized}
+      \frac{\partial\Lagr}{\partial f}
+    - \frac{d}{dt}\left(\frac{\partial\Lagr}{\partial f'}\right)
+    + \frac{d^2}{dt^2}\left(\frac{\partial\Lagr}{\partial f''}\right)
+    + \ldots
+    + (-1)^n \frac{d^n}{dt^n}\left(\frac{\partial\Lagr}{\partial f^{(n)}}\right)
+    = 0
   \end{equation}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \end{document}
