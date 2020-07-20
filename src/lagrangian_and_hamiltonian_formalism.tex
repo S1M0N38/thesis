@@ -1,4 +1,4 @@
-Before dive straight in the study of Higher Derivative (HD) systems, i.e. systems
+Before dive straight into the study of Higher Derivative (HD) systems, i.e. systems
 characterized by lagrangian contains terms such as $\ddot{q}$, ${q}^{(3)}$, ..., it's
 better to review some basic concepts of the \emph{lagrangian} and \emph{hamiltonian
 formalism} in order to fix ideas and notation.
@@ -23,7 +23,7 @@ lagrangian mechanics are: \emph{generalized coordinates}, \emph{degrees of freed
     Holonomic constraints are relation between generalized coordinates which can be
     expressed as:
     \begin{equation*}
-        f(q^{\mu}) = 0 \qquad \mu = 1, \ldots, n < \infty
+        f(q^{\mu}) = 0 \qquad \mu = 1, \ldots, n
     \end{equation*}
 \end{definition}
 Once generalized coordinates has been chosen their evolution describe the evolution
@@ -34,12 +34,12 @@ definition:
     The \emph{generalized velocities} $\dot{q}^{\mu}$ are the time derivatives of the
     generalized coordinates $q^{\mu}$, i.e.
     \begin{equation*}
-        \dot{q} := \frac{dq(t)}{dt}
+      \dot{q}^{\mu} := \frac{dq^{\mu}(t)}{dt}
     \end{equation*}
     The same idea can used to define
     \begin{equation*}
-        \ddot{q} := \frac{d^2q(t)}{dt^2} \qquad \ldots \qquad
-        q^{(n)} := \frac{d^nq(t)}{dt^n}
+        \ddot{q}^{\mu} := \frac{d^2q^{\mu}(t)}{dt^2} \qquad \ldots \qquad
+        q^{(n)\mu} := \frac{d^nq^{\mu}(t)}{dt^n}
     \end{equation*}
 \end{definition}
 
@@ -82,5 +82,5 @@ i.e. the equation of motion in lagrangian mechanics.
 Usually the underling Lagrangian of a classical mechanical system is $L(q^{\mu},
 \dot{q}^{\mu})$ so the equation \eqref{eq:euler-lagrange} it's truncated after the
 second term. In this restriction of the lagrangian formalism, lagrangian mechanics and
-newtonian mechanics are equivalent. $L$ can be written as difference of two quantity typical of
-the newtonian mechanics: kinetic energy $T$ and potential energy $V$.
+newtonian mechanics are equivalent. $L$ can be written as difference of two
+quantities of the newtonian mechanics: kinetic energy $T$ and potential energy $V$.
