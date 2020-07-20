@@ -1,0 +1,86 @@
+Before dive straight in the study of Higher Derivative (HD) systems, i.e. systems
+characterized by lagrangian contains terms such as $\ddot{q}$, ${q}^{(3)}$, ..., it's
+better to review some basic concepts of the \emph{lagrangian} and \emph{hamiltonian
+formalism} in order to fix ideas and notation.
+
+\subsection{Lagrangian formalism}
+When talking about \emph{lagrangian formalism} we mean the whole mathematical formalism
+that it's been develop around the \emph{lagrangian mechanics} and then extends way
+beyond to the realm of classical mechanics. The lagrangian mechanics was born as an
+alternative formulation of the \emph{newtonian mechanics} describing a system
+analytically instead of the vector based approach used by Newton. The keys concepts of
+lagrangian mechanics are: \emph{generalized coordinates}, \emph{degrees of freedom} and
+\emph{constraints}.
+\begin{definition} \cite{Ginsberg08}
+    \emph{Generalized coordinates} $q^{\mu}$ are a set of coordinates (i.e. a
+    collection of real number) that describe uniquely the configuration of a system.
+\end{definition}
+\begin{definition} \cite{Ginsberg08}
+    The minimum number $n$ of generalized coordinates required to specify the position
+    of a system is the \emph{number of degrees of freedom} of that system.
+\end{definition}
+\begin{definition} \cite{Goldstein11_hol_constraints}
+    Holonomic constraints are relation between generalized coordinates which can be
+    expressed as:
+    \begin{equation*}
+        f(q^{\mu}) = 0 \qquad \mu = 1, \ldots, n < \infty
+    \end{equation*}
+\end{definition}
+Once generalized coordinates has been chosen their evolution describe the evolution
+of the system. According to classical mechanics $q^{\mu}$ evolve leisurely in a smooth
+fashion following the \emph{equation of motion}. This ``smoothness'' allows following
+definition:
+\begin{definition}
+    The \emph{generalized velocities} $\dot{q}^{\mu}$ are the time derivatives of the
+    generalized coordinates $q^{\mu}$, i.e.
+    \begin{equation*}
+        \dot{q} := \frac{dq(t)}{dt}
+    \end{equation*}
+    The same idea can used to define
+    \begin{equation*}
+        \ddot{q} := \frac{d^2q(t)}{dt^2} \qquad \ldots \qquad
+        q^{(n)} := \frac{d^nq(t)}{dt^n}
+    \end{equation*}
+\end{definition}
+
+In newtonian mechanics the equations of motion are ordinary second order differential
+equation related the position vector $\bm{x}$ and the forces $\bm{F}$:
+\begin{equation*}
+    m \frac{d^2\bm{x}}{dt^2} = \bm{F}
+\end{equation*}
+
+Lagrangian mechanics do not start from equations of motion for the description of the
+system; instead it's defined a function called the \emph{Lagrangian}:
+\begin{equation} \label{eq:general_lagrangian}
+    L(q^{\mu}, \dot{q}^{\mu}, \ddot{q}^{\mu}, \ldots, q^{(n)\mu})
+\end{equation}
+An \emph{action functional} $S[q^{\mu}]$ can be associated to a system described by the
+lagrangian $L$ evolving from a position at time $t_1$ to another position at time $t_2$
+\begin{equation} \label{eq:general_action}
+    S[q^{\mu}] := \int_{t_1}^{t_2} dt L(q^{\mu}, \dot{q}^{\mu}, \ddot{q}^{\mu}, \ldots, q^{(n)\mu})
+\end{equation}
+The last ingredient to finally derive the equation of motion in the lagrangian formalism
+is the \emph{Hamilton's principle} \cite{Goldstein11_Ham_principle}:
+\begin{displayquote}
+    \emph{The motion of the system it's a stationary point of the action functional
+    \eqref{eq:general_action}}, i.e
+    \begin{equation*}
+        \frac{\delta S[q^{\mu}]}{\delta q^{\mu}} = 0
+    \end{equation*}
+\end{displayquote}
+Keeping ``fixed-end'' (the initial and final configurations of the system are the ones
+we choose hence are fixed) during the variations and using the results from Appendix
+\ref{appendix: calculus of variation} we arrive at the \emph{Euler-Lagrange equation},
+i.e. the equation of motion in lagrangian mechanics.
+\begin{equation} \label{eq:euler-lagrange}
+    \frac{\delta L}{\delta q^{\mu}} =
+    \frac{\del L}{\del q^{\mu}} -
+    \frac{d}{dt}\frac{\del L}{\del \dot{q}^{\mu}} +
+    \frac{d^2}{dt^2}\frac{\del L}{\del \ddot{q}^{\mu}} -
+    \ldots = 0
+\end{equation}
+Usually the underling Lagrangian of a classical mechanical system is $L(q^{\mu},
+\dot{q}^{\mu})$ so the equation \eqref{eq:euler-lagrange} it's truncated after the
+second term. In this restriction of the lagrangian formalism, lagrangian mechanics and
+newtonian mechanics are equivalent. $L$ can be written as different of two quantity typical of
+the newtonian mechanics: kinetic energy $T$ and potential energy $V$.
