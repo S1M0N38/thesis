@@ -1,1 +1,37 @@
-\lipsum[1]
+In this appendix are summarized some concepts and calculations of the
+\emph{calculus of variations} extensively used in the paper. Calculus of
+variations is the study how \emph{functionals} change under smalls variations of
+their inputs.
+
+\begin{definition}
+  \cite{Functional_Encyclopedia_of_Mathematics}
+  A functional is a $J$ map from an set $X$ into the set $\R$ of real numbers or
+  the set $\C$ of complex numbers. If $X$ endowed with the structure of a vector
+  space, a topological space or an ordered set, then there arise the important
+  classes of linear, continuous and monotone functionals, respectively.
+\end{definition}
+
+Let $X:=\{y: [x_1, x_2] \subset \R \rightarrow \R: x \mapsto y(x)\}$ and define
+the linear continuous functional $J[y]$ as:
+
+\begin{equation}
+  J[y] := \int_{x_1}^{x_2} f(y^{(0)}, y^{(1)}, y^{(2)}, \ldots, y^{(n)})
+\end{equation}
+
+A variation of the function $y(x)$ is denote by $\delta y(x)$ and correspond to
+a generic small change of the function $y$ at $x$. Using the linearity of the
+derivative with respect to $x$ we obtain the so called \emph{k-th order
+perturbations}.
+
+\begin{equation}
+  y^{(k)} \rightarrow \frac{d^ky(x)}{dx^k} + \frac{d^k\delta y(x)}{dx^k} =
+  y^{(k)} + \delta y^{(k)} \qquad k=0, \ldots, n
+\end{equation}
+
+A variation of the functional $J[y]$ is denoted by $\delta J[y]$. It' is due to
+the total contribution of the variations of its inputs, i.e. $\delta y(x)$ and
+it's define as
+
+\begin{equation}
+  \delta J[y] := J[y + \delta y] - J[y]
+\end{equation}
