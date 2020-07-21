@@ -3,6 +3,8 @@ In this appendix are summarized some concepts and calculations of the
 variations is the study how \emph{functionals} change under smalls variations of
 their inputs.
 
+% TODO: add reference for rigour and disclaimer <22-07-20> %
+
 \begin{definition}
   \cite{Functional_Encyclopedia_of_Mathematics}
   A functional is a $J$ map from an set $X$ into the set $\R$ of real numbers or
@@ -11,10 +13,11 @@ their inputs.
   classes of linear, continuous and monotone functionals, respectively.
 \end{definition}
 
-Let $X:=\{y: [x_1, x_2] \subset \R \rightarrow \R: x \mapsto y(x)\}$ and define
-the linear continuous functional $J[y]$ as:
+Let $X:=\{y: [x_1, x_2] \subset \R \rightarrow \R: x \mapsto y(x) \ | \ y(x)
+\in \mathcal{C}^{\infty}([x_1, x_2])\}$ and define the linear continuous
+functional $J[y]$ as:
 
-\begin{equation}
+\begin{equation} \label{eq:def_functional}
   J[y] := \int_{x_1}^{x_2} f(y^{(0)}, y^{(1)}, y^{(2)}, \ldots, y^{(n)})
 \end{equation}
 
@@ -23,15 +26,81 @@ a generic small change of the function $y$ at $x$. Using the linearity of the
 derivative with respect to $x$ we obtain the so called \emph{k-th order
 perturbations}.
 
-\begin{equation}
+\begin{equation} \label{eq:def_function_variation}
   y^{(k)} \rightarrow \frac{d^ky(x)}{dx^k} + \frac{d^k\delta y(x)}{dx^k} =
   y^{(k)} + \delta y^{(k)} \qquad k=0, \ldots, n
 \end{equation}
 
-A variation of the functional $J[y]$ is denoted by $\delta J[y]$. It' is due to
+A variation of the functional $J[y]$ is denoted by $\delta J[y]$. It's given by
 the total contribution of the variations of its inputs, i.e. $\delta y(x)$ and
 it's define as
 
-\begin{equation}
+\begin{equation} \label{eq:def_functional_variation}
   \delta J[y] := J[y + \delta y] - J[y]
+\end{equation}
+
+Substituting \eqref{eq:def_function_variation} in
+\eqref{eq:def_functional_variation} and expanding $J[y + \delta y]$ to first
+order using Taylor expansion around $y$ we obtain
+
+\begin{align*}
+  \delta J[y]
+  &=\int_{x_1}^{x_2} dx \left\{ f +
+    \frac{\partial f}{\partial y^{(0)}} \delta y^{(0)} +
+    \frac{\partial f}{\partial y^{(1)}} \delta y^{(1)} + \ldots +
+    \frac{\partial f}{\partial y^{(n)}} \delta y^{(n)}
+    \right\} - \int_{x_1}^{x_2} dx f \\
+  &=\int_{x_1}^{x_2} dx
+    \sum_{k = 0}^{n} \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)}
+   =\sum_{k = 0}^{n}
+    \int_{x_1}^{x_2} dx \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} \\
+\end{align*}
+
+Using integration by part repeatedly the last term can be rewrite as
+
+\begin{align}
+  \label{eq:sum_temrs}
+  \int_{x_1}^{x_2} dx \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} =
+  & \sum_{j=0}^{k} (-1)^j \frac{d^j}{dx^j}
+  \left( \frac{\partial f}{\partial y^{(k)}} \right) \delta y^{(k-1-j)}
+  \Big|_{x_1}^{x_2} + \\
+  \label{eq:int_temrs}
+  & \int_{x_1}^{x_2} dx (-1)^k \frac{d^k}{dx^k}
+  \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
+\end{align}
+
+Usually in the application of calculus of variation ends points of $y(x)$ are
+kept fixed and the every variation is zero, i.e.
+
+\begin{equation} \label{eq:fixed_ends}
+  \delta y^{(k)}(x_1) = \delta y^{(k)}(x_2) = 0  \qquad k = 0, \ldots, n
+\end{equation}
+
+Under this assumption the expression for $\delta J[y]$ drastically simplify and
+the summation term in \eqref{eq:sum_temrs} vanish and remain only
+\eqref{eq:int_temrs}. Substituting it in the original expression we get
+
+\begin{equation} \label{eq:functional_variation_ends_fixed}
+  \delta J[y] = \int_{x_1}^{x_2} dx \sum_{k = 0}^{n} (-1)^k \frac{d^k}{dx^k}
+  \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
+\end{equation}
+
+Equation \eqref{eq:functional_variation_ends_fixed} clearly resemble to the
+expression for the differential of $f(x_1, x_2, \ldots, x_n)$ in multi-variable
+calculus. One would wish to write a formal expression for the \emph{derivation
+of the functional} with respect to the $y(x)$. This can be achieve be this
+comparison
+
+\begin{equation*}
+  df = \sum_{k}^{n} \left\{ \frac{\partial f(x)}{\partial x_k} dx_k \right\}
+  \quad \longleftrightarrow \quad
+  \delta J[y] = \int_{x_1}^{x_2} dx
+  \left\{ \frac{\delta J[y]}{\delta y} \delta y \right\}
+\end{equation*}
+
+leading up to the notion of \emph{functional derivative}
+
+\begin{equation} \label{eq:functional_derivative}
+  \frac{\delta J[y]}{\delta y} := \sum_{k = 0}^{n} (-1)^k \frac{d^k}{dx^k}
+  \left( \frac{\partial f}{\partial y^{(k)}}\right)
 \end{equation}
