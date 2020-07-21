@@ -1,86 +1,217 @@
-Before dive straight into the study of Higher Derivative (HD) systems, i.e. systems
-characterized by lagrangian contains terms such as $\ddot{q}$, ${q}^{(3)}$, ..., it's
-better to review some basic concepts of the \emph{lagrangian} and \emph{hamiltonian
-formalism} in order to fix ideas and notation.
+Before dive straight into the study of Higher Derivative (HD) systems, i.e.
+systems characterized by lagrangian contains terms such as $\ddot{q}$,
+${q}^{(3)}$, ..., it's better to review some basic concepts of the
+\emph{lagrangian} and \emph{hamiltonian formalism} in order to fix ideas and
+notation.
 
 \subsection{Lagrangian formalism}
-When talking about \emph{lagrangian formalism} we mean the whole mathematical formalism
-that it's been develop around the \emph{lagrangian mechanics} and then extends way
-beyond to the realm of classical mechanics. The lagrangian mechanics was born as an
-alternative formulation of the \emph{newtonian mechanics} describing a system
-analytically instead of the vector based approach used by Newton. The keys concepts of
-lagrangian mechanics are: \emph{generalized coordinates}, \emph{degrees of freedom} and
-\emph{constraints}.
-\begin{definition} \cite{Ginsberg08}
-    \emph{Generalized coordinates} $q^{\mu}$ are a set of coordinates (i.e. a
-    collection of real number) that describe uniquely the configuration of a system.
-\end{definition}
-\begin{definition} \cite{Ginsberg08}
-    The minimum number $n$ of generalized coordinates required to specify the position
-    of a system is the \emph{number of degrees of freedom} of that system.
-\end{definition}
-\begin{definition} \cite{Goldstein11_hol_constraints}
-    Holonomic constraints are relation between generalized coordinates which can be
-    expressed as:
-    \begin{equation*}
-        f(q^{\mu}) = 0 \qquad \mu = 1, \ldots, n
-    \end{equation*}
-\end{definition}
-Once generalized coordinates has been chosen their evolution describe the evolution
-of the system. According to classical mechanics $q^{\mu}$ evolve leisurely in a smooth
-fashion following the \emph{equation of motion}. This ``smoothness'' allows following
-definition:
-\begin{definition}
-    The \emph{generalized velocities} $\dot{q}^{\mu}$ are the time derivatives of the
-    generalized coordinates $q^{\mu}$, i.e.
-    \begin{equation*}
-      \dot{q}^{\mu} := \frac{dq^{\mu}(t)}{dt}
-    \end{equation*}
-    The same idea can used to define
-    \begin{equation*}
-        \ddot{q}^{\mu} := \frac{d^2q^{\mu}(t)}{dt^2} \qquad \ldots \qquad
-        q^{(n)\mu} := \frac{d^nq^{\mu}(t)}{dt^n}
-    \end{equation*}
+When talking about \emph{lagrangian formalism} we mean the whole mathematical
+formalism that it's been develop around the \emph{lagrangian mechanics} and then
+extends way beyond to the realm of classical mechanics. The lagrangian mechanics
+was born as an alternative formulation of the \emph{newtonian mechanics}
+describing a system analytically instead of the vector based approach used by
+Newton. The keys concepts of lagrangian mechanics are: \emph{generalized
+coordinates}, \emph{degrees of freedom} and \emph{constraints}.
+
+\begin{definition}\label{def: generalized coordinates} \cite{Ginsberg08}
+  \emph{Generalized coordinates} $q^{\mu}$ are a set of coordinates (i.e. a
+  collection of real number) that describe uniquely the configuration of a
+  system.
 \end{definition}
 
-In newtonian mechanics the equations of motion are ordinary second order differential
-equation related the position vector $\bm{x}$ and the forces $\bm{F}$:
+\begin{definition}\label{def: dof} \cite{Ginsberg08}
+  The minimum number $n$ of generalized coordinates required to specify the
+  position of a system is the \emph{number of degrees of freedom} of that
+  system.
+\end{definition}
+
+\begin{definition}\label{def: holonomic constraints}
+  \cite{Goldstein11_hol_constraints}
+  \emph{Holonomic constraints} are relation between generalized coordinates which can
+  be expressed as:
+  \begin{equation*}
+      f(q^{\mu}) = 0 \qquad \mu = 1, \ldots, n
+  \end{equation*}
+\end{definition}
+
+Once generalized coordinates has been chosen their evolution describe the
+evolution of the system. According to classical mechanics $q^{\mu}$ evolve
+leisurely in a smooth fashion following the \emph{equation of motion}. This
+``smoothness'' allows following definition:
+
+\begin{definition}
+  The \emph{generalized velocities} $\dot{q}^{\mu}$ are the time derivatives of the
+  generalized coordinates $q^{\mu}$, i.e.
+  \begin{equation*}
+    \dot{q}^{\mu} := \frac{dq^{\mu}(t)}{dt}
+  \end{equation*}
+  The same idea can used to define
+  \begin{equation*}
+    \ddot{q}^{\mu} := \frac{d^2q^{\mu}(t)}{dt^2} \qquad \ldots \qquad
+        q^{(n)\mu} := \frac{d^nq^{\mu}(t)}{dt^n}
+  \end{equation*}
+\end{definition}
+
+In newtonian mechanics the equations of motion are ordinary second order
+differential equation related the position vector $\bm{x}$ and the forces
+$\bm{F}$:
+
 \begin{equation*}
-    m \frac{d^2\bm{x}}{dt^2} = \bm{F}
+  m \frac{d^2\bm{x}}{dt^2} = \bm{F}
 \end{equation*}
 
-Lagrangian mechanics do not start from equations of motion for the description of the
-system; instead it's defined a function called the \emph{Lagrangian}:
+Lagrangian mechanics do not start from equations of motion for the description
+of the system; instead it's defined a function called the \emph{Lagrangian}:
+
 \begin{equation} \label{eq:general_lagrangian}
-    L(q^{\mu}, \dot{q}^{\mu}, \ddot{q}^{\mu}, \ldots, q^{(n)\mu})
+  L(q^{\mu}, \dot{q}^{\mu}, \ddot{q}^{\mu}, \ldots, q^{(n)\mu})
 \end{equation}
-An \emph{action functional} $S[q^{\mu}]$ can be associated to a system described by the
-lagrangian $L$ evolving from a position at time $t_1$ to another position at time $t_2$
+
+An \emph{action functional} $S[q^{\mu}]$ can be associated to a system described
+by the lagrangian $L$ evolving from a position at time $t_1$ to another position
+at time $t_2$
+
 \begin{equation} \label{eq:general_action}
-    S[q^{\mu}] := \int_{t_1}^{t_2} dt L(q^{\mu}, \dot{q}^{\mu}, \ddot{q}^{\mu}, \ldots, q^{(n)\mu})
+  S[q^{\mu}] := \int_{t_1}^{t_2} dt
+  L(q^{\mu}, \dot{q}^{\mu}, \ddot{q}^{\mu}, \ldots, q^{(n)\mu})
 \end{equation}
-The last ingredient to finally derive the equation of motion in the lagrangian formalism
-is the \emph{Hamilton's principle} \cite{Goldstein11_Ham_principle}:
+
+The last ingredient to finally derive the equation of motion in the lagrangian
+formalism is the \emph{Hamilton's principle} \cite{Goldstein11_Ham_principle}:
 \begin{displayquote}
-    \emph{The motion of the system it's a stationary point of the action functional
-    \eqref{eq:general_action}}, i.e
-    \begin{equation*}
-        \frac{\delta S[q^{\mu}]}{\delta q^{\mu}} = 0
-    \end{equation*}
+  \emph{The motion of the system it's a stationary point of the action
+  functional \eqref{eq:general_action}}, i.e.
+  \begin{equation*}
+    \frac{\delta S[q^{\mu}]}{\delta q^{\mu}} = 0
+  \end{equation*}
 \end{displayquote}
-Keeping ``fixed-end'' (the initial and final configurations of the system are the ones
-we choose hence are fixed) during the variations and using the results from Appendix
-\ref{appendix: calculus of variation} we arrive at the \emph{Euler-Lagrange equation},
-i.e. the equation of motion in lagrangian mechanics.
+Keeping ``fixed-end'' (the initial and final configurations of the system are
+the ones we choose hence are fixed) during the variations and using the results
+from Appendix \ref{appendix: calculus of variation} we arrive at the
+\emph{Euler-Lagrange equation}, i.e. the equation of motion in lagrangian
+mechanics.
+
 \begin{equation} \label{eq:euler-lagrange}
-    \frac{\delta L}{\delta q^{\mu}} =
+    \frac{\delta S[q^{\mu}]}{\delta q^{\mu}} =
     \frac{\partial L}{\partial q^{\mu}} -
     \frac{d}{dt}\frac{\partial L}{\partial \dot{q}^{\mu}} +
     \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}^{\mu}} -
     \ldots = 0
 \end{equation}
+
 Usually the underling Lagrangian of a classical mechanical system is $L(q^{\mu},
-\dot{q}^{\mu})$ so the equation \eqref{eq:euler-lagrange} it's truncated after the
-second term. In this restriction of the lagrangian formalism, lagrangian mechanics and
-newtonian mechanics are equivalent. $L$ can be written as difference of two
-quantities of the newtonian mechanics: kinetic energy $T$ and potential energy $V$.
+\dot{q}^{\mu})$ so the equation \eqref{eq:euler-lagrange} it's truncated after
+the second term. In this restriction of the lagrangian formalism, lagrangian
+mechanics and newtonian mechanics are equivalent. $L$ can be written as
+difference of two quantities of the newtonian mechanics: kinetic energy $T$ and
+potential energy $V$. \\
+
+In the classical mechanics problems (such as particle constrains on a surface or
+a double pendulum) the number of degrees of freedom of the system is finite.
+Lagrangian formalism can be extends to systems with an infinite countable number
+of degrees of freedom (think to the classical gas). But the formalism could be
+push further more and be able to describe \emph{classical fields}.
+
+\begin{definition}\label{def: classical field}
+  \cite{Aldrovandi19_classical_field}
+  A \emph{classical field} is a system with a continuous infinity of degrees of
+  freedom.
+\end{definition}
+
+Going from discrete to continuous the notation to indicate the generalized
+coordinates has to be review
+
+\begin{align*}
+  q(t) \rightarrow \phi, \quad \mu \rightarrow \bm{x}
+  \qquad \Rightarrow \qquad
+  q^{\mu}(t) \rightarrow \phi(\bm{x},t)
+\end{align*}
+
+The previous generalized coordinates $q$ were just $\mu$ real number evolving in
+time according to \eqref{eq:euler-lagrange}. Now $\phi$ are the generalized
+coordinates but unlike $q$ they are function of space $\bm{x}$ and time $t$. The
+evolution of $\phi$ depends on time and space so the dot notation for the
+derivation should be replace by a one that take also space derivatives
+into account. Special relativity provide a nice framework to join the space and
+time into \emph{spacetime} that allows us to treat $\bm{x}$ and $t$ on equal
+footing
+\footnote{
+  Following the standard notation quantities derived from newtonian space are
+  written in bold (e.g. $\bm{x}$, $\bm{p}$) while the corresponding quantities
+  in Minkowski spacetime are not (e.g. $x$, $p$).
+}.
+
+\begin{equation*}
+  x^0 := ct \qquad
+  x := (x^0, \bm{x}) \qquad
+  \partial_{\mu} := \left(
+    \frac{\partial}{\partial x^0},
+    \frac{\partial}{\partial x^1},
+    \frac{\partial}{\partial x^2},
+    \frac{\partial}{\partial x^3}
+  \right)
+\end{equation*}
+
+The lagrangian can also express the interaction between two or more fields.
+Given a set of fields $\bm{\phi}(x):=\{\phi_i(x)\}$ with $i=1,\ldots,n$ the
+lagrangian will have the form
+
+\begin{equation} \label{eq:general_lagrangian_density}
+  \Lagr(x) = \Lagr[
+      \bm{\phi}(x),
+      \partial_{\mu} \bm{\phi}(x),
+      \partial_{\mu} \partial_{\nu} \bm{\phi}(x),
+      \ldots
+    ]
+\end{equation}
+
+Comparing \eqref{eq:general_lagrangian} and
+\eqref{eq:general_lagrangian_density} it's clear that they are two different
+mathematical object. The input to the lagrangian
+\eqref{eq:general_lagrangian_density} are the functions $\bm{\phi}(x)$ so
+$\Lagr(x)$ is not a function but a functional. The proper name of this object
+is \emph{Lagrangian density}
+\footnote{The origin of the term \emph{density} came from differential geometry.
+  \emph{1-weight tensor densities} are object that are transformed almost like
+  tensor but producing and extra multiplicative factor: the inverse determinant
+  of the transformation. Later when evaluating the action
+  \eqref{eq:general_action_fields}, under a change of coordinates, this term is
+  simplify with the determinant produced by $dx$.
+}.
+In order to obtain the equations that describe the spacetime evolution of the
+fields, the so called \emph{fields equations}, we apply Hamilton's principle to
+\eqref{eq:general_lagrangian_density}
+
+\begin{equation} \label{eq:general_action_fields}
+  S[\bm{\phi}] := \int d^4x \Lagr(x)
+\end{equation}
+
+Observe that integration run over $x$, so $S[\bm{\phi}]$ depends only on the
+functional form of $\phi$. Using again the concept of functional derivative
+(appendix \ref{appendix: calculus of variation}) we get
+\eqref{eq:euler-lagrange-field}. Formally the steps are equal to the derivation
+of \eqref{eq:euler-lagrange}, but instead to take the derivative with respect to
+time, the $\partial_{\mu}$ has been used.
+
+\begin{equation} \label{eq:euler-lagrange-field}
+  \frac{\delta S[\bm{\phi}]}{\delta \bm{\phi}} =
+    \frac{\partial \Lagr}{\partial \bm{\phi}} -
+    \partial_{\mu} \frac{\partial \Lagr}{\partial \partial_{\mu}\bm{\phi}} +
+    \partial_{\mu}\partial_{\nu}\frac{\partial L}
+    {\partial \partial_{\mu}\partial_{\nu}\bm{\phi}} -
+    \ldots = 0
+\end{equation}
+
+One of the important aspect that link Lagrangian (density) and motion (field)
+equation are the \emph{symmetries}: every symmetries of the Lagrangian is also a
+symmetry of the equation of motion \cite{Aldrovandi19_symmetry}. Nature
+suggested Newton directly the equations of motion of classical object, but
+formulation of more fundamental theory stop at what humans can experience. On
+the other hand in the Lagrangian formalism one try an educated guess on the
+lagrangian based on the symmetries observed and the derivative the equation of
+motion that will be tested by experiments.
+
+
+\subsection{Hamiltonian formalism}
+
+% TODO: add hamiltonian %
