@@ -1,9 +1,13 @@
 In this appendix are summarized some concepts and calculations of the
-\emph{calculus of variations} extensively used in the paper. Calculus of
-variations is the study how \emph{functionals} change under smalls variations of
-their inputs.
-
-% TODO: add reference for rigour and disclaimer <22-07-20> %
+\emph{calculus of variations} extensively used in the paper
+\footnote{
+  Appendix \ref{appendix: calculus of variation} does not aim to be
+  mathematically rigorous but expose fundamental ideas in a simple and concise
+  way. For a proper introduction to this subject consult the relevant
+  literature.
+}.
+Calculus of variations is the study how \emph{functionals} change under smalls
+variations of their inputs.
 
 \begin{definition}
   \cite{Functional_Encyclopedia_of_Mathematics}
@@ -63,9 +67,9 @@ Using integration by part repeatedly the last term can be rewrite as
   \int_{x_1}^{x_2} dx \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} =
   & \sum_{j=0}^{k} (-1)^j \frac{d^j}{dx^j}
   \left( \frac{\partial f}{\partial y^{(k)}} \right) \delta y^{(k-1-j)}
-  \Big|_{x_1}^{x_2} + \\
+  \Big|_{x_1}^{x_2} \\
   \label{eq:int_temrs}
-  & \int_{x_1}^{x_2} dx (-1)^k \frac{d^k}{dx^k}
+  & + \int_{x_1}^{x_2} dx (-1)^k \frac{d^k}{dx^k}
   \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
 \end{align}
 
@@ -88,11 +92,12 @@ the summation term in \eqref{eq:sum_temrs} vanish and remain only
 Equation \eqref{eq:functional_variation_ends_fixed} clearly resemble to the
 expression for the differential of $f(x_1, x_2, \ldots, x_n)$ in multi-variable
 calculus. One would wish to write a formal expression for the \emph{derivation
-of the functional} with respect to the $y(x)$. This can be achieve be this
+of the functional} with respect to the $y(x)$. This can be achieve by this
 comparison
 
 \begin{equation*}
-  df = \sum_{k}^{n} \left\{ \frac{\partial f(x)}{\partial x_k} dx_k \right\}
+  df(x) = \sum_{k=1}^{n}
+  \left\{ \frac{\partial f(x)}{\partial x_k} dx_k \right\}
   \quad \longleftrightarrow \quad
   \delta J[y] = \int_{x_1}^{x_2} dx
   \left\{ \frac{\delta J[y]}{\delta y} \delta y \right\}
