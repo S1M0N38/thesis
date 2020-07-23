@@ -1,0 +1,52 @@
+Motivi dello studio
+- gravità?
+-
+
+Meccanica Analitica (da principi variazionali)
+- Formulazioni alternative della meccanica
+- Meccanica lagrangiana
+- Meccanica Hamiltoniana
+- Habitat geometrico
+
+Meccanica Classica
+- teorema di Ostrogradsky CM
+- Imposizione di vincoli
+- teorema dei vincoli benigni
+- esempi
+
+Meccanica Quantistica
+- teorema di Ostrogradsky QM
+- Pais-Uhlenbeck oscillator
+
+Appendice
+- Trasformata di Legendre
+- Newton <=> Lagrange <=> Hamilton
+- Moltiplicatori di Lagrange
+
+
+Introduzione
+Motivazioni delle studio di lagrangiginae HD,
+Problemi che incorrno
+risoluzione dei problemi
+
+Formalismo Lagrangiano ed hamiltionano
+- Meccanica lagnagiana
+    - quali sono i concetti
+    - def coord. generalizzate e velocità 
+    - spazio delle configurazioni e mu-space 
+    - principio di Hamilton (richiamo ad appendice sul caloclo variazionale)
+    - eq. eulero Lagrnage
+- Meccanica hamiltiona
+    - come si collega alla mecc. lagrnagiana
+    - def. momenti generalizzati
+    - eq. moto e parentesi di poisson
+    - spazion delle fasi
+ recap e pro e contro dei formalismi 
+
+
+Classical HD Systems
+
+
+Quantum HD Systems
+
+
