@@ -27,8 +27,8 @@ coordinates}, \emph{degrees of freedom} and \emph{constraints}.
 
 \begin{definition}\label{def: holonomic constraints}
   \cite{Goldstein11_hol_constraints}
-  \emph{Holonomic constraints} are relation between generalized coordinates which can
-  be expressed as:
+  \emph{Holonomic constraints} are relation between generalized coordinates
+  which can be expressed as:
   \begin{equation*}
       f(q^{\mu}) = 0 \qquad \mu = 1, \ldots, n
   \end{equation*}
@@ -40,8 +40,8 @@ leisurely in a smooth fashion following the \emph{equation of motion}. This
 ``smoothness'' allows following definition:
 
 \begin{definition}
-  The \emph{generalized velocities} $\dot{q}^{\mu}$ are the time derivatives of the
-  generalized coordinates $q^{\mu}$, i.e.
+  The \emph{generalized velocities} $\dot{q}^{\mu}$ are the time derivatives of
+  the generalized coordinates $q^{\mu}$, i.e.
   \begin{equation*}
     \dot{q}^{\mu} := \frac{dq^{\mu}(t)}{dt}
   \end{equation*}
@@ -229,14 +229,57 @@ constructing hamiltonian formalism starting from the lagrangian one.
   \item Let $L(\bm{q}, \dot{\bm{q}}, \ldots, \bm{q}^{(n)})$ be the lagrangian
     for a system, define \emph{conjugate momenta} and pair them with the
     corresponding \emph{generalized coordinates}
-    \begin{equation}
-      q_{(i)}^{\mu} := q^{(i)\mu}
+    \begin{equation} \label{eq:def_canonical_coordinates}
+      Q_{(i)}^{\mu} := q^{(i-1)\mu}
       \quad \leftrightarrow \quad
-      p_{(i)\mu} := \frac{\delta L}{\delta q^{(i+1)\mu}}
-      \qquad i = 1, \ldots, n-1
+      P_{(i)\mu} := \frac{\delta L}{\delta q^{(i)\mu}}
+      \qquad i = 1, \ldots, n
     \end{equation}
-    These are called the \emph{i-th conjugate coordinates}
-    $(q_{(i)}^{\mu}, \, p_{(i)\mu}) \equiv (\bm{q}_{(i)}, \, \bm{p}_{(i)})$.
+    These are called the \emph{i-th canonical coordinates}
+    $(Q_{(i)}^{\mu}, \, P_{(i)\mu}) \equiv (\bm{Q}_{i}, \, \bm{P}_{i})$
+    \footnote{
+      This choice of canonical coordinates is due to Ostrograsdki and is used
+      in \cite{Smilga17, Chen13}.
+    }.
 
-  \item Define the Hamiltonian
+  \item Define the Hamiltonian as
+    \begin{equation} \label{eq:Ham_in_q}
+      H(\bm{q}, \dot{\bm{q}}, \ldots, \bm{q}^{(n)}) :=
+      \sum_{i=0}^{n} \frac{\delta L}{\delta \bm{q}^{(i)}} \bm{q}^{(i)} -
+      L(\bm{q}, \dot{\bm{q}}, \ldots, \bm{q}^{(n)})
+    \end{equation}
+    Under the hypothesis of \emph{regular lagrangian}, $\bm{q}^{(n)}$ can be
+    recover from the definition of $\bm{P}_n$ inverting equation
+    \begin{equation} \label{eq:qn=h}
+      \frac{\delta L}{\delta \bm{q}^{(n)}} = \bm{P}_i
+      \quad \Rightarrow \quad
+      \bm{q}^{(n)} \equiv q^{(n)\mu} =
+      h^{\mu}(Q^{\mu}_{(1)}, \ldots, Q^{\mu}_{(n)}, P_{(n)\mu}) \equiv \bm{h}
+    \end{equation}
+    Substituting \eqref{eq:def_canonical_coordinates} and \eqref{eq:qn=h} in
+    \eqref{eq:Ham_in_q}, the Hamiltonian, expressed in term of canonical
+    coordinates, is obtain
+    \begin{align}
+      H = \bm{P}_n \bm{h} + \bm{P}_{n-1} \bm{Q}_n + \ldots + \bm{P}_1 \bm{Q}_2
+          - L(\bm{Q}_1, \bm{Q}_2, \ldots, \bm{h})
+    \end{align}
+
+  \item The Hamiltonian generate the time evolution of any function of canonical
+    variables $F(\bm{Q}_i, \bm{P}_i)$ via the \emph{Poisson Bracket}
+    \cite{Chen13}:
+    \begin{equation}
+      \dot{F}(\bm{Q}_i, \bm{P}_i) = \left\{
+        F(\bm{Q}_i, \bm{P}_i), H
+      \right\}
+    \end{equation}
+
+    Poisson Bracket, in canonical coordinates, are defined as
+    \begin{equation*} \label{eq:possion_braket}
+      \left\{ f, g \right\} := \sum_{i=1}^{n} \left(
+        \frac{\partial f}{\partial Q^{\mu}_{(i)}}
+        \frac{\partial g}{\partial P_{\mu(i)}} -
+        \frac{\partial g}{\partial Q^{\mu}_{(i)}}
+        \frac{\partial f}{\partial P_{\mu(i)}}
+      \right)
+    \end{equation*}
 \end{enumerate}
