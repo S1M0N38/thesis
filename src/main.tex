@@ -13,6 +13,7 @@
 
 \usepackage[toc,page]{appendix}
 \usepackage{subfiles}
+\usepackage[hidelinks]{hyperref}
 \usepackage{biblatex}
 
 \addbibresource{references.bib}
@@ -41,7 +42,6 @@
 \begin{document}
 
   \maketitle
-  \newpage
 
   \begin{abstract}
     \lipsum[1]
@@ -50,18 +50,30 @@
   \newpage
 
   \section{Introduction}
+  \label{section: introduction}
   \subfile{introduction}
 
   \section{Lagrangian and Hamiltonian formalism}
+  \label{section: lagrangin and hamiltonian formalism}
   \subfile{lagrangian_and_hamiltonian_formalism}
+
+  \section{Classical higher derivative systems}
+  \label{section: classical higher derivative systems}
+  \subfile{classical_higher_derivative_systems}
+
+  % \section{Quantum higher derivative systems}
+  % \label{section: quantum higher derivative systems}
+  % \subfile{quantum_higher_derivative_systems}
 
   \newpage
   \begin{appendices}
-    \section{Calculus of variations} \label{appendix: calculus of variation}
+    \section{Calculus of variations}
+    \label{appendix: calculus of variation}
     \subfile{calculus_of_variations}
   \end{appendices}
 
   \newpage
+
   \printbibliography
 
 \end{document}
