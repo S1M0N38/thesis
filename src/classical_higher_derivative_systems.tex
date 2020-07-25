@@ -1,0 +1,65 @@
+Common lagrangian in introductory courses of classical mechanics depends of $q$
+and $\dot{q}$. We refer to them as \emph{first-order lagrangian} because the
+highest derivative term is $\dot{q}$, i.e. the first derivative of $q(t)$ with
+respect to time. If in the lagrangian appears also $\ddot{q}$ it will be a
+\emph{second-order lagrangian} and so on. \\
+
+In the following the mathematical machinery, develop in section \ref{section:
+lagrangin and hamiltonian formalism}, will be used to study two apparently
+similar lagrangian and introduce the core problem of HD systems.
+
+\subsection{First-order vs Second-order lagrangian}
+The simplest non-trivial lagrangians are those in polynomial form like
+
+\begin{equation*}
+  L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q) \qquad
+  L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+\end{equation*}
+
+where $\alpha$ is a smooth function of $q$ only. No Greek indices appear on
+$q^{(i)}$ because we limit ourself to one-dimensional systems. $L_1$ is a
+first-order lagrangian while $L_2$ it's a second-order one.
+
+
+\paragraph{first-order lagrangian} In order to get the equation of motion we
+used the Euler-Lagrange equation \eqref{eq:euler-lagrange}
+
+\begin{equation} \label{eq: first-order_motion_eq_lagr}
+  \frac{\partial L_1}{\partial q} -
+  \frac{d}{dt}\frac{\partial L_1}{\partial \dot{q}} +
+  \underbrace{
+  \frac{d^2}{dt^2}\frac{\partial L_1}{\partial \ddot{q}} - \ldots }_0 = 0
+  \qquad \Rightarrow \qquad
+  \ddot{q} = - \frac{d\alpha(q)}{dq}
+\end{equation}
+
+If $q$ is the position coordinate of a unit mass point, the function $\alpha(q)$
+can be interpreted as the potential energy and \eqref{eq:
+first-order_motion_eq_lagr} is nothing less than Newton's second law. To get the
+hamiltonian description apply the recipe in section \ref{subsection:
+hamiltonian_formalism}
+
+\begin{equation*}
+  \begin{cases}
+    Q := q \\
+    P := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
+  \end{cases}
+  \qquad
+  H(q, \dot{q}) := \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
+\end{equation*}
+
+\begin{equation} \label{eq: first-order_motion_eq_ham}
+  H(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+  \begin{cases}
+    \dot{Q} =   \frac{\partial H}{\partial P} = P \\
+    \dot{P} = - \frac{\partial H}{\partial Q} = - \frac{d\alpha(Q)}{dQ}
+  \end{cases}
+\end{equation}
+
+Since $L_1$ does not explicitly depend on time (only through $q$ and $\dot{q}$),
+the hamiltonian $H$ can be interpreted as the total energy of the system (sum of
+kinetic and potential energy).  Combining the two equation in \eqref{eq:
+first-order_motion_eq_ham} we restore \eqref{eq: first-order_motion_eq_lagr}.
+
+
+\paragraph{second-order lagrangian} todo
