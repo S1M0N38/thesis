@@ -278,8 +278,48 @@ constructing hamiltonian formalism starting from the lagrangian one.
       \left\{ f, g \right\} := \sum_{i=1}^{n} \left(
         \frac{\partial f}{\partial Q^{\mu}_{(i)}}
         \frac{\partial g}{\partial P_{\mu(i)}} -
-        \frac{\partial g}{\partial Q^{\mu}_{(i)}}
         \frac{\partial f}{\partial P_{\mu(i)}}
+        \frac{\partial g}{\partial Q^{\mu}_{(i)}}
       \right)
     \end{equation*}
+    In particular they can be used for deduce the evolution of the i-th
+    canonical coordinates:
+    \begin{align*}
+      \left\{ Q^{\mu}_{(i)}, H\right\}
+      = \delta^{(j)}_{(i)} \delta^{\mu}_{\nu}
+          \frac{\partial H}{\partial P_{\nu(j)}}
+      = \frac{\partial H}{\partial P_{\mu(i)}}
+      \quad \Rightarrow \quad
+      \dot{\bm{Q}_i} &=  \frac{\partial H}{\partial \bm{P}_i}
+      \\
+      \left\{ P_{\mu(i)}, H\right\}
+      = - \delta^{(j)}_{(i)} \delta^{\nu}_{\mu}
+          \frac{\partial H}{\partial Q^{\nu}_{(j)}}
+      = - \frac{\partial H}{\partial Q^{\mu}_{(i)}}
+      \quad \Rightarrow \quad
+      \dot{\bm{P}_i} &= -\frac{\partial H}{\partial \bm{Q}_i}
+    \end{align*}
 \end{enumerate}
+An advantage on the hamiltonian formalism it's the wider choice of coordinate
+transformations. Unlike lagrangian formalism, in the hamiltonian description new
+coordinates can be define starting from the old one by mixing the corresponding
+generalized coordinates and their conjugate momenta such that \emph{canonical
+commutation relations} are preserved.
+
+\begin{equation*}
+  \begin{cases}
+    \{\tilde{Q}^{\mu}_{(i)}, \tilde{Q}^{\nu}_{(i)}\} =
+    \{Q^{\mu}_{i}, Q^{\nu}_{i}\} = 0 \\
+    \{\tilde{P}_{\mu(i)}, \tilde{P}_{\nu(i)}\} =
+    \{P_{\mu(i)}, P_{\nu(i)}\} = 0 \\
+    \{\tilde{Q}^{\mu}_{(i)}, \tilde{P}_{\nu(i)}\} =
+    \{Q^{\mu}_{(i)}, P_{\nu(i)}\} = \delta^{\mu}_{\nu(i)} \\
+  \end{cases}
+  \qquad \Rightarrow \qquad
+  \begin{cases}
+    \tilde{\bm{Q}_i} = \tilde{\bm{Q}_i}(\bm{Q}_i, \bm{P}_i) \\
+    \tilde{\bm{P}_i} = \tilde{\bm{P}_i}(\bm{Q}_i, \bm{P}_i)
+  \end{cases}
+\end{equation*}
+
+These transformation are called \emph{canonical transformation}.
