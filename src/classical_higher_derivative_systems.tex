@@ -16,9 +16,9 @@ The simplest non-trivial lagrangians are those in polynomial form like
   L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
 \end{equation*}
 
-where $\alpha$ is a smooth function of $q$ only. No Greek indices appear on
-$q^{(i)}$ because we limit ourself to one-dimensional systems. $L_1$ is a
-first-order lagrangian while $L_2$ it's a second-order one.
+where $\alpha$ is a smooth function of $q$ only \cite{Chen13}. No Greek indices
+appear on $q^{(i)}$ because we limit ourself to one-dimensional systems. $L_1$
+is a first-order lagrangian while $L_2$ it's a second-order one.
 
 
 \paragraph{first-order lagrangian} In order to get the equation of motion we
@@ -45,11 +45,11 @@ hamiltonian_formalism}
     P := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
   \end{cases}
   \qquad
-  H(q, \dot{q}) := \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
+  H_1(q, \dot{q}) := \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
 \end{equation*}
 
 \begin{equation} \label{eq: first-order_motion_eq_ham}
-  H(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+  H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
   \begin{cases}
     \dot{Q} =   \frac{\partial H}{\partial P} = P \\
     \dot{P} = - \frac{\partial H}{\partial Q} = - \frac{d\alpha(Q)}{dQ}
@@ -57,9 +57,51 @@ hamiltonian_formalism}
 \end{equation}
 
 Since $L_1$ does not explicitly depend on time (only through $q$ and $\dot{q}$),
-the hamiltonian $H$ can be interpreted as the total energy of the system (sum of
+the hamiltonian $H_1$ can be interpreted as the total energy of the system (sum of
 kinetic and potential energy).  Combining the two equation in \eqref{eq:
 first-order_motion_eq_ham} we restore \eqref{eq: first-order_motion_eq_lagr}.
 
 
-\paragraph{second-order lagrangian} todo
+\paragraph{second-order lagrangian} Proceeding as before, equation of motion
+follow from Euler-Lagrange equation \eqref{eq:euler-lagrange}
+
+\begin{equation} \label{eq: second-order_motion_eq_lagr}
+  \frac{\partial L_2}{\partial q} -
+  \frac{d}{dt}\frac{\partial L_2}{\partial \dot{q}} +
+  \frac{d^2}{dt^2}\frac{\partial L_2}{\partial \ddot{q}} -
+  \underbrace{
+    \frac{d^3}{dt^3}\frac{\partial L_2}{\partial q^{(3)}} + \ldots
+  }_0 = 0
+  \quad \Rightarrow \quad
+  q^{(4)} = - \frac{d\alpha(q)}{dq}
+\end{equation}
+
+Equation \eqref{eq: second-order_motion_eq_lagr} never appear in classical
+mechanics, but can it describe some kind of system? The study of the hamiltonian
+can give us some clue about the total energy of the system.
+
+\begin{equation*}
+  \begin{cases}
+    Q_1 := q \\
+    P_1 := \frac{\delta L_2}{\delta \dot{q}} = -q^{(3)}
+  \end{cases}
+  \begin{cases}
+    Q_2 := \dot{q} \\
+    P_2 := \frac{\delta L_2}{\delta \ddot{q}} = \ddot{q}
+  \end{cases}
+  \quad
+  H_1(q, \dot{q}) :=
+    \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
+    \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
+    L_1(q, \dot{q})
+\end{equation*}
+
+\begin{equation} \label{eq: second-order_motion_eq_ham}
+  H_2(Q_1, Q_2, P_1, P_2) = P_1Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+\end{equation}
+
+There is a significant difference between the two spectra of $H_1$ and $H_2$:
+the first is bounded from below while the latter is not (and both are not
+bounded from above).
+
+\subsection{Linear Ostrogradskian instability (Ghosts)}
