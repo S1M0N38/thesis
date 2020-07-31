@@ -21,7 +21,7 @@ appear on $q^{(i)}$ because we limit ourself to one-dimensional systems. $L_1$
 is a first-order lagrangian while $L_2$ it's a second-order one.
 
 
-\paragraph{first-order lagrangian} In order to get the equation of motion we
+\paragraph{First-order lagrangian} In order to get the equation of motion we
 used the Euler-Lagrange equation \eqref{eq:euler-lagrange}
 
 \begin{equation} \label{eq: first-order_motion_eq_lagr}
@@ -62,7 +62,7 @@ kinetic and potential energy).  Combining the two equation in \eqref{eq:
 first-order_motion_eq_ham} we restore \eqref{eq: first-order_motion_eq_lagr}.
 
 
-\paragraph{second-order lagrangian} Proceeding as before, equation of motion
+\paragraph{Second-order lagrangian} Proceeding as before, equation of motion
 follow from Euler-Lagrange equation \eqref{eq:euler-lagrange}
 
 \begin{equation} \label{eq: second-order_motion_eq_lagr}
@@ -90,7 +90,7 @@ can give us some clue about the total energy of the system.
     P_2 := \frac{\delta L_2}{\delta \ddot{q}} = \ddot{q}
   \end{cases}
   \quad
-  H_1(q, \dot{q}) :=
+  H_2(q, \dot{q}) :=
     \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
     \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
     L_1(q, \dot{q})
@@ -104,4 +104,273 @@ There is a significant difference between the two spectra of $H_1$ and $H_2$:
 the first is bounded from below while the latter is not (and both are not
 bounded from above).
 
+
 \subsection{Linear Ostrogradskian instability (Ghosts)}
+Consider an \emph{isolated} system describe by the hamiltonian $H_2$; if the
+energy is conserve even though the spectra is not bounded the energy stay
+constant. Things start to going wrong when ones consider \emph{interacting}
+system (e.g. $H_1$-system interacting with $H_2$-system). The phase space of
+$H_2$-system infinitely extend where the Hamiltonian is negative. In the example
+this is due to the \emph{linear} term $P_1$. When two systems interact the
+$H_1$-system tends to occupy higher and higher energies states while the
+$H_2$-system fall lower and lower in negative energies; this behavior entails
+the conservation of energy %todo{cite}.
+This is the so called \emph{linear Ostrogradskian instability}. \\
+
+One can encounter the same kind of instability in quantum mechanics when try to
+canonically quantized higher order hamiltonian (e.g. $H_2$). This process lead
+to \emph{negative norm states} (or \emph{negative energy states}) which are
+often called \emph{``ghosts''}. Systems (even classical ones) involving this
+type of ghosts are called \emph{ghost-like} or \emph{ghost-ridden} systems. \\
+
+One may wonder when these ghosts are summoned; the answer is contains in the
+Ostrogradsky theorem %todo footnote.
+
+\begin{theorem}[Ostrogradsky] \label{th:ostrogradsky_classical}
+  If in the Lagrangian \eqref{eq:general_lagrangian} $n \geq 2$ and the
+  canonical momentum $\bm{P}_n$ does not vanish, the Hamiltonian
+  \eqref{eq:general_hamiltonian} may acquire an arbitrary real value.
+\end{theorem}
+\begin{proof}
+  The proof is given for a one-dimensional system (i.e. $\mu=1$) but it
+  generalize straight to higher dimensions. Consider the Hamiltonian
+  \eqref{eq:general_hamiltonian} in terms of conjugate coordinates
+  \begin{equation} \label{eq:general_hamiltonian_1dim}
+    H = P_n h + P_{n-1} Q_n + \ldots + P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
+  \end{equation}
+  The function $h$ express $q^{(n)}$ in terms of conjugate coordinates under
+  the assumption of regular Lagrangian, i.e.
+  \begin{equation*}
+    q^{(n)} = h(Q_1, \ldots, Q_2, P_n)
+  \end{equation*}
+  Observe that $h$ does not depend on $P_1, \ldots, P_{n-1}$ so the only
+  contribution of these momenta to the Hamiltonian is in the linear factor
+  \begin{equation*}
+    P_{n-1} Q_n + \ldots + P_1 Q_2
+  \end{equation*}
+  which is linear in momenta and hence can acquire any real value and so does
+  the Hamiltonian \eqref{eq:general_hamiltonian_1dim}.
+\end{proof}
+
+For many years, due to consequences of Theorem \ref{th:ostrogradsky_classical},
+HD theories are consider intrinsically sick and not worthy of further study.
+However a deeper investigation reveals that Ostrogradsky instability can be cure
+and HD theories shouldn't be discard in the first instance. One way to
+exorcising Ostrogradsky's ghost is through imposition of constraints
+\cite{Chen13}.
+
+
+\subsection{Removing Ostrogradskian instability with constraints}
+
+In hamiltonian mechanics, \emph{constraints} are relation between coordinates
+and conjugate momenta. Constraints are classify in two group: \emph{first class
+constraints} and \emph{second class constraints}. Second class constraints can
+be thought as ``physical'' (e.g. train on a railway, particle on a plane) so
+that the solutions of equations of motion are different with or without them.
+First-class are instead related to a gauge freedom: the solutions of equations
+of motion differ by a function of time and hence represent the same system.
+Moreover the Poisson Bracket of a first class constraint with all the other
+constraints vanishes on the constraints surface in the phase space (i.e.
+$\{\phi, \tilde{\phi}\} \approx 0$, see later for the notation used).
+
+
+Another independent classification can be made for constraints (and not confused
+with the previous one): \emph{primary constraints} and \emph{secondary
+constrains}.  Primary constraints are relation between $Q$s and $P$s which holds
+independently from the equations of motion.
+
+\begin{equation} \label{eq:constraint}
+  \phi_1(Q, P) = 0
+\end{equation}
+
+As the name suggests, secondary constraints are derive from the primary one
+imposing the preservation of the constraints during the evolution of the system.
+This generate a series of constraints where the constraints relations are called
+\emph{consistency relations}.
+
+\begin{equation} \label{eq:consistency_relations}
+  \phi_1 = 0 \quad \Rightarrow \quad
+  \left\{ \phi_1 , H \right\} =: \phi_2 \approx 0 \quad \Rightarrow \quad
+  \left\{ \phi_2 , H \right\} =: \phi_3 \approx 0 \quad \Rightarrow \quad
+  \ldots
+\end{equation}
+
+The weak equality symbol ''$\approx$`` has been used to highlight the fact that
+these relation vanish only on the hypersurface where all constraints are
+satisfied. When we will said that a constrain $phi_i$ \emph{vanish} it it is to
+be intended in this weak sense.
+
+\subsubsection{Lagrangian and Hamiltonian with $m$ auxiliary variables}
+Constraints in hamiltonian mechanics can be impose with the usage of auxiliary
+variables $\lambda_i$ in the underlying lagrangian:
+
+\begin{equation*}
+  L = L(
+  q, \dot{q}, \ddot{q}, \ldots, q^{(n)},
+  \lambda_1, \lambda_2, \ldots, \lambda_m
+  )
+\end{equation*}
+
+And the lagrangian, besides the equations of motion \eqref{eq:euler-lagrange},
+need to satisfy the constraints equation
+\begin{equation}
+  \frac{\partial L}{\partial \lambda_i} = 0 \qquad i=1, 2, \ldots, m
+\end{equation}
+
+Canonical coordinates has to be choose also for $\lambda_i$ and the following
+choice can be done
+\begin{equation} \label{eq:def_canonical_coordinates_lambda}
+  \Lambda_{i}:= \lambda_{i}
+  \quad \leftrightarrow \quad
+  \Pi_{i} := \frac{\delta L}{\delta \dot{\lambda_{i}}} = 0
+  \qquad i = 1, 2, \ldots, m
+\end{equation}
+so the primary constraints in \eqref{eq:constraint} simply become
+$\phi_{1, i}: \Pi_i = 0$. To the hamiltonian \eqref{eq:Ham_in_q} are now added
+the auxiliaries variables terms becoming
+\begin{equation} \label{eq:Ham_constraints_in_q}
+  H :=
+  \sum_{j=1}^{n} \frac{\delta L}{\delta q^{(j)}} q^{(j)} +
+  \sum_{i=1}^{m} \frac{\delta L}{\delta \dot{\lambda_i}} \dot{\lambda_i} -
+  L(q, \ldots, q^{(n)}, \lambda_1, \ldots, \lambda_m)
+\end{equation}
+
+The $\dot{\lambda_i}$ can be obtain later by the consistency relations
+\eqref{eq:consistency_relations} and will be some $u_i$ function of canonical
+coordinates. Expressing hamiltonian \eqref{eq:Ham_constraints} in canonical
+coordinates we obtain
+
+\begin{align} \label{eq:Ham_constraints}
+  H =\ & P_n h + P_{n-1} Q_n + \ldots + P_1 Q_2 \nonumber \\
+       & + \phi_m u_m + \phi_{m-1} u_{m-1} + \ldots + \phi_1 u_1 \nonumber \\
+       & - L ( Q_1, Q_2, \ldots, h, \Lambda_1, \ldots, \Lambda_m)
+\end{align}
+
+
+After calculating secondary constraints with \eqref{eq:consistency_relations}
+
+\begin{equation*}
+  \phi_{2, i} := \left\{ \phi_{1,i}, H \right\} =
+  \frac{\partial \phi_{1,i}}{\partial \Pi_i}
+  \frac{\partial H}{\partial \Lambda_i} =
+  \frac{\partial L}{\partial \lambda_i} \Big|_{\lambda_i = \Lambda_i}
+  \approx 0
+\end{equation*}
+
+two cases are possible:
+
+\begin{enumerate}
+  \item $\{\phi_{1,i}, \phi_{2,j}\} \napprox 0$: $\phi_{1,i}$, $\phi_{2,j}$ are
+    both second-class constraints thus there are no further constraints
+    derivable from consistency relations.
+  \item $\{\phi_{1,i}, \phi_{2,j}\} \approx 0$: $\phi_{1,i}$, $\phi_{2,j}$ are
+    not second-class constraints end further constraints can be found employing
+    the chain \eqref{eq:consistency_relations} until \emph{case 1} is reach.
+\end{enumerate}
+
+After all constraints have been found, one can use these equation to wrote the
+auxiliary canonical variables in terms of the ``usual'' canonical variables
+\begin{equation} \label{eq:constraints_in_terms_of_canonical_vars}
+  \begin{cases}
+    \Lambda_i =\ f_i(Q_1, \ldots, Q_n, P_n) \\
+    \Pi_i =\ 0
+  \end{cases}
+  \qquad i = 1, 2, \ldots, m \\
+\end{equation}
+and then substitute in the hamiltonian \eqref{eq:Ham_constraints}
+\begin{equation*}
+  H =\ P_n h + P_{n-1} Q_n + \ldots + P_1 Q_2
+     - L ( Q_1, Q_2, \ldots, h, f_1, \ldots, f_m)
+\end{equation*}
+
+To recap, we started form a phase space of dimension $2n$ (n $Q$s + n $P$s),
+then enlarge it by adding $2m$ auxiliary variables (m $\Lambda$s + m $\Pi$s) so
+the total phase space is $2(n+m)$. Then associated with every pair of canonical
+auxiliary variables two constraints (\emph{case 1}) or more (\emph{case 2}) have
+been found.  During the last substitution the dimension of phase space is bring
+down to it's original dimensions (\emph{case 1}: $2(n+m) - 2m = 2n$) or further
+reduced (\emph{case 2}: e.g. $2(n+m) - 3m < 2n$).
+
+\subsubsection{Example of non-stable system with constraints}
+We introduce here a widely studied HD lagrangian: the
+\emph{Pais-Uhlenbeck oscillator} (PU).
+\begin{equation} \label{eq:lagrangian_PU}
+  L_{PU} = \frac{1}{2} \left[
+    \ddot{q}^2 - (\omega_1^2 + \omega_2^2) \dot{q}^2 + \omega_1^2 \omega_2^2 q^2
+  \right]
+\end{equation}
+
+According to Ostrogradsky Theorem \ref{th:ostrogradsky_classical} this system
+shows a problematic instability. When can try to cure that introducing a
+constraints such as $\ddot{q}^2 - \dot{q}^2 = 0$ and see in the hamiltonian
+still two-side unbounded. Using the auxiliary variable $\lambda$ one can write
+the constraint version of \eqref{eq:lagrangian_PU}:
+\begin{equation} \label{eq:lagrangian_PUC}
+  L_{PUC} = L_{PU} + \frac{\lambda}{2} \left(\ddot{q}^2 - \dot{q}^2\right)
+\end{equation}
+and from it derive the hamiltonian following the given prescription.
+\begin{align*}
+  & \begin{cases}
+    Q_1 := q \\
+    P_1 := \frac{\delta L_{PUC}}{\delta \dot{q}} =
+        - (\lambda + 1) q^{(3)} - \dot{\lambda}\ddot{q}
+        - (\lambda + \omega_1^2 + \omega_2^2)\dot{q}
+  \end{cases} \\
+  & \begin{cases}
+    Q_2 := \dot{q} \\
+    P_2 := \frac{\delta L_{PUC}}{\delta \ddot{q}} =
+        (\lambda + 1) \ddot{q}
+        \quad  \Rightarrow \quad \ddot{q} = \frac{P_2}{(\Lambda + 1)}
+  \end{cases} \\
+  & \begin{cases}
+    \Lambda := \lambda \\
+    \Pi := \frac{\delta L_{PUC}}{\delta \lambda} = 0
+        \quad  \Rightarrow \quad \phi_1: \Pi = 0
+  \end{cases}
+\end{align*}
+\begin{equation} \label{eq:ham_PUC_with_aux_vars}
+   H_{PUC} =\ P_1 Q_2 + \frac{P_2^2}{2(\Lambda + 1)} + \phi_1 u_1
+  + \frac{Q_2^2}{2} \left(\Lambda + \omega_1^2 + \omega_2^2 \right)
+  - \frac{Q_1^2}{2} \omega_1^2 \omega_2^2
+\end{equation}
+
+\begin{equation} \label{eq:secondary_constraint_PU}
+  \phi_2 :=
+  \left\{ \phi_1, H_{PUC} \right\} =
+  \frac{1}{2} \left[ \frac{P_2}{\Lambda + 1} - Q_2 \right]
+  \left[ \frac{P_2}{\Lambda + 1} + Q_2 \right]
+  \approx 0
+\end{equation}
+
+In secondary constraint equation \eqref{eq:secondary_constraint_PU}, in order
+to vanish, one of the square bracket must vanish. The two square bracket
+represent two hypersurfaces and one solution is chosen instead of the other
+based on initial conditions. In the following, we chose the bracket with the
+minus sign. Moreover note that $\phi_1$ and $\phi_2$ are already second-class
+constraints, indeed
+
+\begin{equation*}
+  \begin{cases}
+    \phi_1: \Pi = 0 \\
+    \phi_2: \frac{P_2}{\Lambda + 1} - Q_2 \approx 0
+  \end{cases}
+  \quad \Rightarrow \quad
+  \left\{ \phi_1, \phi_2 \right\} = -
+  \frac{\partial\phi_1}{\partial\Pi} \frac{\partial\phi_2}{\partial\Lambda} =
+  \frac{P_2}{(\Lambda + 1)^2} \napprox 0
+\end{equation*}
+
+so no further constraints can be found (\emph{case 1}). The equation for
+$/phi_1$ (trivial) and for $/phi_2$ can be locally inverted
+\eqref{eq:constraints_in_terms_of_canonical_vars} obtaining that $\Pi = 0$ and
+$\Lambda = P_2/Q_2 - 1$. Substituting them in \eqref{eq:ham_PUC_with_aux_vars}
+the final hamiltonian of the system appears but unfortunately the Ostrogradsky
+instability persists.
+\begin{equation*}
+   H_{PUC} =\ P_1 Q_2 + P_2 Q_2
+  + \frac{Q_2^2}{2} \left(\omega_1^2 + \omega_2^2 - 1 \right)
+  - \frac{Q_1^2}{2} \omega_1^2 \omega_2^2
+\end{equation*}
+
+
+\subsubsection{Example of stable system with constraints}
