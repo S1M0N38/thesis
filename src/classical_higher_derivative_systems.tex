@@ -366,11 +366,87 @@ $/phi_1$ (trivial) and for $/phi_2$ can be locally inverted
 $\Lambda = P_2/Q_2 - 1$. Substituting them in \eqref{eq:ham_PUC_with_aux_vars}
 the final hamiltonian of the system appears but unfortunately the Ostrogradsky
 instability persists.
-\begin{equation*}
+\begin{equation} \label{eq:ham_PUC_instable}
    H_{PUC} =\ P_1 Q_2 + P_2 Q_2
   + \frac{Q_2^2}{2} \left(\omega_1^2 + \omega_2^2 - 1 \right)
   - \frac{Q_1^2}{2} \omega_1^2 \omega_2^2
-\end{equation*}
+\end{equation}
 
 
 \subsubsection{Example of stable system with constraints}
+Now consider the following constrained Pais-Uhlenbeck oscillator \cite{Chen13}
+\begin{equation}
+  L_{PUC} = L_{PU} +
+  4 \omega_1^2\omega_2^2 q^2 \lambda (1+ \lambda) +
+  2 \sqrt{2} \omega_1\omega_2 \lambda q \ddot{q}
+\end{equation}
+
+Analogously to the previous example, canonical variable and hamiltonian
+$H_{PUC}$ can be derived in similar fashion
+\begin{align*}
+  & \begin{cases}
+    Q_1 := q \\
+    P_1 := - q^{(3)} -
+    \left( 2\sqrt{2} \omega_1\omega_2\lambda + \omega_1^2 + \omega_1^2 \right)
+    \dot{q} - 2\sqrt{2}\omega_1\omega_2\dot{\lambda} q
+  \end{cases} \\
+  & \begin{cases}
+    Q_2 := \dot{q} \\
+    P_2 := \ddot{q} + 2\sqrt{2} \omega_1\omega_2\lambda q
+    \quad \Rightarrow \quad
+    \ddot{q} = P_2 - 2\sqrt{2} \omega_1\omega_2\Lambda Q_1
+  \end{cases} \\
+  & \begin{cases}
+    \Lambda := \lambda \\
+    \Pi := 0
+    \quad  \Rightarrow \quad \phi_1: \Pi = 0
+  \end{cases}
+\end{align*}
+\begin{align} \label{eq:ham_PUC_with_aux_vars_stable}
+  H_{PUC} =\ & P_1 Q_2 + \frac{P_2^2}{2} -
+  \omega_1^2\omega_2^2\frac{Q_1^2}{2} +
+  \left( \omega_1^2 + \omega_2^2 \right) \frac{Q_2^2}{2} \\
+  & - 4 \omega_1^2\omega_2^2\Lambda Q_1^2 -
+  2\sqrt{2}\omega_1\omega_2\Lambda P_2 Q_1 + \phi_1 u_1
+\end{align}
+
+Secondary constraints relations carry useful information up to the forth order
+\footnote{
+  To obtain $\phi_4$, information from $\phi_1$ and $\phi_2$ have been used in
+  order to write $\phi_4$ in terms of $\Lambda$.
+}
+\begin{align*}
+  & \phi_1 : \Pi = 0 \\
+  & \phi_2 := \{\phi_1, H_{PUC}\} =
+    P_2 + \sqrt{2} \omega_1\omega_2 Q_1 \approx 0 \\
+  & \phi_3 := \{\phi_2, H_{PUC}\} =
+    P_1 + \left(\omega_1^2 + \omega_2^2 - \sqrt{2}\omega_1\omega_2 \right) Q_2
+    \approx 0 \\
+  & \phi_4 := \{\phi_3, H_{PUC}\} =
+  \omega_1 \omega_2 (3+8\Lambda) - \sqrt{2}
+  \left( \omega_1^2 + \omega_2^2 \right) \left(1 + 2\Lambda \right) \approx 0
+\end{align*}
+
+These consistency relations can be inverted so that $P_2$, $Q_2$ and $\Lambda$
+are express in terms of $P_1$ and $Q_1$. Substituting them into
+\eqref{eq:ham_PUC_with_aux_vars_stable} obtaining
+
+\begin{equation} \label{eq:ham_PUC_stable}
+  H_{PUC} =\ \frac{\omega_1^2\omega_2^2}{2} Q_1^2 +
+  \frac{\omega_1\omega_2}{\sqrt{2} \left(\sqrt{2} \omega_1\omega_2 -
+  \omega_1^2 - \omega_2^2 \right)^2} P_1^2
+\end{equation}
+
+The hamiltonian \eqref{eq:ham_PUC_stable} it's bounded from below (and not from
+above, just like an harmonic oscillator) and hence this system does not suffer
+of Ostrogradsky instability unlike the previous example. \\
+
+The main difference between the two is the role played by constraints. In the
+first example the dimensions of phase space of the unconstrained and constrained
+hamiltonian are both four (i.e. four variable appear in the reduced hamiltonian
+\eqref{eq:ham_PUC_instable}: $Q_1$, $P_1$, $Q_2$ and $P_2$). In the second
+example the constraints reduce the dimensionality of the phase space from the
+original four to two (indeed just $Q_1$ and $P_1$ appear in
+\eqref{eq:ham_PUC_stable}). As shown in \cite{Chen13} a reduction of the phase
+space, due to imposed constraints, can cure the typical Ostrogradsky instability
+of HD theories.
