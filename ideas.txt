@@ -6,30 +6,19 @@ gravità?
 
 -----------------------------------------------------------------
 
-Meccanica Analitica (da principi variazionali)
-- Formulazioni alternative della meccanica
-- Meccanica lagrangiana
-- Meccanica Hamiltoniana
-- Habitat geometrico (no)
+Lagrangian & Hamiltonian formalism
+- Lagrangian formalism
+- Hamiltonain formalism
+- Geometric habitat
 
------------------------------------------------------------------
+------------------------------------------------------------------
 
-Meccanica Classica - Classical HD Systems
-- Introduzione, lagrangiane tipiche,
-  esmepio di lagrangiana 2nd order,
-  comparazione con la precendate e capire che non è bounded.
-
-- Hamiltoniana nont bouneded
-  - Argomentazione entropica e perchè sono state immediatamente
-  scartate.
-  - orgine del nome
-  -teorema di Ostrogradsky CM (in realtà non dovuto ad Ostro...)
-
-- Eliminare il problema
-  indeivuduare il problema e usare i vincoli per eliminarlo
-  definizione di vincoli con moltiplicatori di Lagrange
-  teorema dei vincoli benigni
-  esempi
+Classical Mechanics
+- 1st vs 2nd order
+- Ostrogradsky instability
+    - theorem & proof
+    - name origin (ghost)
+- remove instability with constraints
 
 ------------------------------------------------------------------
 
