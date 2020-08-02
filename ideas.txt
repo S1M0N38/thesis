@@ -23,12 +23,18 @@ Classical Mechanics
 ------------------------------------------------------------------
 
 Meccanica Quantistica - Quantum HD Systems
+- canonical quantization
 - teorema di Ostrogradsky QM
 - Pais-Uhlenbeck oscillator
+    - caso non degenere
+    - caso degenre
+    - interazioni
+- benign ghosts
 
 ------------------------------------------------------------------
 
 Appendici
 - Calcolo variazionale
+- Integrali di cammino (?)
 
 ------------------------------------------------------------------
