@@ -11,6 +11,7 @@
 \usepackage{lipsum} % Lorem ipsum dolor sit ...
 \usepackage{comment}
 \usepackage{csquotes}
+\usepackage{enumitem}
 
 \usepackage[toc,page]{appendix}
 \usepackage{subfiles}
@@ -30,12 +31,10 @@
 
 
 % Shortcut
-\DeclareMathOperator{\Lagr}{\mathcal{L}} % Lagrangian
-\DeclareMathOperator{\R}{\mathbb{R}} % Real Number
-\DeclareMathOperator{\N}{\mathbb{N}} % Natural Number
-\DeclareMathOperator{\C}{\mathbb{C}} % Natural Number
-\DeclareMathOperator{\coleq}{\mathbb{C}} % Natural Number
-
+\DeclareMathOperator{\Lagr}{\mathcal{L}}  % Lagrangian
+\DeclareMathOperator{\R}{\mathbb{R}}      % Real Number
+\DeclareMathOperator{\N}{\mathbb{N}}      % Natural Number
+\DeclareMathOperator{\C}{\mathbb{C}}      % Complex Number
 
 % Layout
 \setlength{\parindent}{0pt}
@@ -63,15 +62,23 @@
   \label{section: classical higher derivative systems}
   \subfile{classical_higher_derivative_systems}
 
-  % \section{Quantum higher derivative systems}
-  % \label{section: quantum higher derivative systems}
-  % \subfile{quantum_higher_derivative_systems}
+  \section{Quantum higher derivative systems}
+  \label{section: quantum higher derivative systems}
+  \subfile{quantum_higher_derivative_systems}
 
   \newpage
   \begin{appendices}
     \section{Calculus of variations}
     \label{appendix: calculus of variation}
     \subfile{calculus_of_variations}
+
+    \section{Path Integrals}
+    \label{appendix:path_integrals}
+    \subfile{path_integrals}
+
+    \section{Canonical quantization}
+    \label{appendix:canonical_quantization}
+    \subfile{canonical_quantization}
   \end{appendices}
 
   \newpage
