@@ -1,0 +1,59 @@
+A quantum system could be derived from the classical counterpart starting by
+hamiltonian formalism; this procedure is base on a map $\wedge$ that take a
+function $f$ define on classical phase space into a quantum \emph{observable}
+$\hat{f}$ (i.e. a hermitian operator acting of elements of a Hilbert space). A
+generic $f$ is define in terms of $Q$ and $P$ while $\hat{f}$ is given in terms
+of $\hat{Q}$ and $ \hat{P}$.
+Various sets of instructions for perform canonical quantization exist (e.g.
+deformation quantization, geometric quantization, ...) but they all originate
+from the one proposed by Dirac \cite{Dirac25}. The map proposed should have
+these following proprieties:
+\begin{enumerate}[label=(\roman*)]
+  \item $\wedge$ takes canonical variable $Q_i$ and $P_i$ in operators:
+    \begin{equation*}
+      \begin{cases}
+        Q \xrightarrow{\wedge} \hat{Q} \equiv \hat{x}
+        \quad &\mid \quad \hat{x} \psi(x) := x \psi(x) \\
+        P \xrightarrow{\wedge} \hat{P} \equiv \hat{p}
+        \quad &\mid \quad \hat{p} \psi(x) := -i \partial_x \psi(x) \\
+      \end{cases}
+    \end{equation*}
+  \item $\wedge$ is linear
+  \item $\wedge$ provide a ``compatibility relation between Poisson algebra and
+    the algebra of quantum observable'' i.e.
+    \begin{equation*}
+      \left\{ f, \, g \right\} \xrightarrow{\wedge}
+      -i \left[ \hat{f}, \, \hat{g} \right]
+    \end{equation*}
+\end{enumerate}
+Unfortunately conditions (i), (ii), (iii) have been proved mutually inconsistent
+hence the maps result ill-define
+\footnote{
+  Groenewold's theorem say that no such map $\wedge$ can produce an exact
+  correspondence between Poisson bracket and commutator.
+}.
+However if we restrict to lower degrees polynomials we have the following
+
+\begin{theorem} \label{th:2nd_deegree_poli_canonical_quantization}
+  \cite{Hall13} If $f(Q,P)$ is a polynomial of degree at most 2 and $g(Q,P)$ is
+  an arbitrary polynomial $\wedge$ is well-define.
+\end{theorem}
+
+Starting from classical system and then quantized it have some advantages and
+some drawbacks. The main drawback is that with this approach can describe the
+purely quantum phenomena such the \emph{spin}. The main advantage is that we can
+develop our quantum intuition by referring to the classical system from which we
+started. Analogies between quantum systems and classical systems are also
+reflected in the equations that describe them. For example the evolution of an
+observable (without an explicit dependence on time)is given by Ehrenfest theorem
+that written in Heisenberg picture is
+
+\begin{equation*}
+  \frac{d}{dt} \hat{f} = -i \left[ \hat{f}, \, \hat{H} \right]
+\end{equation*}
+
+which exhibits a close resemblance with \eqref{eq:poisson_bracket_evolution}
+using property (iii). Another advantage concerns the coordinates transformation.
+Sometime equations of a quantum system take simpler form under coordinates
+transformation. One can use the theory of the canonical transformation develop
+in classical mechanics and then canonically quantize the result.
