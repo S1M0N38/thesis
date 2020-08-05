@@ -3,6 +3,94 @@ studied. In appendices are presented two way to go from the classical
 lagrangian and hamiltonian formalism to the quantum mechanical ones:
 \emph{Feynman path integrals} (\ref{appendix:path_integrals}) and
 \emph{canonical quantization} (\ref{appendix:canonical_quantization}). These
-procedures will be used to derive the Quantum Pais-Uhlenbeck (QPU) starting from
-\eqref{eq:lagrangian_PU}. The quantum version of the Ostrogradsky theorem will
-be proved and lastly more example of ghost-driven theories are given.
+procedures will be used to derive the Quantum Pais-Uhlenbeck (QPU) oscillator
+starting from \eqref{eq:lagrangian_PU}. The quantum version of the Ostrogradsky
+theorem will be proved and lastly more example of ghost-ridden theories are
+given.
+
+\subsection{Ghosts}
+As said previously in section
+\ref{subsection:linear_ostrogradskian_instability}, in quantum mechanics
+\emph{linear Ostrogradskian instability} goes under the name ``\emph{ghost}''.
+Just like classical HD theories, quantum HD theories have the spectrum of the
+hamiltonian unbounded. Theorem \ref{th:ostrogradsky_classical} have its quantum
+counterpart:
+
+\begin{theorem} \label{th:ostrogradsky_quantum}
+  \cite{Smilga17} The quantum counterpart of Hamiltonian
+  \eqref{eq:general_hamiltonian_1dim} for a non-degenerate higher-derivative
+  system has no ground state.
+\end{theorem}
+\begin{proof}
+  The proof is given for a one-dimentional system ($\mu=1$) describe by a second
+  order lagrangian ($n=2$); the generalizaton for a multi-dimentional HD system
+  is straightforward. The result hamiltonian is
+  \begin{equation*}
+    H = h(Q_1, Q_2, P_2) P_2 + Q_2 P_1 - L(Q_1, Q_2, h)
+  \end{equation*}
+  Using the canonical quantization the function H is converted to a quantum
+  observable $\hat{H}$ which eigenvalue are the allowed energies of the system.
+  \begin{align*}
+    & \begin{cases}
+      Q_1 \xrightarrow{\wedge} \hat{Q_1} \equiv \hat{x}
+      \quad &\mid \quad \hat{x}\psi(x, v) = x \psi(x, v) \\
+      P_1 \xrightarrow{\wedge} \hat{P_1} \equiv \hat{p}_x
+      \quad &\mid \quad \hat{p}_x\psi(x, v) = -i\partial_x \psi(x, v) \\
+    \end{cases} \\
+    & \begin{cases}
+      Q_2 \xrightarrow{\wedge} \hat{Q_2} \equiv \hat{v}
+      \quad &\mid \quad \hat{v}\psi(x, v) = v \psi(x, v) \\
+      P_2 \xrightarrow{\wedge} \hat{P_2} \equiv \hat{p}_v
+      \quad &\mid \quad \hat{p}_v\psi(x, v) = -i\partial_v \psi(x, v) \\
+    \end{cases}
+  \end{align*}
+  \begin{equation} \label{eq:ham_operator_2nd_order}
+    \hat{H} = h(\hat{x}, \hat{v}, \hat{p}_v) \hat{p}_v + \hat{v} \hat{p}_x -
+    L (\hat{x}, \hat{v}, h)
+  \end{equation}
+
+  Moreover suppose that the spectrum of the hamiltonian is discrete. If was
+  continuous, normalize it in a box so the range of $x$ and $v$ is finite which
+  make the spectrum discrete. At the end remove regularization sending the box
+  size to infinity.
+  Let $\psi_0(x, v)$ be the normalized ground state of the system with the
+  associated eigenvalue $E_0$, i.e. $\hat{H}\psi_0(x, v) = E_0 \psi_0(x, v)$.
+  To seek for an energy value close to $E_0$ we use the \emph{variational
+  method}
+  \footnote{
+    Variational methods must not be confused with variational calculus, they
+    are totally different things.
+  } with the following variational ansatz:
+
+  \begin{equation}
+    \psi_c(x, v) = e^{icx}\psi_0(x,v)
+  \end{equation}
+
+  Observe that $\psi_c(x,v)$ is not an eigenfunction of the Hamiltonian
+  \eqref{eq:ham_operator_2nd_order} and neither linear combination $\psi_f(x,v)$
+  of $\psi_c(x,v)$ are.
+
+  \begin{align*}
+    &\hat{H} \psi_c(x,v) = E_0\psi_c(x, v) + cv \psi_c(x,v)
+    \neq \lambda \psi_c(x,v) \\ \\
+    &\psi_f = \int f(c) \psi_c \, dc = \psi_0 \int f(c) e^{icx} \, dc =
+    \psi_0 \tilde{f}(x) \\
+    &\hat{H} \psi_f(x,v) = E_0\psi_f(x, v) -
+    iv \frac{\partial \tilde{f}(x)}{\partial x} \psi_c(x,v)
+    \neq \lambda \psi_c(x,v)
+  \end{align*}
+
+  So $\psi_c$ and $\psi_f$ does not vanish of exited state and variational
+  energy must not exceed $E_0$ and can be obtain by direct calculation.
+
+  \begin{equation*}
+    E_0 \leq E_c = \int \psi_c^* \hat{H} \psi_c \, dx \, dv =
+    E_0 + c \int v \left|\psi_0 \right| ^2 \, dx \, dv
+  \end{equation*}
+
+  If the integral $\int v \left|\psi_0 \right| ^2 \, dx \, dv$ does not vanish
+  arbitrarily negative energies can be reach by an appropriate choice of $c$.
+  Otherwise if the integral vanish, $E_c$ does not depend on $c$ and does not
+  grow, as it should if $\psi_0$ would be a ground state \cite{Smilga17}. Thus,
+  $\psi_0$ is not a ground state as it was postulated. \\
+\end{proof}
