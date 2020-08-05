@@ -158,10 +158,37 @@ becomes the difference of two independent quantum harmonic oscillator.
 \begin{equation}
   \hat{H} =
   \frac{\hat{P}_1^2 \, + \, \omega_1^2 \hat{X}_1^2}{2} -
-  \frac{\hat{P}_2^2 \, + \, \omega_2^2 \hat{X}_2^2}{2}
+  \frac{\hat{P}_2^2 \, + \, \omega_2^2 \hat{X}_2^2}{2} \equiv
+  \hat{H}_1 - \hat{H}_2
 \end{equation}
 
-So the spectrum is the difference between the two spectra, i.e.
+The spectrum of $\hat{H}$ follows from the solution of the equation
+$\hat{H} \psi = E \psi$. Let $\psi$ be the product of the eigenstates of two
+independent simple one-dimensional quantum harmonic oscillator $\psi_n$ and
+$\psi_m$, i.e.
+
+\begin{equation*}
+  \psi(X_1, X_2) = \psi_n(X_1) \psi_m(X_2)
+  \quad \text{where} \quad
+  \begin{cases}
+    &\hat{H}_1\psi_n = \omega_1 \left( \frac{1}{2} + n \right)\psi_n \\
+    &\hat{H}_2\psi_m = \omega_2 \left( \frac{1}{2} + m \right)\psi_m
+  \end{cases}
+\end{equation*}
+
+\begin{align*}
+  \hat{H} \psi
+  &= \left(\hat{H}_1 - \hat{H}_2\right) \left(\psi_n \psi_m\right) \\
+  &= \left(\hat{H}_1\psi_n\right)\psi_m - \left(\hat{H}_2\psi_m\right)\psi_n \\
+  &= \left(
+    \omega_1\left(\frac{1}{2} + n\right) -
+    \omega_2\left(\frac{1}{2} + m\right)
+     \right) \left(\psi_n\psi_m\right)
+\end{align*}
+
+
+
+So the spectrum is
 
 \begin{equation}
   E_{mn} =
@@ -180,7 +207,7 @@ rational number $k$; the spectrum can be written as
 so the spectrum is discrete. On the other hand if the frequencies are
 incommensurable the every real number can be hit by an appropriate choice of
 $n$ and $m$. But the wave function of all eigenstate are normalizable, so the
-spectrum is not continuous but pure point.
+spectrum is not continuous but rather pure point.
 
 
 
