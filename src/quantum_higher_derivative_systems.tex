@@ -8,7 +8,7 @@ starting from \eqref{eq:lagrangian_PU}. The quantum version of the Ostrogradsky
 theorem will be proved and lastly more example of ghost-ridden theories are
 given.
 
-\subsection{Ghosts}
+\subsection{Ghosts} \label{section:ghosts}
 As said previously in section
 \ref{subsection:linear_ostrogradskian_instability}, in quantum mechanics
 \emph{linear Ostrogradskian instability} goes under the name ``\emph{ghost}''.
@@ -94,3 +94,98 @@ counterpart:
   grow, as it should if $\psi_0$ would be a ground state \cite{Smilga17}. Thus,
   $\psi_0$ is not a ground state as it was postulated. \\
 \end{proof}
+
+
+\subsection{Quantum Pais-Uhlenbeck oscillator}
+The first study to be publish about a quantum HD theory was the \emph{Quantum
+Pais-Uhlenbeck oscillator} (QPU) \cite{PU50}. In order to obtain the Hamiltonian
+(operator) $\hat{H}_{QPU}$ of the QPU system, the $L_{PU}$
+\eqref{eq:lagrangian_PU} had to be converted in the corresponding Hamiltonian
+$H_{PU}$ and then canonically quantize it, i.e.
+$L_{PU} \rightarrow H_{PU} \xrightarrow{\wedge} \hat{H}_{QPU}$
+\footnote{
+  Notation for quantum operators is
+  the same used in the proof of Theorem \ref{th:ostrogradsky_quantum}
+}.
+
+\begin{equation} \label{eq:hamiltonian_QPU}
+  \hat{H}_{QPU} = \hat{p}_x \hat{v} + \frac{\hat{p}_v^2}{2}
+  + \left(\omega_1^2 + \omega_2^2\right)\frac{\hat{v}^2}{2}
+  - \omega_1^2\omega_2^2 \frac{\hat{x}^2}{2}
+\end{equation}
+
+\subsubsection{non-degenerate frequencies: $\omega_1 \neq \omega_2$}
+
+Consider the following canonical transformation and then canonically quantize
+the new canonical variables $\tilde{Q}$ and $\tilde{P}$
+\footnote{
+  The proposed transformation is canonical because the canonical commutation
+  relations are still valid, i.e.
+  $\left\{ \tilde{Q_i} \, , \, \tilde{Q_j}\right\} =
+  \left\{ \tilde{P_i} \, , \, \tilde{P_j}\right\} = 0$ and
+  $\left\{ \tilde{Q_i} \, , \, \tilde{P_j}\right\} = \delta_{ij}$
+}.
+
+\begin{align*}
+  \tilde{Q_1} &= \frac{1}{\omega_1}
+    \frac{P_1 \, + \,  \omega_1^2 Q_2} {\sqrt{\omega_1^2-\omega_2^2}}
+              &\xrightarrow{\wedge}& &\hat{\tilde{Q}}_1 \equiv
+  \hat{X}_1 &= \frac{1}{\omega_1}
+    \frac{\hat{p}_x \, + \,  \omega_1^2 v} {\sqrt{\omega_1^2-\omega_2^2}}
+    \\
+  \tilde{P_1} &= \omega_1
+    \frac{P_2 \, + \, \omega_2^2 Q_1} {\sqrt{\omega_1^2-\omega_2^2}}
+              &\xrightarrow{\wedge}& &\hat{\tilde{P}}_1 \equiv
+    \hat{P}_1 &= \omega_1
+    \frac{\hat{p}_v \, + \,  \omega_2^2 x} {\sqrt{\omega_1^2-\omega_2^2}}
+    \\
+  \tilde{Q_2} &=
+    \frac{P_2 \, + \,  \omega_1^2 Q_1} {\sqrt{\omega_1^2-\omega_2^2}}
+              &\xrightarrow{\wedge}& &\hat{\tilde{Q}}_2 \equiv
+  \hat{X}_2 &=
+    \frac{\hat{p}_v \, + \,  \omega_1^2 x} {\sqrt{\omega_1^2-\omega_2^2}}
+    \\
+  \tilde{P_2} &=
+    \frac{P_1 \, + \, \omega_2^2 Q_2} {\sqrt{\omega_1^2-\omega_2^2}}
+              &\xrightarrow{\wedge}& &\hat{\tilde{P}}_2 \equiv
+  \hat{P}_1 &=
+    \frac{\hat{p}_x \, + \,  \omega_2^2 v} {\sqrt{\omega_1^2-\omega_2^2}}
+\end{align*}
+
+Using $\hat{X}$ and $\hat{P}$, the Hamiltonian \eqref{eq:hamiltonian_QPU}
+becomes the difference of two independent quantum harmonic oscillator.
+
+\begin{equation}
+  \hat{H} =
+  \frac{\hat{P}_1^2 \, + \, \omega_1^2 \hat{X}_1^2}{2} -
+  \frac{\hat{P}_2^2 \, + \, \omega_2^2 \hat{X}_2^2}{2}
+\end{equation}
+
+So the spectrum is the difference between the two spectra, i.e.
+
+\begin{equation}
+  E_{mn} =
+  \omega_1 \left( \frac{1}{2} + n \right) -
+  \omega_2 \left( \frac{1}{2} + m \right)
+  \qquad m,n = 0,1,2,\ldots
+\end{equation}
+
+Consider the situation where ratio between $\omega_2$ and $\omega_1$ is a
+rational number $k$; the spectrum can be written as
+
+\begin{equation*}
+  E_{mn} = \omega_1 \left( \frac{1-k}{2} + n + mk \right)
+\end{equation*}
+
+so the spectrum is discrete. On the other hand if the frequencies are
+incommensurable the every real number can be hit by an appropriate choice of
+$n$ and $m$. But the wave function of all eigenstate are normalizable, so the
+spectrum is not continuous but pure point.
+
+
+
+
+
+
+
+% \subsubsection{degenerate frequencies: $\omega_1 = \omega_2$}
