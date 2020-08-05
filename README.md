@@ -19,4 +19,4 @@ as `Repository template`.
 2. Push the tag with `git push --follow-tags`
 
 3. The github server detected the new tag and deoploy a new pdf version in
-[Releases](https://github.com/S1M0N38/latex-template/releases)
+[Releases](https://github.com/S1M0N38/thesis/releases)
