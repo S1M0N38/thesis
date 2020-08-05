@@ -306,20 +306,20 @@ coordinates can be define starting from the old one by mixing the corresponding
 generalized coordinates and their conjugate momenta such that \emph{canonical
 commutation relations} are preserved.
 
-\begin{equation*}
+\begin{equation} \label{eq:canonical_transformation}
   \begin{cases}
-    \{\tilde{Q}^{\mu}_{(i)}, \tilde{Q}^{\nu}_{(i)}\} =
-    \{Q^{\mu}_{i}, Q^{\nu}_{i}\} = 0 \\
-    \{\tilde{P}_{\mu(i)}, \tilde{P}_{\nu(i)}\} =
-    \{P_{\mu(i)}, P_{\nu(i)}\} = 0 \\
-    \{\tilde{Q}^{\mu}_{(i)}, \tilde{P}_{\nu(i)}\} =
-    \{Q^{\mu}_{(i)}, P_{\nu(i)}\} = \delta^{\mu}_{\nu(i)} \\
+    \{\tilde{Q}^{\mu}_{(i)}, \tilde{Q}^{\nu}_{(j)}\} =
+    \{Q^{\mu}_{(i)}, Q^{\nu}_{(j)}\} = 0 \\
+    \{\tilde{P}_{\mu(i)}, \tilde{P}_{\nu(j)}\} =
+    \{P_{\mu(i)}, P_{\nu(j)}\} = 0 \\
+    \{\tilde{Q}^{\mu}_{(i)}, \tilde{P}_{\nu(j)}\} =
+    \{Q^{\mu}_{(i)}, P_{\nu(j)}\} = \delta^{\mu}_{\nu} \delta_{ij}\\
   \end{cases}
-  \qquad \Rightarrow \qquad
+  \quad \Rightarrow \quad
   \begin{cases}
-    \tilde{\bm{Q}_i} = \tilde{\bm{Q}_i}(\bm{Q}_i, \bm{P}_i) \\
-    \tilde{\bm{P}_i} = \tilde{\bm{P}_i}(\bm{Q}_i, \bm{P}_i)
+    \tilde{\bm{Q}_i} = \tilde{\bm{Q}_i}(\bm{Q}_j, \bm{P}_j) \\
+    \tilde{\bm{P}_i} = \tilde{\bm{P}_i}(\bm{Q}_j, \bm{P}_j)
   \end{cases}
-\end{equation*}
+\end{equation}
 
 These transformation are called \emph{canonical transformation}.
