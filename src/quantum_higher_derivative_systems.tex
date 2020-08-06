@@ -124,7 +124,7 @@ the new canonical variables $\tilde{Q}$ and $\tilde{P}$
   $\left\{ \tilde{Q_i} \, , \, \tilde{Q_j}\right\} =
   \left\{ \tilde{P_i} \, , \, \tilde{P_j}\right\} = 0$ and
   $\left\{ \tilde{Q_i} \, , \, \tilde{P_j}\right\} = \delta_{ij}$
-}.
+} \cite{Mannheim05}.
 
 \begin{align*}
   \tilde{Q_1} &= \frac{1}{\omega_1}
@@ -210,9 +210,76 @@ $n$ and $m$. But the wave function of all eigenstate are normalizable, so the
 spectrum is not continuous but rather pure point.
 
 
+\subsubsection{degenerate frequencies: $\omega_1 = \omega_2$}
+If frequencies $\omega_1$ and $\omega_2$ are the same, the previous
+transformation can't be perform due to the vanishing denominator. Nevertheless a
+solution can be obtain following the procedure describe in \cite{PU50,
+Bolonek06}. Let $\psi$ be written as
 
+\begin{equation*}
+  \psi(x, v) = e^{-i\omega^2xv}\phi(x,v)
+\end{equation*}
 
+So $\hat{H}$ acts on such $\psi$ as
 
+\begin{equation*}
+  \hat{H} \psi = e^{-i\omega^2xv}
+  \left[\frac{\hat{p}_v^2}{2} + v\hat{p}_x - \omega^2x\hat{p}_v \right] \phi
+  \quad \Rightarrow \quad
+  \hat{H}_{\phi} :=
+  \frac{\hat{p}_v^2}{2} + v\hat{p}_x - \omega^2x\hat{p}_v
+\end{equation*}
 
+Now, on $\hat{H}_{\phi}$ are apply a scale transformation and then a unitary
+transformation\footnote{
+  During the calculation of $\hat{H}'_{\phi}$ was useful swapping
+  two non-commuting operators (e.g. $v$ and $e^{\lambda \hat{p}_v}$)
+  so that their commutator appears. This identity was used:
+  $\left[e^{\lambda \, \hat{A}}, \, \hat{B}\right] =
+  \lambda \, e^{\lambda \, \hat{A}} \left[\hat{A} , \, \hat{B} \right]$
+}.
 
-% \subsubsection{degenerate frequencies: $\omega_1 = \omega_2$}
+\begin{equation*}
+  \text{scale} \
+  \begin{cases}
+    &x         \rightarrow x/\omega \\
+    &\hat{p}_x \rightarrow \omega\hat{p}_x
+  \end{cases}
+  \qquad \text{unitary} \;
+  \U = \exp\left\{ - \frac{\hat{p}_x \hat{p}_v}{4}\right\}
+\end{equation*}
+
+\begin{equation*}
+  \hat{H}'_{\phi} = \, \U^{\dagger}
+  \hat{H}_{\phi} \left(x/\omega,\ v,\ \omega \hat{p}_x,\ \hat{p}_v\right)
+  \ \U \qquad
+  \phi'(x, v) = \U \phi\left(x/\omega, v\right)
+\end{equation*}
+
+\begin{equation} \label{eq:ham_phi_PU}
+  \hat{H}'_{\phi} = \frac{\hat{p}^2_x \, + \, \hat{p}^2_{v}}{4}
+  + \omega \left(v \hat{p}_x - x \hat{p}_v \right)
+\end{equation}
+
+Hamiltonian \eqref{eq:ham_phi_PU} can be interpreted as the hamiltonian of a
+free particle plus the term $\omega \left(v \hat{p}_x - x \hat{p}_v \right)$
+which resemble the orbital angular momentum in the $(\omega x, \, v)$ plane.
+Going in polar coordinates and reverting back to the original $\psi$, we obtain
+
+\begin{align} \label{eq:sol_ham_degen_PU}
+  \psi_{l, \, k}(x, v \,; t) \ &\propto \
+  e^{-i\omega^2xv}
+  \exp\left\{
+    \frac{i}{4\omega^2} \frac{\partial^2}{\partial x \partial v}
+  \right\} \cdot \nonumber \\
+  &\cdot \left[
+    J_l \left(k\sqrt{v^2 + \omega^2 x^2}\right)
+    \left( \frac{wx - iv}{wx +iv} \right)^{l/2}
+  \right]
+  e^{-it (l\omega + k^2/4)}
+\end{align}
+
+Wave functions \eqref{eq:sol_ham_degen_PU} are not normalizable hence the
+spectrum is continuous. Moreover each energy level infinitely degenerate:
+$\psi_{l+1, \, k}$ and $\psi_{l, \, \sqrt{k^2 + 4 \omega}}$ have same
+eigenvalue.
