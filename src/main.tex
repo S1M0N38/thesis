@@ -1,24 +1,55 @@
 \documentclass[a4paper]{article}
 
-\usepackage{amsmath} % math stuff
+% -----------------------------------Packages--------------------------------- %
+
+% Allow to use é, é, ç, ... directly from keyboard
+\usepackage[utf8]{inputenc}
+
+% T1 font encoding is an 8-bit encoding and uses fonts that have 256 glyphs
+% (e.g. 'ö' is a single glyph and is not made by adding accent to 'o')
+\usepackage[T1]{fontenc}
+
+% Set the language of the document (e.g. title, section, abstract, ...)
+\usepackage[english]{babel}
+
+% math stuff: equation, declaring operators, ...
+\usepackage{amsmath}
+
+% math additional symbols: mathbb (blackboard font), mathfrak (Fraktur letters)
+% include asmfont as a dependencies
+\usepackage{amssymb}
+
+% additional features on theorms such as theoremstyle
 \usepackage{amsthm}
-\usepackage{amssymb} % math symbols (like Real, Complex, ...)
+
+% bold font with \bm command
 \usepackage{bm}
-\usepackage{mathabx}
 
-\usepackage{tikz} % images
-
-\usepackage{lipsum} % Lorem ipsum dolor sit ...
-\usepackage{comment}
-\usepackage{csquotes}
+% enumerate lists
 \usepackage{enumitem}
 
-\usepackage[toc,page]{appendix}
+% import subfiles .tex
 \usepackage{subfiles}
+
+% make \ref clickale
 \usepackage[hidelinks]{hyperref}
+
+% insert appendix
+\usepackage[toc,page]{appendix}
+
+% biblatex dependency
+\usepackage{csquotes}
+
+% References loader with \addbibresource{*.bib}
 \usepackage{biblatex}
 
+
+% ------------------------------Bibliography---------------------------------- %
+
 \addbibresource{references.bib}
+
+
+% ------------------------------Theorems config------------------------------- %
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
@@ -26,19 +57,23 @@
 \numberwithin{equation}{section}
 
 
+% ------------------------------Customs commands------------------------------ %
+
+% Custom command
+\newcommand{\field}[1]{\mathbb{#1}}       % Complex, Real, Natural, ...
+\DeclareMathOperator{\Lagr}{\mathcal{L}}  % Lagrangian
+\DeclareMathOperator{\U}{\mathcal{U}}     % Time evolution operator
+
+
+% ----------------------------------Layout------------------------------------ %
+
+\setlength{\parindent}{0pt}
+
+
+% ----------------------------------Document---------------------------------- %
+
 \title{Amazing project}
 \author{Simone Bertolotto}
-
-
-% Shortcut
-\DeclareMathOperator{\Lagr}{\mathcal{L}}  % Lagrangian
-\DeclareMathOperator{\R}{\mathbb{R}}      % Real Number
-\DeclareMathOperator{\N}{\mathbb{N}}      % Natural Number
-\DeclareMathOperator{\C}{\mathbb{C}}      % Complex Number
-\DeclareMathOperator{\U}{\mathcal{U}}     % Unitary
-
-% Layout
-\setlength{\parindent}{0pt}
 
 
 \begin{document}
@@ -46,7 +81,7 @@
   \maketitle
 
   \begin{abstract}
-    \lipsum[1]
+    todo
   \end{abstract}
 
   \newpage
