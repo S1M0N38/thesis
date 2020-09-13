@@ -1,7 +1,7 @@
 In this appendix are summarized some concepts and calculations of the
 \emph{calculus of variations} extensively used in the paper
 \footnote{
-  Appendix \ref{appendix: calculus of variation} does not aim to be
+  Appendix~\ref{appendix: calculus of variation} does not aim to be
   mathematically rigorous but expose fundamental ideas in a simple and concise
   way. For a proper introduction to this subject consult the relevant
   literature.
@@ -9,8 +9,7 @@ In this appendix are summarized some concepts and calculations of the
 Calculus of variations is the study how \emph{functionals} change under smalls
 variations of their inputs.
 
-\begin{definition}
-  \cite{Functional_Encyclopedia_of_Mathematics}
+\begin{definition}~\cite{Functional_Encyclopedia_of_Mathematics}
   A functional is a $J$ map from an set $X$ into the set $\field{R}$ of real
   numbers or the set $\field{C}$ of complex numbers. If $X$ endowed with the
   structure of a vector space, a topological space or an ordered set, then
@@ -32,7 +31,7 @@ derivative with respect to $x$ we obtain the so called \emph{k-th order
 perturbations}.
 
 \begin{equation} \label{eq:def_function_variation}
-  y^{(k)} \rightarrow \frac{d^ky(x)}{dx^k} + \frac{d^k\delta y(x)}{dx^k} =
+  y^{(k)} \rightarrow \frac{d^k y(x)}{dx^k} + \frac{d^k\delta y(x)}{dx^k} =
   y^{(k)} + \delta y^{(k)} \qquad k=0, \ldots, n
 \end{equation}
 
@@ -44,15 +43,15 @@ it's define as
   \delta J[y] := J[y + \delta y] - J[y]
 \end{equation}
 
-Substituting \eqref{eq:def_function_variation} in
-\eqref{eq:def_functional_variation} and expanding $J[y + \delta y]$ to first
+Substituting~\eqref{eq:def_function_variation}
+in~\eqref{eq:def_functional_variation} and expanding $J[y + \delta y]$ to first
 order using Taylor expansion around $y$ we obtain
 
 \begin{align*}
   \delta J[y]
   &=\int_{x_1}^{x_2} dx \left\{ f +
     \frac{\partial f}{\partial y^{(0)}} \delta y^{(0)} +
-    \frac{\partial f}{\partial y^{(1)}} \delta y^{(1)} + \ldots +
+    \frac{\partial f}{\partial y^{(1)}} \delta y^{(1)} + \cdots +
     \frac{\partial f}{\partial y^{(n)}} \delta y^{(n)}
     \right\} - \int_{x_1}^{x_2} dx f \\
   &=\int_{x_1}^{x_2} dx
@@ -66,11 +65,11 @@ Using integration by part repeatedly the last term can be rewrite as
 \begin{align}
   \label{eq:sum_temrs}
   \int_{x_1}^{x_2} dx \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} =
-  & \sum_{j=0}^{k} (-1)^j \frac{d^j}{dx^j}
+  & \sum_{j=0}^{k} {(-1)}^j \frac{d^j}{dx^j}
   \left( \frac{\partial f}{\partial y^{(k)}} \right) \delta y^{(k-1-j)}
   \Big|_{x_1}^{x_2} \\
   \label{eq:int_temrs}
-  & + \int_{x_1}^{x_2} dx (-1)^k \frac{d^k}{dx^k}
+  & + \int_{x_1}^{x_2} dx {(-1)}^k \frac{d^k}{dx^k}
   \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
 \end{align}
 
@@ -82,15 +81,15 @@ kept fixed and the every variation is zero, i.e.
 \end{equation}
 
 Under this assumption the expression for $\delta J[y]$ drastically simplify and
-the summation term in \eqref{eq:sum_temrs} vanish and remain only
-\eqref{eq:int_temrs}. Substituting it in the original expression we get
+the summation term in~\eqref{eq:sum_temrs} vanish and remain
+only~\eqref{eq:int_temrs}. Substituting it in the original expression we get
 
 \begin{equation} \label{eq:functional_variation_ends_fixed}
-  \delta J[y] = \int_{x_1}^{x_2} dx \sum_{k = 0}^{n} (-1)^k \frac{d^k}{dx^k}
+  \delta J[y] = \int_{x_1}^{x_2} dx \sum_{k = 0}^{n} {(-1)}^k \frac{d^k}{dx^k}
   \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
 \end{equation}
 
-Equation \eqref{eq:functional_variation_ends_fixed} clearly resemble to the
+Equation~\eqref{eq:functional_variation_ends_fixed} clearly resemble to the
 expression for the differential of $f(x_1, x_2, \ldots, x_n)$ in multi-variable
 calculus. One would wish to write a formal expression for the \emph{derivation
 of the functional} with respect to the $y(x)$. This can be achieve by this
@@ -107,12 +106,12 @@ comparison
 leading up to the notion of \emph{functional derivative}
 
 \begin{equation} \label{eq:functional_derivative}
-  \frac{\delta J[y]}{\delta y} := \sum_{k = 0}^{n} (-1)^k \frac{d^k}{dx^k}
+  \frac{\delta J[y]}{\delta y} := \sum_{k = 0}^{n} {(-1)}^k \frac{d^k}{dx^k}
   \left( \frac{\partial f}{\partial y^{(k)}}\right)
 \end{equation}
 
-Some \cite{Chen13}, abusing of notation,  write $\frac{\delta f}{\delta y}$
-instead of $\frac{\delta J[y]}{\delta y}$ implying the connection
-\eqref{eq:def_functional} between $J$ and $f$. This abusion it's also used in
-this paper when defining the conjugate momenta
-\eqref{eq:def_canonical_coordinates}.
+Some~\cite{Chen13}, abusing of notation,  write $\frac{\delta f}{\delta y}$
+instead of $\frac{\delta J[y]}{\delta y}$ implying the
+connection~\eqref{eq:def_functional} between $J$ and $f$. This abusion it's
+also used in this paper when defining the conjugate
+momenta~\eqref{eq:def_canonical_coordinates}.

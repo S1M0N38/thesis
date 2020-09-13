@@ -4,22 +4,21 @@ lagrangian and hamiltonian formalism to the quantum mechanical ones:
 \emph{Feynman path integrals} (\ref{appendix:path_integrals}) and
 \emph{canonical quantization} (\ref{appendix:canonical_quantization}). These
 procedures will be used to derive the Quantum Pais-Uhlenbeck (QPU) oscillator
-starting from \eqref{eq:lagrangian_PU}. The quantum version of the Ostrogradsky
+starting from~\eqref{eq:lagrangian_PU}. The quantum version of the Ostrogradsky
 theorem will be proved and lastly more example of ghost-ridden theories are
 given.
 
-\subsection{Ghosts} \label{section:ghosts}
-As said previously in section
-\ref{subsection:linear_ostrogradskian_instability}, in quantum mechanics
+\subsection{Ghosts}\label{section:ghosts}
+As said previously in Section~\ref{subsection:
+linear_ostrogradskian_instability}, in quantum mechanics
 \emph{linear Ostrogradskian instability} goes under the name ``\emph{ghost}''.
 Just like classical HD theories, quantum HD theories have the spectrum of the
-hamiltonian unbounded. Theorem \ref{th:ostrogradsky_classical} have its quantum
+hamiltonian unbounded. Theorem~\ref{th:ostrogradsky_classical} have its quantum
 counterpart:
 
-\begin{theorem} \label{th:ostrogradsky_quantum}
-  \cite{Smilga17} The quantum counterpart of Hamiltonian
-  \eqref{eq:general_hamiltonian_1dim} for a non-degenerate higher-derivative
-  system has no ground state.
+\begin{theorem}\label{th:ostrogradsky_quantum}~\cite{Smilga17}
+  The quantum counterpart of Hamiltonian~\eqref{eq:general_hamiltonian_1dim}
+  for a non-degenerate higher-derivative system has no ground state.
 \end{theorem}
 \begin{proof}
   The proof is given for a one-dimentional system ($\mu=1$) describe by a second
@@ -56,8 +55,7 @@ counterpart:
   Let $\psi_0(x, v)$ be the normalized ground state of the system with the
   associated eigenvalue $E_0$, i.e. $\hat{H}\psi_0(x, v) = E_0 \psi_0(x, v)$.
   To seek for an energy value close to $E_0$ we use the \emph{variational
-  method}
-  \footnote{
+  method}~\footnote{
     Variational methods must not be confused with variational calculus, they
     are totally different things.
   } with the following variational ansatz:
@@ -66,9 +64,9 @@ counterpart:
     \psi_c(x, v) = e^{icx}\psi_0(x,v)
   \end{equation}
 
-  Observe that $\psi_c(x,v)$ is not an eigenfunction of the Hamiltonian
-  \eqref{eq:ham_operator_2nd_order} and neither linear combination $\psi_f(x,v)$
-  of $\psi_c(x,v)$ are.
+  Observe that $\psi_c(x,v)$ is not an eigenfunction of the
+  Hamiltonian~\eqref{eq:ham_operator_2nd_order} and neither linear combination
+  $\psi_f(x,v)$ of $\psi_c(x,v)$ are.
 
   \begin{align*}
     &\hat{H} \psi_c(x,v) = E_0\psi_c(x, v) + cv \psi_c(x,v)
@@ -91,21 +89,21 @@ counterpart:
   If the integral $\int v \left|\psi_0 \right| ^2 \, dx \, dv$ does not vanish
   arbitrarily negative energies can be reach by an appropriate choice of $c$.
   Otherwise if the integral vanish, $E_c$ does not depend on $c$ and does not
-  grow, as it should if $\psi_0$ would be a ground state \cite{Smilga17}. Thus,
+  grow, as it should if $\psi_0$ would be a ground state~\cite{Smilga17}. Thus,
   $\psi_0$ is not a ground state as it was postulated. \\
 \end{proof}
 
 
 \subsection{Quantum Pais-Uhlenbeck oscillator}
 The first study to be publish about a quantum HD theory was the \emph{Quantum
-Pais-Uhlenbeck oscillator} (QPU) \cite{PU50}. In order to obtain the Hamiltonian
-(operator) $\hat{H}_{QPU}$ of the QPU system, the $L_{PU}$
-\eqref{eq:lagrangian_PU} had to be converted in the corresponding Hamiltonian
-$H_{PU}$ and then canonically quantize it, i.e.
+Pais-Uhlenbeck oscillator} (QPU)~\cite{PU50}. In order to obtain the Hamiltonian
+(operator) $\hat{H}_{QPU}$ of the QPU system, 
+the $L_{PU}$~\eqref{eq:lagrangian_PU} had to be converted in the corresponding
+Hamiltonian $H_{PU}$ and then canonically quantize it, i.e.
 $L_{PU} \rightarrow H_{PU} \xrightarrow{\wedge} \hat{H}_{QPU}$
 \footnote{
   Notation for quantum operators is
-  the same used in the proof of Theorem \ref{th:ostrogradsky_quantum}
+  the same used in the proof of Theorem~\ref{th:ostrogradsky_quantum}
 }.
 
 \begin{equation} \label{eq:hamiltonian_QPU}
@@ -124,7 +122,7 @@ the new canonical variables $\tilde{Q}$ and $\tilde{P}$
   $\left\{ \tilde{Q_i} \, , \, \tilde{Q_j}\right\} =
   \left\{ \tilde{P_i} \, , \, \tilde{P_j}\right\} = 0$ and
   $\left\{ \tilde{Q_i} \, , \, \tilde{P_j}\right\} = \delta_{ij}$
-} \cite{Mannheim05}.
+}~\cite{Mannheim05}.
 
 \begin{align*}
   \tilde{Q_1} &= \frac{1}{\omega_1}
@@ -152,7 +150,7 @@ the new canonical variables $\tilde{Q}$ and $\tilde{P}$
     \frac{\hat{p}_x \, + \,  \omega_2^2 v} {\sqrt{\omega_1^2-\omega_2^2}}
 \end{align*}
 
-Using $\hat{X}$ and $\hat{P}$, the Hamiltonian \eqref{eq:hamiltonian_QPU}
+Using $\hat{X}$ and $\hat{P}$, the Hamiltonian~\eqref{eq:hamiltonian_QPU}
 becomes the difference of two independent quantum harmonic oscillator.
 
 \begin{equation}
@@ -213,7 +211,7 @@ spectrum is not continuous but rather pure point.
 \subsubsection{degenerate frequencies: $\omega_1 = \omega_2$}
 If frequencies $\omega_1$ and $\omega_2$ are the same, the previous
 transformation can't be perform due to the vanishing denominator. Nevertheless a
-solution can be obtain following the procedure describe in \cite{PU50,
+solution can be obtain following the procedure describe in~\cite{PU50,
 Bolonek06}. Let $\psi$ be written as
 
 \begin{equation*}
@@ -261,7 +259,7 @@ transformation\footnote{
   + \omega \left(v \hat{p}_x - x \hat{p}_v \right)
 \end{equation}
 
-Hamiltonian \eqref{eq:ham_phi_PU} can be interpreted as the hamiltonian of a
+Hamiltonian~\eqref{eq:ham_phi_PU} can be interpreted as the hamiltonian of a
 free particle plus the term $\omega \left(v \hat{p}_x - x \hat{p}_v \right)$
 which resemble the orbital angular momentum in the $(\omega x, \, v)$ plane.
 Going in polar coordinates and reverting back to the original $\psi$, we obtain
@@ -274,12 +272,12 @@ Going in polar coordinates and reverting back to the original $\psi$, we obtain
   \right\} \cdot \nonumber \\
   &\cdot \left[
     J_l \left(k\sqrt{v^2 + \omega^2 x^2}\right)
-    \left( \frac{wx - iv}{wx +iv} \right)^{l/2}
+    {\left( \frac{wx - iv}{wx +iv} \right)}^{l/2}
   \right]
   e^{-it (l\omega + k^2/4)}
 \end{align}
 
-Wave functions \eqref{eq:sol_ham_degen_PU} are not normalizable hence the
+Wave functions~\eqref{eq:sol_ham_degen_PU} are not normalizable hence the
 spectrum is continuous. Moreover each energy level infinitely degenerate:
 $\psi_{l+1, \, k}$ and $\psi_{l, \, \sqrt{k^2 + 4 \omega}}$ have same
 eigenvalue.
