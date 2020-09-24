@@ -1,4 +1,4 @@
-name: Generate pdf
+name: Generate document
 
 on:
   push:
