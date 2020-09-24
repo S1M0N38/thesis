@@ -3,7 +3,7 @@ name: Generate pdf
 on:
   push:
     paths: 
-      - 'src/**'
+      - 'document/**'
 
 jobs:
   build:
