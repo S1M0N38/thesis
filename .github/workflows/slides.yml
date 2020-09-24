@@ -1,9 +1,9 @@
-name: Generate document
+name: Generate slides 
 
 on:
   push:
     paths: 
-      - 'document/**'
+      - 'slides/**'
 
 jobs:
   build:
@@ -17,4 +17,4 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: main.tex
-          working_directory: src
+          working_directory: slides
