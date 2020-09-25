@@ -1,4 +1,4 @@
-Before dive straight into the study of Higher Derivative (HD) systems, i.e.\
+Before diving into the study of Higher Derivative (HD) systems, i.e.\
 systems characterized by Lagrangian contains terms such as $\ddot{q}$,
 ${q}^{(3)}$, \dots, it's better to review some basic concepts of the
 \emph{Lagrangian} and \emph{Hamiltonian formalism} in order to fix ideas and
@@ -6,10 +6,16 @@ notations.
 
 \subsection{Lagrangian formalism}\label{subsection: lagrangian_formalism}
 When talking about \emph{Lagrangian formalism} we mean the whole mathematical
-formalism that it's been develop around the \emph{Lagrangian mechanics} and then
-extends way beyond the realm of classical mechanics. The Lagrangian mechanics
+formalism that it has been develop around the \emph{Lagrangian mechanics} and then
+extended way beyond the realm of classical mechanics. The Lagrangian mechanics
 was born as an alternative formulation of the \emph{Newtonian mechanics}
-describing a system analytically instead of the vector based approach used by
+describing a system analytically
+%TODO
+%No figures will be found in this work. The methods I present require neither
+%constructions nor geometrical or mechanical arguments, but solely algebraic
+%operations subject to a regular and uniform procedure.
+%Lagrange (Mécanique analytique - preface to the First Edition)
+instead of the vector based approach used by
 Newton. The keys concepts of Lagrangian mechanics are: \emph{generalized
 coordinates}, \emph{degrees of freedom} and \emph{constraints}.
 
@@ -23,6 +29,7 @@ coordinates}, \emph{degrees of freedom} and \emph{constraints}.
   The minimum number $n$ of generalized coordinates required to specify the
   position of a system is the \emph{number of degrees of freedom} of that
   system.
+  %TODO "They may be locally dependent"
 \end{definition}
 
 \begin{definition}\label{def: holonomic constraints}~\cite{
@@ -36,7 +43,7 @@ coordinates}, \emph{degrees of freedom} and \emph{constraints}.
 
 Once generalized coordinates has been chosen their evolution describe the
 evolution of the system. According to classical mechanics $q^{\mu}$ evolve
-leisurely in a smooth fashion following the \emph{equation of motion}. This
+in a smooth fashion following the \emph{equation of motion}. This
 ``smoothness'' allows following definition:
 
 \begin{definition}
@@ -52,9 +59,9 @@ leisurely in a smooth fashion following the \emph{equation of motion}. This
   \end{equation*}
 \end{definition}
 
-Sometimes, to lighten the notation, $q^{(n)\mu}$ will be denoted by
-$\bm{q}^{(n)}$ but should not be mistaken by a vector: there no something
-like a basis where $q^{\mu}$ play the role of the coordinates. \\
+Sometimes to lighten the notation $q^{(n)\mu}$ will be denoted by
+$\bm{q}^{(n)}$ but should not be mistaken by a vector: there is no something
+like a basis where $q^{\mu}$ play the role of the components. \\
 
 In Newtonian mechanics the equations of motion are ordinary second order
 differential equation related the position vector $\vec{x}$ and the forces
@@ -104,17 +111,18 @@ mechanics.
 
 Usually the underling Lagrangian of a classical mechanical system is $L(q^{\mu},
 \dot{q}^{\mu})$ so the equation~\eqref{eq:euler-lagrange} it's truncated after
-the second term. In this restriction of the Lagrangian formalism, Lagrangian
-mechanics and Newtonian mechanics are equivalent. $L$ can be written as
-difference of two quantities of the Newtonian mechanics: kinetic energy $T$ and
-potential energy $V$. \\
+the second term. In this special case the Lagrangian mechanics and Newtonian
+mechanics are equivalent. Usually $L$ can be written as difference of two
+quantities of the Newtonian mechanics: kinetic energy $T$ and potential energy
+$V$. \\
 
-In the classical mechanics problems (such as particle constrains on a surface or
-a double pendulum) the number of degrees of freedom of the system is finite.
+In the classical mechanics problems (such as a particle constrained on a surface
+or a double pendulum) the number of degrees of freedom of the system is finite.
 Lagrangian formalism can be extends to systems with an infinite countable number
-of degrees of freedom (think to the classical gas). But the formalism could be
-push further and be able to describe \emph{classical fields}.
+of degrees of freedom. But the formalism could be push further and be able to
+describe \emph{classical fields}.
 
+%TODO "Data (f) con 0 <= x < 2pi posso  fare Fourier ossia f(x) ~ {fn}"
 \begin{definition}\label{def: classical field}~\cite{
   Aldrovandi19_classical_field}
   A \emph{classical field} is a system with a continuous infinity of degrees of
@@ -207,12 +215,13 @@ respect to time, the $\partial_{\mu}$ has been used.
 
 One of the important aspect that link Lagrangian (density) and motion (field)
 equation are the \emph{symmetries}: every symmetries of the Lagrangian is also a
-symmetry of the equation of motion~\cite{Aldrovandi19_symmetry}. Nature
-suggested Newton directly the equations of motion of classical object, but
-formulation of more fundamental theory stop at what humans can experience. On
-the other hand in the Lagrangian formalism one try an educated guess on the
-Lagrangian based on the symmetries observed and the derivative the equation of
-motion that will be tested by experiments.
+symmetry of the equation of motion~\cite{Aldrovandi19_symmetry}. In the past,
+scientists try to directly wrote down the equations that govern motion of
+classical objects after observing their behavior. So the formulation of physical
+theories stops at what humans can experience. On the other hand in the
+Lagrangian formalism one try an educated guess of the Lagrangian based on the
+symmetries observed and then derive the equation of motion that will be tested
+by experiments.
 
 
 \subsection{Hamiltonian formalism}\label{subsection: hamiltonian_formalism}
