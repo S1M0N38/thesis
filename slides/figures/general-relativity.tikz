@@ -57,8 +57,8 @@
 		\node [style=none] (137) at (1, 9) {};
 		\node [style=none] (138) at (-17, 1) {};
 		\node [style=none] (135) at (17, 0) {};
-		\node [style=none] (139) at (0, -2) {};
-		\node [style=none] (140) at (0, 3.25) {};
+		\node [style=none] (141) at (0, 3.5) {};
+		\node [style=none] (142) at (0, -2) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [in=-165, out=30] (78.center) to (79.center);
@@ -99,8 +99,8 @@
 		\draw (136.center) to (135.center);
 		\draw (138.center) to (131.center);
 		\draw (132.center) to (133.center);
-		\draw [style=gray fill line] (139.center)
-			 to [bend left=90, looseness=1.75] (140.center)
+		\draw [style=fill orange] (142.center)
+			 to [bend left=90, looseness=1.75] (141.center)
 			 to [bend left=90, looseness=1.75] cycle;
 	\end{pgfonlayer}
 \end{tikzpicture}

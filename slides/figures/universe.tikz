@@ -1,0 +1,64 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3.5, 9.25) {};
+		\node [style=none] (1) at (-3.5, -1.75) {};
+		\node [style=none] (2) at (6.25, -1.75) {};
+		\node [style=none] (4) at (1.75, 1) {};
+		\node [style=none] (5) at (-1.75, 7.5) {};
+		\node [style=none] (6) at (-0.25, 7.25) {};
+		\node [style=none] (7) at (2.5, 7.5) {};
+		\node [style=none] (8) at (4, 7.25) {};
+		\node [style=none] (9) at (-1.5, 4.75) {};
+		\node [style=none] (10) at (-0.25, 5.25) {};
+		\node [style=none] (11) at (3.5, 5.25) {};
+		\node [style=none] (12) at (4.5, 4.75) {};
+		\node [style=none] (13) at (-1.5, 1.75) {};
+		\node [style=none] (14) at (0, 2.5) {};
+		\node [style=none] (15) at (2.75, 2.75) {};
+		\node [style=none] (16) at (3.5, 2.25) {};
+		\node [style=none] (17) at (3.75, 0) {};
+		\node [style=none] (18) at (2.75, -0.5) {};
+		\node [style=none] (19) at (0.25, -1) {};
+		\node [style=none] (20) at (-0.75, -1.25) {};
+		\node [style=none] (21) at (1.25, 7.25) {};
+		\node [style=none] (22) at (1.25, 5.5) {};
+		\node [style=none] (23) at (1.25, 2.75) {};
+		\node [style=none] (24) at (1.5, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=balck arrow] (1.center) to (0.center);
+		\draw [style=balck arrow] (1.center) to (2.center);
+		\draw [style=balck arrow] (1.center) to (4.center);
+		\draw [style=draw orange] (5.center) to (6.center);
+		\draw [style=draw orange, bend left=15] (7.center) to (8.center);
+		\draw [style=draw orange, bend left] (8.center) to (12.center);
+		\draw [style=draw orange, in=60, out=-105] (12.center) to (16.center);
+		\draw [style=draw orange, bend right=15] (16.center) to (17.center);
+		\draw [style=draw orange, bend left] (17.center) to (18.center);
+		\draw [style=draw orange, bend right, looseness=0.50] (19.center) to (20.center);
+		\draw [style=draw orange, bend left=45] (20.center) to (13.center);
+		\draw [style=draw orange, bend right, looseness=1.25] (13.center) to (9.center);
+		\draw [style=draw orange, bend left=15] (9.center) to (5.center);
+		\draw [style=draw orange, bend right] (6.center) to (10.center);
+		\draw [style=draw orange, in=60, out=-60] (10.center) to (14.center);
+		\draw [style=draw orange, bend right, looseness=1.25] (14.center) to (19.center);
+		\draw [style=draw orange, bend left] (18.center) to (15.center);
+		\draw [style=draw orange, in=-75, out=60] (15.center) to (11.center);
+		\draw [style=draw orange, bend right=15] (11.center) to (7.center);
+		\draw [style=draw orange] (9.center) to (10.center);
+		\draw [style=draw orange] (12.center) to (11.center);
+		\draw [style=draw orange, in=-165, out=30] (13.center) to (14.center);
+		\draw [style=draw orange, bend left, looseness=1.25] (15.center) to (16.center);
+		\draw [style=draw orange] (19.center) to (24.center);
+		\draw [style=draw orange] (24.center) to (18.center);
+		\draw [style=draw orange] (14.center) to (23.center);
+		\draw [style=draw orange, in=165, out=15, looseness=0.50] (23.center) to (15.center);
+		\draw [style=draw orange] (10.center) to (22.center);
+		\draw [style=draw orange, bend left=15] (22.center) to (11.center);
+		\draw [style=draw orange] (6.center) to (21.center);
+		\draw [style=draw orange] (21.center) to (7.center);
+		\draw [style=draw orange] (21.center) to (22.center);
+		\draw [style=draw orange, bend left=15] (22.center) to (23.center);
+		\draw [style=draw orange, bend right=15] (23.center) to (24.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
