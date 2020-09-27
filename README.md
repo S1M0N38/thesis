@@ -1,3 +1,3 @@
 # Thesis
 
-Download the last *document* release from https://github.com/S1M0N38/thesis/releases
+Download *document.pdf* and *slides.pdf* from [latest release](https://github.com/S1M0N38/thesis/releases/latest)
