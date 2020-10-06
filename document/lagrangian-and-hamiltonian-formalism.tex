@@ -182,13 +182,16 @@ mathematical object. The input to the
 Lagrangian~\eqref{eq:general_lagrangian_density} are the functions
 $\bm{\phi}(x)$ so $\Lagr(x)$ is not a function but a functional. The proper name
 of this object is \emph{Lagrangian density}
-\footnote{The origin of the term \emph{density} came from differential geometry.
-  \emph{1-weight tensor densities} are object that transforms almost like
-  tensor but producing and extra multiplicative factor: the inverse determinant
-  of the transformation. Later when evaluating the action~\eqref{
-  eq:general_action_fields}, under a change of coordinates, this term
-  cancel out with the determinant produced by $dx$.
-}.
+
+% no need to include
+% \footnote{The origin of the term \emph{density} came from differential geometry.
+%   \emph{1-weight tensor densities} are object that transforms almost like
+%   tensor but producing and extra multiplicative factor: the inverse determinant
+%   of the transformation. Later when evaluating the action~\eqref{
+%   eq:general_action_fields}, under a change of coordinates, this term
+%   cancel out with the determinant produced by $dx$.
+% }.
+
 In order to obtain the equations that describe the spacetime evolution of the
 fields, the so called \emph{fields equations}, we apply Hamilton's principle
 to~\eqref{eq:general_lagrangian_density}
@@ -226,12 +229,12 @@ by experiments.
 
 \subsection{Hamiltonian formalism}\label{subsection: hamiltonian_formalism}
 \emph{Hamiltonian formalism} it's the mathematical framework underling
-\emph{Hamiltonian mechanics} which it's again a reformulation of Newtonian
+\emph{Hamiltonian mechanics} which is again a reformulation of Newtonian
 mechanics based on the Lagrangian mechanics. The connection between these two
 formalism can be made mathematically rigorous using the so called \emph{Legendre
-map} that moves objects from ``Lagrange-world'' (the tangent bundle to
-configuration manifold) to ``Hamilton-world'' (the cotangent bundle to
-configuration manifold). This derivation is kept out of this paper and we just
+map} that moves objects from ``Lagrange-world'' (the tangent bundle of
+configuration manifold) to ``Hamilton-world'' (the cotangent bundle of
+configuration manifold). This derivation is not discuss here and we just
 provide the recipe for constructing Hamiltonian formalism starting from the
 Lagrangian one.
 
@@ -252,9 +255,9 @@ Lagrangian one.
       in~\cite{Smilga17, Chen13}.
     }.
 
-  \item Define the Hamiltonian as
+  \item Define the function $\tilde{H}$ as
     \begin{equation} \label{eq:Ham_in_q}
-      H(\bm{q}, \dot{\bm{q}}, \ldots, \bm{q}^{(n)}) :=
+      \tilde{H}(\bm{q}, \dot{\bm{q}}, \ldots, \bm{q}^{(n)}) :=
       \sum_{i=1}^{n} \frac{\delta L}{\delta \bm{q}^{(i)}} \bm{q}^{(i)} -
       L(\bm{q}, \dot{\bm{q}}, \ldots, \bm{q}^{(n)})
     \end{equation}
@@ -267,8 +270,7 @@ Lagrangian one.
       h^{\mu}(Q^{\mu}_{(1)}, \ldots, Q^{\mu}_{(n)}, P_{(n)\mu}) \equiv \bm{h}
     \end{equation}
     Substituting~\eqref{eq:def_canonical_coordinates} and~\eqref{eq:qn=h}
-    in~\eqref{eq:Ham_in_q}, the Hamiltonian, expressed in term of canonical
-    coordinates, is obtain
+    in~\eqref{eq:Ham_in_q}, the \emph{Hamiltonian} is obtain
     \begin{equation} \label{eq:general_hamiltonian}
       H = \bm{P}_n \bm{h} + \bm{P}_{n-1} \bm{Q}_n + \cdots + \bm{P}_1 \bm{Q}_2
           - L(\bm{Q}_1, \bm{Q}_2, \ldots, \bm{h})
@@ -310,7 +312,30 @@ Lagrangian one.
       \dot{\bm{P}_i} &= -\frac{\partial H}{\partial \bm{Q}_i}
     \end{align*}
 \end{enumerate}
-An advantage on the Hamiltonian formalism it's the wider choice of coordinates
+
+The Lagrangian equation of motion can be obtain by combining the evolution of
+canonical variables and by substituting
+definitions~\eqref{eq:def_canonical_coordinates} and~\eqref{eq:Ham_in_q}. Two
+equations follows:
+
+\begin{equation} \label{eq:ham_to_lagr_1}
+  \frac{d}{dt}\left(\frac{\delta L}{\delta \bm{q}^{(i)}}\right) = -
+  \frac{\delta L}{\delta \bm{q}^{(i-1)}} +
+  \frac{\partial L}{\partial \bm{q}^{(i-1)}}
+  \qquad i = 2, 3, \ldots, n
+\end{equation}
+
+\begin{equation} \label{eq:ham_to_lagr_2}
+  \frac{d}{dt}\left(\frac{\delta L}{\delta \bm{q}^{(1)}}\right) = -
+  \frac{\partial L}{\partial \bm{q}^{(0)}}
+\end{equation}
+
+Both equations simplify by using~\eqref{eq:functional_derivative_identity} and
+while in the first one all terms cancel out, in the second one remains
+$\frac{\delta L}{\delta \bm{q}^{(0)}} = 0$, indeed the Euler-Lagrange equation
+of motion. \\
+
+An advantage of the Hamiltonian formalism is the wider choice of coordinates
 transformations. Unlike Lagrangian formalism, in the Hamiltonian description new
 coordinates can be define starting from the old one by mixing the corresponding
 generalized coordinates and their conjugate momenta such that \emph{canonical
