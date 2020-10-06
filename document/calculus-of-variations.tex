@@ -112,4 +112,20 @@ Some~\cite{Chen13}, abusing of notation,  write $\frac{\delta f}{\delta y}$
 instead of $\frac{\delta J[y]}{\delta y}$ implying the
 connection~\eqref{eq:def_functional} between $J$ and $f$. This abuse it's
 also used in this paper when defining the conjugate
-momenta~\eqref{eq:def_canonical_coordinates}.
+momenta~\eqref{eq:def_canonical_coordinates}. Moreover the functional derivative
+can be define with respect to $y^{(i)}$ as follows
+
+\begin{equation} \label{eq:functional_derivative_y_i}
+  \frac{\delta f}{\delta y^{(i)}} := \sum_{k = 0}^{n} {(-1)}^k \frac{d^k}{dx^k}
+  \left( \frac{\partial f}{\partial y^{(i+k)}}\right)
+  \qquad i = 0, 1, 2, \ldots, n
+\end{equation}
+
+and a relation beteewn $y^{(i)}$ and $y^{(i+1)}$ can be observe
+
+\begin{equation} \label{eq:functional_derivative_identity}
+  \frac{\delta f}{\delta y^{(i)}} =
+  \frac{\partial f}{\partial y^{(i)}} -
+  \frac{d}{dx}\left(\frac{\delta f}{\delta y^{(i+1)}}\right)
+  \qquad i = 0, 1, 2, \ldots, n
+\end{equation}
