@@ -42,14 +42,15 @@ hamiltonian_formalism}
     P := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
   \end{cases}
   \qquad
-  H_1(q, \dot{q}) := \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
+  \tilde{H}_1(q, \dot{q}) :=
+  \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
 \end{equation*}
 
 \begin{equation} \label{eq: first-order_motion_eq_ham}
   H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
   \begin{cases}
-    \dot{Q} =   \frac{\partial H}{\partial P} = P \\
-    \dot{P} = - \frac{\partial H}{\partial Q} = - \frac{d\alpha(Q)}{dQ}
+    \dot{Q} =   \frac{\partial H_1}{\partial P} = P \\
+    \dot{P} = - \frac{\partial H_1}{\partial Q} = - \frac{d\alpha(Q)}{dQ}
   \end{cases}
 \end{equation}
 
@@ -89,7 +90,7 @@ can give us some clues about the total energy of the system.
     P_2 := \frac{\delta L_2}{\delta \ddot{q}} = \ddot{q}
   \end{cases}
   \quad
-  H_2(q, \dot{q}) :=
+  \tilde{H}_2(q, \dot{q}) :=
     \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
     \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
     L_1(q, \dot{q})
@@ -142,7 +143,7 @@ Ostrogradsky theorem
   The function $h$ express $q^{(n)}$ in terms of conjugate coordinates under
   the assumption of regular Lagrangian, i.e.
   \begin{equation*}
-    q^{(n)} = h(Q_1, \ldots, Q_2, P_n)
+    q^{(n)} = h(Q_1, \ldots, Q_n, P_n)
   \end{equation*}
   Observe that $h$ does not depend on $P_1, \ldots, P_{n-1}$ so the only
   contribution of these momenta to the Hamiltonian is in the linear factor
@@ -230,7 +231,7 @@ so the primary constraints in~\eqref{eq:constraint} simply become
 $\phi_{1, i}: \Pi_i = 0$. To the Hamiltonian~\eqref{eq:Ham_in_q} are now added
 the auxiliaries variables terms becoming
 \begin{equation} \label{eq:Ham_constraints_in_q}
-  H :=
+  \tilde{H} :=
   \sum_{j=1}^{n} \frac{\delta L}{\delta q^{(j)}} q^{(j)} +
   \sum_{i=1}^{m} \frac{\delta L}{\delta \dot{\lambda_i}} \dot{\lambda_i} -
   L(q, \ldots, q^{(n)}, \lambda_1, \ldots, \lambda_m)
