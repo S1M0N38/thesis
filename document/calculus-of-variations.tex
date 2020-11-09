@@ -49,32 +49,32 @@ order using Taylor expansion around $y$ we obtain
 
 \begin{align*}
   \delta J[y]
-  &=\int_{x_1}^{x_2} dx \left\{ f +
+  &=\int_{x_1}^{x_2} dx \, \left\{ f +
     \frac{\partial f}{\partial y^{(0)}} \delta y^{(0)} +
     \frac{\partial f}{\partial y^{(1)}} \delta y^{(1)} + \cdots +
     \frac{\partial f}{\partial y^{(n)}} \delta y^{(n)}
     \right\} - \int_{x_1}^{x_2} dx f \\
-  &=\int_{x_1}^{x_2} dx
+  &=\int_{x_1}^{x_2} dx \,
     \sum_{k = 0}^{n} \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)}
    =\sum_{k = 0}^{n}
-    \int_{x_1}^{x_2} dx \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} \\
+    \int_{x_1}^{x_2} dx \, \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} \\
 \end{align*}
 
 Using integration by part repeatedly the last term can be rewrite as
 
 \begin{align}
   \label{eq:sum_temrs}
-  \int_{x_1}^{x_2} dx \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} =
+  \int_{x_1}^{x_2} dx \, \frac{\partial f}{\partial y^{(k)}} \delta y^{(k)} =
   & \sum_{j=0}^{k} {(-1)}^j \frac{d^j}{dx^j}
   \left( \frac{\partial f}{\partial y^{(k)}} \right) \delta y^{(k-1-j)}
   \Big|_{x_1}^{x_2} \\
   \label{eq:int_temrs}
-  & + \int_{x_1}^{x_2} dx {(-1)}^k \frac{d^k}{dx^k}
+  & + \int_{x_1}^{x_2} dx \, {(-1)}^k \frac{d^k}{dx^k}
   \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
 \end{align}
 
 Usually in the application of calculus of variation ends points of $y(x)$ are
-kept fixed and the every variation is zero, i.e.
+kept fixed and so their variations are zero for all $k$, i.e.
 
 \begin{equation} \label{eq:fixed_ends}
   \delta y^{(k)}(x_1) = \delta y^{(k)}(x_2) = 0  \qquad k = 0, \ldots, n
@@ -82,10 +82,11 @@ kept fixed and the every variation is zero, i.e.
 
 Under this assumption the expression for $\delta J[y]$ drastically simplify and
 the summation term in~\eqref{eq:sum_temrs} vanish and remain
-only~\eqref{eq:int_temrs}. Substituting it in the original expression we get
+only~\eqref{eq:int_temrs}. Substituting it in the expression for $\delta J[y]$
+we get
 
 \begin{equation} \label{eq:functional_variation_ends_fixed}
-  \delta J[y] = \int_{x_1}^{x_2} dx \sum_{k = 0}^{n} {(-1)}^k \frac{d^k}{dx^k}
+  \delta J[y] = \int_{x_1}^{x_2} dx \, \sum_{k = 0}^{n} {(-1)}^k \frac{d^k}{dx^k}
   \left( \frac{\partial f}{\partial y^{(k)}}\right) \delta y
 \end{equation}
 
@@ -96,10 +97,10 @@ of the functional} with respect to the $y(x)$. This can be achieve by this
 comparison
 \begin{equation*}
   df(x) = \sum_{k=1}^{n}
-  \left\{ \frac{\partial f(x)}{\partial x_k} dx_k \right\}
+  \left\{ \frac{\partial f(x)}{\partial x_k} \, dx_k \right\}
   \quad \longleftrightarrow \quad
   \delta J[y] = \int_{x_1}^{x_2} dx
-  \left\{ \frac{\delta J[y]}{\delta y} \delta y \right\}
+  \left\{ \frac{\delta J[y]}{\delta y} \, \delta y \right\}
 \end{equation*}
 leading up to the notion of \emph{functional derivative}
 
@@ -120,8 +121,7 @@ can be define with respect to $y^{(i)}$ as follows
   \left( \frac{\partial f}{\partial y^{(i+k)}}\right)
   \qquad i = 0, 1, 2, \ldots, n
 \end{equation}
-
-and a relation beteewn $y^{(i)}$ and $y^{(i+1)}$ can be observe
+and a relation between $y^{(i)}$ and $y^{(i+1)}$ can be shown
 
 \begin{equation} \label{eq:functional_derivative_identity}
   \frac{\delta f}{\delta y^{(i)}} =
