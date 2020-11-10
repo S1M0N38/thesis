@@ -120,6 +120,48 @@
     derivative terms}.
   \end{frame}
 
+  \section{Lagrangian \& Hamiltonian formalism}
+
+  \begin{frame}{Functional derivative}
+    \begin{equation*}
+      S[q] := \int_{t_1}^{t_2} dt \,
+      L \left(q, \dot{q}, \ddot{q}, \ldots, q^{(n)} \right)
+      \qquad \text{where} \qquad q^{(k)} := \frac{d^k q(t)}{dt^k}
+    \end{equation*}
+    \begin{equation*}
+      q^{k} \rightarrow \frac{d^k q(t)}{dt^k} + \frac{d^k \delta q(t)}{dt^k} =
+      q^{(k)} + \delta q^{k}
+      \quad \text{and define} \quad
+      \delta S[q] := S[q + \delta q] - S[q]
+    \end{equation*}\vspace{0.2em}
+
+    Considering $\delta q^{k}$ infinitesimal and keeping the ends points fixed
+    % \\ (i.e. $\delta y^{k}(t_1) = \delta y^{k}(t_2) = 0$ for all k)
+    \begin{equation*}
+      \delta S[q] = \int_{t_1}^{t_2} dt \,
+      \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
+      \left(\frac{\partial L}{\partial q^{(k)}}\right) \delta q
+    \end{equation*}
+    \begin{equation*}
+      df(x) = \sum_{k=1}^{n}
+      \left\{\frac{\partial f(x)}{\partial x_k} dx_k\right\}
+      \quad \longleftrightarrow \quad
+      \delta S[q] = \int_{t_1}^{t_2} dt \,
+      \left\{ \frac{\delta S[q]}{\delta q} \delta \right\}
+    \end{equation*}
+
+    \alert{
+    \begin{equation*}
+      \frac{\delta S[q]}{\delta q}:=
+      \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
+      \left(\frac{\partial L}{\partial q^{(k)}}\right)
+    \end{equation*}
+    }
+  \end{frame}
+
+  %\begin{frame}{Euler-Lagrange equations}
+  %\end{frame}
+
   \begin{frame}[standout]
     Thank you!
   \end{frame}
