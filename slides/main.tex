@@ -159,8 +159,79 @@
     }
   \end{frame}
 
-  %\begin{frame}{Euler-Lagrange equations}
-  %\end{frame}
+  \begin{frame}{Lagrangian formalism}
+    \begin{alertblock}{Hamilton's principle}
+      \vspace{0.5em}
+      The motion of the system it's a stationary point of the action functional
+      \begin{equation*}
+        \frac{\delta S[q]}{\delta q} = 0
+      \end{equation*}
+    \end{alertblock}
+    \begin{alertblock}{Euler-Lagrange equation}
+      \vspace{0.5em}
+      \begin{equation*}
+        \Rightarrow \qquad
+        \frac{\delta S[q]}{\delta q} =
+        \frac{\partial L}{\partial q} -
+        \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} +
+        \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}} -
+        \ldots = 0
+      \end{equation*}
+    \end{alertblock}
+  \end{frame}
+
+  \begin{enumerate}
+  \begin{frame}{Hamiltonian formalism}
+    \begin{alertblock}{From Lagrange to Hamilton in 3 step}
+      \vspace{0.5em}
+
+      \item Define i-th \emph{canonical coordinates as}
+        \begin{equation*} \label{eq:def_canonical_coordinates}
+          Q_{(i)} := q^{(i-1)}
+          \quad \leftrightarrow \quad
+          P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
+          \qquad i = 1, \ldots, n
+        \end{equation*}
+
+        \item Define $\tilde{H}$ as
+          \begin{equation*} \label{eq:Ham_in_q}
+            \tilde{H}(q, \dot{q}, \ldots, q^{(n)}) :=
+            \sum_{i=1}^{n} \frac{\delta L}{\delta q^{(i)}} q^{(i)} -
+            L(q, \dot{q}, \ldots, q^{(n)})
+          \end{equation*}
+          \begin{equation*} \label{eq:qn=h}
+            \frac{\delta L}{\delta q^{(n)}} = P_i
+            \quad \Rightarrow \quad
+            q^{(n)} = h(Q_{(1)}, \ldots, Q_{(n)}, P_{(n)}) \equiv h
+          \end{equation*}
+          \begin{equation*} \label{eq:general_hamiltonian}
+            H = P_n h + P_{n-1} Q_n + \cdots +
+                P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
+          \end{equation*}
+    \end{alertblock}
+  \end{frame}
+
+  \begin{frame}{Hamiltonian formalism}
+    \begin{alertblock}{}
+      \item The Hamiltonian generate the time evolution of any function of
+        canonical variable $F(Q_i, P_i)$ via the \emph{Poisson Bracket}
+        \begin{equation*} \label{eq:poisson_bracket_evolution}
+          \dot{F}(Q_i, P_i) = \left\{ F(Q_i, P_i), H \right\}
+        \end{equation*}
+        Poisson Bracket, in canonical coordinates, are defined as
+        \begin{equation*} \label{eq:possion_braket}
+          \left\{ f, g \right\} := \sum_{i=1}^{n} \left(
+            \frac{\partial f}{\partial Q_{(i)}}
+            \frac{\partial g}{\partial P_{(i)}} -
+            \frac{\partial f}{\partial P_{(i)}}
+            \frac{\partial g}{\partial Q_{(i)}}
+          \right)
+        \end{equation*}
+    \end{alertblock}
+  \end{frame}
+  \end{enumerate}
+
+  \section{First order vs Second order Lagrangian}
 
   \begin{frame}[standout]
     Thank you!
