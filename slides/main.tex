@@ -2,6 +2,7 @@
 
 \documentclass[10pt]{beamer}
 \usetheme{metropolis}
+\usepackage{appendixnumberbeamer}
 
 
 % -----------------------------------Packages--------------------------------- %
@@ -117,7 +118,7 @@
     \end{columns}
     \end{alertblock}
     In this fields theory in the \emph{Lagrangian} appears \alert{higher
-    derivative terms}.
+    derivative terms}~\cite{Smilga17}.
   \end{frame}
 
   \section{Lagrangian \& Hamiltonian formalism}
@@ -130,7 +131,7 @@
     \end{equation*}
     \begin{equation*}
       q^{k} \rightarrow \frac{d^k q(t)}{dt^k} + \frac{d^k \delta q(t)}{dt^k} =
-      q^{(k)} + \delta q^{k}
+      q^{(k)} + \delta q^{(k)}
       \quad \text{and define} \quad
       \delta S[q] := S[q + \delta q] - S[q]
     \end{equation*}\vspace{0.2em}
@@ -162,7 +163,8 @@
   \begin{frame}{Lagrangian formalism}
     \begin{alertblock}{Hamilton's principle}
       \vspace{0.5em}
-      The motion of the system it's a stationary point of the action functional
+      The motion of the system it's a stationary point of the action
+      functional~\cite{Goldstein11_Ham_principle}
       \begin{equation*}
         \frac{\delta S[q]}{\delta q} = 0
       \end{equation*}
@@ -184,7 +186,6 @@
   \begin{frame}{Hamiltonian formalism}
     \begin{alertblock}{From Lagrange to Hamilton in 3 step}
       \vspace{0.5em}
-
       \item Define i-th \emph{canonical coordinates as}
         \begin{equation*} \label{eq:def_canonical_coordinates}
           Q_{(i)} := q^{(i-1)}
@@ -192,29 +193,30 @@
           P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
           \qquad i = 1, \ldots, n
         \end{equation*}
-
-        \item Define $\tilde{H}$ as
-          \begin{equation*} \label{eq:Ham_in_q}
-            \tilde{H}(q, \dot{q}, \ldots, q^{(n)}) :=
-            \sum_{i=1}^{n} \frac{\delta L}{\delta q^{(i)}} q^{(i)} -
-            L(q, \dot{q}, \ldots, q^{(n)})
-          \end{equation*}
-          \begin{equation*} \label{eq:qn=h}
-            \frac{\delta L}{\delta q^{(n)}} = P_i
-            \quad \Rightarrow \quad
-            q^{(n)} = h(Q_{(1)}, \ldots, Q_{(n)}, P_{(n)}) \equiv h
-          \end{equation*}
-          \begin{equation*} \label{eq:general_hamiltonian}
-            H = P_n h + P_{n-1} Q_n + \cdots +
-                P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
-          \end{equation*}
+      \item Define $\tilde{H}$ as
+        \begin{equation*} \label{eq:Ham_in_q}
+          \tilde{H}(q, \dot{q}, \ldots, q^{(n)}) :=
+          \sum_{i=1}^{n} \frac{\delta L}{\delta q^{(i)}} q^{(i)} -
+          L(q, \dot{q}, \ldots, q^{(n)})
+        \end{equation*}
+        \begin{equation*} \label{eq:qn=h}
+          \frac{\delta L}{\delta q^{(n)}} = P_i
+          \quad \Rightarrow \quad
+          q^{(n)} = h(Q_{(1)}, \ldots, Q_{(n)}, P_{(n)}) \equiv h
+        \end{equation*}
+        \vspace{0.2em}
+        \begin{equation*} \label{eq:general_hamiltonian}
+          H = P_n h + P_{n-1} Q_n + \cdots +
+              P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
+        \end{equation*}
     \end{alertblock}
   \end{frame}
 
   \begin{frame}{Hamiltonian formalism}
     \begin{alertblock}{}
       \item The Hamiltonian generate the time evolution of any function of
-        canonical variable $F(Q_i, P_i)$ via the \emph{Poisson Bracket}
+        canonical variable $F(Q_i, P_i)$ via the \emph{Poisson
+        Bracket}~\cite{Chen13}
         \begin{equation*} \label{eq:poisson_bracket_evolution}
           \dot{F}(Q_i, P_i) = \left\{ F(Q_i, P_i), H \right\}
         \end{equation*}
@@ -231,10 +233,222 @@
   \end{frame}
   \end{enumerate}
 
-  \section{First order vs Second order Lagrangian}
+  %\section{First order vs Second order Lagrangian}
+  \section{First order vs Second order system}
+
+  \begin{frame}{First order vs Second order Lagrangian}
+    We would like to find the differences between systems that can be
+    describe by these two Lagrangians:
+    \vspace{0.5em}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \begin{center}
+          \alert{First order system}
+          \begin{equation*}
+            L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
+          \end{equation*}
+        \end{center}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \begin{center}
+          \alert{Second order system}
+          \begin{equation*}
+            L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+          \end{equation*}
+        \end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{First order Lagrangian}
+    \begin{equation*}
+      L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
+    \end{equation*}
+    \vspace{0.2em}
+    \begin{equation*} \label{eq: first-order_motion_eq_lagr}
+      \frac{\partial L_1}{\partial q} -
+      \frac{d}{dt}\frac{\partial L_1}{\partial \dot{q}} +
+      \underbrace{
+      \frac{d^2}{dt^2}\frac{\partial L_1}{\partial \ddot{q}} - \ldots }_0 = 0
+      \qquad \Rightarrow \qquad
+      \ddot{q} = - \frac{d\alpha(q)}{dq}
+    \end{equation*}
+    \begin{equation*}
+      \begin{cases}
+        Q := q \\
+        P := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
+      \end{cases}
+      \qquad
+      \tilde{H}_1(q, \dot{q}) :=
+      \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
+    \end{equation*}
+    \metroset{block=fill}
+    \begin{block}{First order Hamiltonian}
+      \begin{equation*} \label{eq: first-order_motion_eq_ham}
+        H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+      \end{equation*}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}{Second order Lagrangian}
+    \begin{equation*}
+      L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+    \end{equation*}
+    \vspace{0.2em}
+    \begin{equation*} \label{eq: second-order_motion_eq_lagr}
+      \frac{\partial L_2}{\partial q} -
+      \frac{d}{dt}\frac{\partial L_2}{\partial \dot{q}} +
+      \frac{d^2}{dt^2}\frac{\partial L_2}{\partial \ddot{q}} -
+      \underbrace{
+        \frac{d^3}{dt^3}\frac{\partial L_2}{\partial q^{(3)}} + \ldots
+      }_0 = 0
+      \quad \Rightarrow \quad
+      q^{(4)} = - \frac{d\alpha(q)}{dq}
+    \end{equation*}
+    \begin{equation*}
+      \begin{cases}
+        Q_1 := q \\
+        P_1 := \frac{\delta L_2}{\delta \dot{q}} = -q^{(3)}
+      \end{cases}
+      \begin{cases}
+        Q_2 := \dot{q} \\
+        P_2 := \frac{\delta L_2}{\delta \ddot{q}} = \ddot{q}
+      \end{cases}
+      \tilde{H}_2(q, \dot{q}) :=
+        \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
+        \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
+        L_1(q, \dot{q})
+    \end{equation*}
+    \metroset{block=fill}
+    \begin{block}{Second order Hamiltonian}
+      \begin{equation*} \label{eq: second-order_motion_eq_ham}
+        H_2(Q_1, Q_2, P_1, P_2) = P_1Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+      \end{equation*}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}{First order vs Second order Hamiltonian}
+    \vspace{0.5em}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{center}
+          \alert{First order system} \vspace{0.1em}
+          \begin{equation*}
+            L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
+          \end{equation*}
+          \begin{equation*} \label{eq: first-order_motion_eq_ham}
+            H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+          \end{equation*}
+        \end{center}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{center}
+          \alert{Second order system} \vspace{0.1em}
+          \begin{equation*}
+            L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+          \end{equation*}
+          \begin{equation*} \label{eq: second-order_motion_eq_ham}
+            H_2(Q_1, Q_2, P_1, P_2) = P_1Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+          \end{equation*}
+        \end{center}
+      \end{column}
+    \end{columns}
+    \vspace{2.0em}
+    There is a significant difference between the two spectra of $H_1$ and
+    $H_2$: the first is bounded from below while the latter is not (and both are
+    not bounded from above).
+  \end{frame}
+
+  \section{Linear Ostrogradskian instability}
+
+  \begin{frame}{Linear Ostrogradskian instability}
+    \begin{alertblock}{$H_2$ system isolated}
+      \vspace{0.5em}
+      If the energy is conserve even though the spectra is not bounded the
+      energy stay constant.
+    \end{alertblock}
+    \vspace{2.0em}
+    \begin{alertblock}{$H_2$ interacting with $H_1$}
+      \vspace{0.5em}
+      $H_2$ system try to reach the minimum of the Hamiltonian $H_2$ by giving
+      energy to $H_1$ system. This is behaviour goes on endlessly. This is the
+      so called \alert{Linear Ostrogradskian instability}~\cite{Kallosh08,
+      Eliezer89}.
+    \end{alertblock}
+  \end{frame}
+
+  \begin{frame}{Ostrogradsky Theorem}
+    \begin{theorem}[Ostrogradsky] \vspace{0.5em}
+      If in a second (or higher) order Lagrangian the canonical momentum $P_n$
+      does not vanish, the corresponding Hamiltonian may acquire an arbitrary
+      real value~\cite{Smilga17}.
+    \end{theorem}
+  \end{frame}
+
+  \begin{frame}{Quantum counterpart}
+    In quantum mechanics \emph{linear Ostrogradskian instability} goes under the
+    name ``\emph{ghost}''. Just like classical HD theories, quantum HD theories
+    have the spectrum of the Hamiltonian unbounded. The previous Theorem have
+    its quantum counterpart:
+    \vspace{2.0em}
+    \begin{theorem} \vspace{0.5em}
+      The quantum counterpart of Hamiltonian derived from higher order
+      Lagrangian of a non-degenerate higher-derivative system has no ground
+      state~\cite{Smilga17}.
+    \end{theorem}
+  \end{frame}
+
+  \begin{frame}{Curing linear Ostrogradskian instability with constrains}
+    As shown in~\cite{Chen13} linear Ostrogradskian instability can be cure by
+    imposition of constrains on the system. This can happen when the constrained
+    Hamiltonian lives in phase space with lower dimensionality than the original
+    phase space. \vspace{1.0em}
+    \begin{block}{Example}
+      \vspace{0.2em}
+      \begin{equation*}
+        L =
+        \underbrace{
+          \frac{1}{2} \left[
+          \ddot{q}^2 - (\omega_1^2 + \omega_2^2) \dot{q}^2 +
+          \omega_1^2 \omega_2^2 q^2 \right]
+        }_{\text{Lagrangian of the system}} +
+        \underbrace{
+          4 \omega_1^2\omega_2^2 q^2 \lambda (1+ \lambda) +
+          2 \sqrt{2} \omega_1\omega_2 \lambda q \ddot{q}
+        }_{\text{constrain}}
+      \end{equation*}
+      \vspace{0.2em}
+      \begin{equation*}
+        H =\ \frac{\omega_1^2\omega_2^2}{2} Q_1^2 +
+        \frac{\omega_1\omega_2}{\sqrt{2} {\left(\sqrt{2} \omega_1\omega_2 -
+        \omega_1^2 - \omega_2^2 \right)}^2} P_1^2
+      \end{equation*}
+    \end{block}
+  \end{frame}
+
+  \section{Conclusions}
+
+  \begin{frame}{Conclusions}
+    \begin{itemize}
+      \item Higher order Lagrangians emerge from field theories formulated in
+        higher dimensional bulk. \vspace{0.5em}
+      \item Most of higher order theories suffer of \emph{linear Ostrogradskian
+        instability} and due to the consequences of \emph{Ostrogradsky Theorem}
+        they have been discard a priori. \vspace{0.5em}
+      \item One way to cure Ostrogradskian instability is by imposing
+        constraints.
+    \end{itemize} \vspace{1.0em}
+    $\Rightarrow$ higher order theories should be investigated more
+    deeply with particular attention to the energy spectrum.
+  \end{frame}
 
   \begin{frame}[standout]
     Thank you!
+  \end{frame}
+
+  \begin{frame}[allowframebreaks]{References}
+    \bibliography{../document/references}
+    \bibliographystyle{abbrv}
   \end{frame}
 
 \end{document}
