@@ -333,17 +333,64 @@
     \begin{equation*}
       \begin{cases}
         Q_1 := q \\
-        P_1 := \frac{\delta L_2}{\delta \dot{q}} = -q^{(3)}
+        P_1 := \frac{\delta L_2}{\delta \dot{q}}
+             = \frac{\partial L_2}{\partial \dot{q}} -
+               \frac{d}{dt} \left( \frac{\partial L_2}{\partial \ddot{q}} \right)
+             = 0 - \frac{d}{dt} \left( \ddot{q} \right) = -q^{(3)}
       \end{cases}
       \begin{cases}
         Q_2 := \dot{q} \\
-        P_2 := \frac{\delta L_2}{\delta \ddot{q}} = \ddot{q}
+        P_2 := \frac{\delta L_2}{\delta \ddot{q}}
+             = \frac{\partial L_2}{\partial \ddot{q}} = \ddot{q}
       \end{cases}
+    \end{equation*}
+
+    Therefore
+    \begin{equation*}
+      \begin{cases}
+        q        = Q_1 \\
+        \dot{q}  = Q_2 \\
+        \ddot{q} = P_2
+      \end{cases}
+      \qquad
+      \begin{cases}
+        \frac{\delta L_2}{\delta \dot{q}}  = P_1 \\
+        \frac{\delta L_2}{\delta \ddot{q}} = P_2
+      \end{cases}
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \begin{equation}\label{eq:canonical_variable_second_order}
+      \begin{cases}
+        q        = Q_1 \\
+        \dot{q}  = Q_2 \\
+        \ddot{q} = P_2
+      \end{cases}
+      \qquad
+      \begin{cases}
+        \frac{\delta L_2}{\delta \dot{q}}  = P_1 \\
+        \frac{\delta L_2}{\delta \ddot{q}} = P_2
+      \end{cases}
+    \end{equation}
+    \begin{equation}\label{eq:h_tilda_second_order}
       \tilde{H}_2(q, \dot{q}) :=
         \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
         \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
-        L_1(q, \dot{q})
-    \end{equation*}
+        L_2(q, \ddot{q})
+        = \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
+        \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
+        \frac{\ddot{q}^2}{2} + \alpha(q)
+    \end{equation}
+
+    Substituting~\eqref{eq:canonical_variable_second_order}
+    in~\eqref{eq:h_tilda_second_order} we get the Hamiltonian
+    \begin{align*} \label{eq: second-order_motion_eq_ham}
+      H_2(Q_1, Q_2, P_1, P_2)
+        &= P_1 Q_2 + P_2 P_2 - \frac{P_2^2}{2} + \alpha(Q_1) \\
+        &= P_1 Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+    \end{align*}
+
     \metroset{block=fill}
     \begin{block}{Second order Hamiltonian}
       \begin{equation*} \label{eq: second-order_motion_eq_ham}
