@@ -38,8 +38,8 @@ hamiltonian_formalism}
 
 \begin{equation*}
   \begin{cases}
-    Q := q \\
-    P := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
+    Q_1 := q \\
+    P_1 := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
   \end{cases}
   \qquad
   \tilde{H}_1(q, \dot{q}) :=
@@ -47,10 +47,10 @@ hamiltonian_formalism}
 \end{equation*}
 
 \begin{equation} \label{eq: first-order_motion_eq_ham}
-  H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+  H_1(Q_1, P_1) = \frac{P_1^2}{2} + \alpha(Q_1) \qquad
   \begin{cases}
-    \dot{Q} =   \frac{\partial H_1}{\partial P} = P \\
-    \dot{P} = - \frac{\partial H_1}{\partial Q} = - \frac{d\alpha(Q)}{dQ}
+    \dot{Q_1} =   \frac{\partial H_1}{\partial P_1} = P_1 \\
+    \dot{P_1} = - \frac{\partial H_1}{\partial Q_1} = - \frac{d\alpha(Q_1)}{dQ_1}
   \end{cases}
 \end{equation}
 
@@ -83,22 +83,50 @@ can give us some clues about the total energy of the system.
 \begin{equation*}
   \begin{cases}
     Q_1 := q \\
-    P_1 := \frac{\delta L_2}{\delta \dot{q}} = -q^{(3)}
+    P_1 := \frac{\delta L_2}{\delta \dot{q}}
+         = \frac{\partial L_2}{\partial \dot{q}} -
+           \frac{d}{dt} \left( \frac{\partial L_2}{\partial \ddot{q}} \right)
+         = 0 - \frac{d}{dt} \left( \ddot{q} \right) = -q^{(3)}
   \end{cases}
   \begin{cases}
     Q_2 := \dot{q} \\
-    P_2 := \frac{\delta L_2}{\delta \ddot{q}} = \ddot{q}
+    P_2 := \frac{\delta L_2}{\delta \ddot{q}}
+         = \frac{\partial L_2}{\partial \ddot{q}} = \ddot{q}
   \end{cases}
-  \quad
+\end{equation*}
+
+Therefore
+\begin{equation}\label{eq:canonical_coordinates_second_order_lagrangian}
+  \begin{cases}
+    q        = Q_1 \\
+    \dot{q}  = Q_2 \\
+    \ddot{q} = P_2
+  \end{cases}
+  \qquad
+  \begin{cases}
+    \frac{\delta L_2}{\delta \dot{q}}  = P_1 \\
+    \frac{\delta L_2}{\delta \ddot{q}} = P_2
+  \end{cases}
+\end{equation}
+
+\begin{equation*}
   \tilde{H}_2(q, \dot{q}) :=
     \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
     \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
-    L_1(q, \dot{q})
+    L_2(q, \ddot{q})
+    = \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
+    \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
+    \frac{\ddot{q}^2}{2} + \alpha(q)
 \end{equation*}
 
-\begin{equation} \label{eq: second-order_motion_eq_ham}
-  H_2(Q_1, Q_2, P_1, P_2) = P_1Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
-\end{equation}
+Substituting relations~\eqref{eq:canonical_coordinates_second_order_lagrangian}
+in the expression for $\tilde{H}_2$ we get the Hamiltonian
+
+\begin{align} \label{eq: second-order_motion_eq_ham}
+  H_2(Q_1, Q_2, P_1, P_2)
+    &= P_1 Q_2 + P_2 P_2 - \frac{P_2^2}{2} + \alpha(Q_1) \notag \\
+    &= P_1 Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+\end{align}
 
 There is a significant difference between the two spectra of $H_1$ and $H_2$:
 the first is bounded from below while the latter is not (and both are not
