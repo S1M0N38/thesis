@@ -56,9 +56,11 @@
 
 % ----------------------------------Document---------------------------------- %
 
-\title{TODO}
+\title{Higher-Order Lagrangians in classical and quantum systems}
 \date{\today}
-\author{Simone Bertolotto}
+\author{Simone Bertolotto\\{\small Supervisor: Prof.\ Igor Pesando}}
+%\author{Simone Bertolotto}
+%\author[Supervisor]{Prof.\ Igor Pesando}
 \institute{Università degli studi di Torino --- Fisica}
 
 \begin{document}
@@ -103,67 +105,87 @@
 
   \begin{frame}{Why study HD systems?}
     \begin{alertblock}{Ordinary Field Theory = Theory of everything}
-    \begin{columns}
-      \begin{column}{0.45\textwidth}
+      \vspace{0.5em}
+    %\begin{columns}
+      %\begin{column}{0.45\textwidth}
         Explain the curvature of spacetime by thinking our universe as (3+1)
         dimension thin film in a flat higher-dimensional space.
-      \end{column}
-      \begin{column}{0.45\textwidth}
-        \begin{figure}
-          \includegraphics[height=90]{./figures/universe.tikz}
-          \caption[labelformat=empty]{bulk ---
-          \alert{universe}}\label{fig:Universe}
-        \end{figure}
-      \end{column}
-    \end{columns}
+      %\end{column}
+      %\begin{column}{0.45\textwidth}
+      %  \begin{figure}
+      %    \includegraphics[height=90]{./figures/universe.tikz}
+      %    \caption[labelformat=empty]{bulk ---
+      %    \alert{universe}}\label{fig:Universe}
+      %  \end{figure}
+      %\end{column}
+    %\end{columns}
     \end{alertblock}
-    In this fields theory in the \emph{Lagrangian} appears \alert{higher
+    In this field theory in the \emph{Lagrangian} appears \alert{higher
     derivative terms}~\cite{Smilga17}.
   \end{frame}
 
   \section{Lagrangian \& Hamiltonian formalism}
 
   \begin{frame}{Functional derivative}
+    Define the \emph{action functional} as
     \begin{equation*}
       S[q] := \int_{t_1}^{t_2} dt \,
       L \left(q, \dot{q}, \ddot{q}, \ldots, q^{(n)} \right)
       \qquad \text{where} \qquad q^{(k)} := \frac{d^k q(t)}{dt^k}
     \end{equation*}
-    \begin{equation*}
-      q^{k} \rightarrow \frac{d^k q(t)}{dt^k} + \frac{d^k \delta q(t)}{dt^k} =
-      q^{(k)} + \delta q^{(k)}
-      \quad \text{and define} \quad
-      \delta S[q] := S[q + \delta q] - S[q]
-    \end{equation*}\vspace{0.2em}
 
-    Considering $\delta q^{k}$ infinitesimal and keeping the ends points fixed
-    % \\ (i.e. $\delta y^{k}(t_1) = \delta y^{k}(t_2) = 0$ for all k)
+    Produce the \emph{k-th order perturbation on $q^{(k)}$}
+    \begin{equation*}
+      q^{(k)} \rightarrow \frac{d^k q(t)}{dt^k} + \frac{d^k \delta q(t)}{dt^k} =
+      q^{(k)} + \delta q^{(k)}
+    \end{equation*}
+
+    and define the \emph{variation of the action functional} as
+    \begin{equation*}
+      \delta S[q] := S[q + \delta q] - S[q]
+    \end{equation*}
+
+    Considering $\delta q$ infinitesimal and keeping the ends points fixed we
+    get % \\ (i.e. $\delta y^{k}(t_1) = \delta y^{k}(t_2) = 0$ for all k)
     \begin{equation*}
       \delta S[q] = \int_{t_1}^{t_2} dt \,
       \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
       \left(\frac{\partial L}{\partial q^{(k)}}\right) \delta q
     \end{equation*}
+  \end{frame}
+
+  \begin{frame}{Functional derivative}
+    Noting the similarities with the differential in multi-variable calculus
     \begin{equation*}
       df(x) = \sum_{k=1}^{n}
       \left\{\frac{\partial f(x)}{\partial x_k} dx_k\right\}
       \quad \longleftrightarrow \quad
       \delta S[q] = \int_{t_1}^{t_2} dt \,
-      \left\{ \frac{\delta S[q]}{\delta q} \delta \right\}
+      \left\{ \frac{\delta S[q]}{\delta q} \delta q \right\}
     \end{equation*}
 
-    \alert{
+    the \emph{functional derivative with respect to $q$} can be define
     \begin{equation*}
       \frac{\delta S[q]}{\delta q}:=
       \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
       \left(\frac{\partial L}{\partial q^{(k)}}\right)
     \end{equation*}
-    }
+
+    Generalization and abuse of notation lead to writing
+    \metroset{block=fill}
+    \begin{block}{Functional derivative with respect to $q^{(i)}$}
+      \begin{equation*}
+        \frac{\delta L}{\delta q^{(i)}}:=
+        \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
+        \left(\frac{\partial L}{\partial q^{(i+k)}}\right)
+      \end{equation*}
+    \end{block}
   \end{frame}
 
   \begin{frame}{Lagrangian formalism}
     \begin{alertblock}{Hamilton's principle}
       \vspace{0.5em}
-      The motion of the system it's a stationary point of the action
+      The motion of the system is a stationary point of the action
       functional~\cite{Goldstein11_Ham_principle}
       \begin{equation*}
         \frac{\delta S[q]}{\delta q} = 0
@@ -188,7 +210,7 @@
       \vspace{0.5em}
       \item Define i-th \emph{canonical coordinates as}
         \begin{equation*} \label{eq:def_canonical_coordinates}
-          Q_{(i)} := q^{(i-1)}
+          Q_{(i)} := q^{(i-1)} = \frac{d^{\, i-1} q}{dt^{\, i-1}}
           \quad \leftrightarrow \quad
           P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
           \qquad i = 1, \ldots, n
@@ -199,28 +221,31 @@
           \sum_{i=1}^{n} \frac{\delta L}{\delta q^{(i)}} q^{(i)} -
           L(q, \dot{q}, \ldots, q^{(n)})
         \end{equation*}
+        Under the hypothesis of regular Lagrangian, relation for $q^{(n)}$ can
+        be inverted
         \begin{equation*} \label{eq:qn=h}
-          \frac{\delta L}{\delta q^{(n)}} = P_i
+          \frac{\delta L}{\delta q^{(n)}} = P_n
           \quad \Rightarrow \quad
           q^{(n)} = h(Q_{(1)}, \ldots, Q_{(n)}, P_{(n)}) \equiv h
-        \end{equation*}
-        \vspace{0.2em}
-        \begin{equation*} \label{eq:general_hamiltonian}
-          H = P_n h + P_{n-1} Q_n + \cdots +
-              P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
         \end{equation*}
     \end{alertblock}
   \end{frame}
 
   \begin{frame}{Hamiltonian formalism}
     \begin{alertblock}{}
-      \item The Hamiltonian generate the time evolution of any function of
-        canonical variable $F(Q_i, P_i)$ via the \emph{Poisson
-        Bracket}~\cite{Chen13}
+        Substituting in the expression for $\tilde{H}$ we get the
+        \emph{Hamiltonian}
+        \begin{equation*} \label{eq:general_hamiltonian}
+          H = P_n h + P_{n-1} Q_n + \cdots +
+              P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
+        \end{equation*}
+      \item The Hamiltonian generates the time evolution of any function of
+        canonical variables $F(Q_i, P_i)$ via the \emph{Poisson
+        Brackets}~\cite{Chen13}
         \begin{equation*} \label{eq:poisson_bracket_evolution}
           \dot{F}(Q_i, P_i) = \left\{ F(Q_i, P_i), H \right\}
         \end{equation*}
-        Poisson Bracket, in canonical coordinates, are defined as
+        Poisson Brackets, in canonical coordinates, are defined as
         \begin{equation*} \label{eq:possion_braket}
           \left\{ f, g \right\} := \sum_{i=1}^{n} \left(
             \frac{\partial f}{\partial Q_{(i)}}
@@ -275,8 +300,8 @@
     \end{equation*}
     \begin{equation*}
       \begin{cases}
-        Q := q \\
-        P := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
+        Q_1 := q \\
+        P_1 := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
       \end{cases}
       \qquad
       \tilde{H}_1(q, \dot{q}) :=
@@ -285,7 +310,7 @@
     \metroset{block=fill}
     \begin{block}{First order Hamiltonian}
       \begin{equation*} \label{eq: first-order_motion_eq_ham}
-        H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+        H_1(Q_1, P_1) = \frac{P_1^2}{2} + \alpha(Q_1) \qquad
       \end{equation*}
     \end{block}
   \end{frame}
@@ -337,7 +362,7 @@
             L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
           \end{equation*}
           \begin{equation*} \label{eq: first-order_motion_eq_ham}
-            H_1(Q, P) = \frac{P^2}{2} + \alpha(Q) \qquad
+            H_1(Q_1, P_1) = \frac{P_1^2}{2} + \alpha(Q_1) \qquad
           \end{equation*}
         \end{center}
       \end{column}
@@ -398,8 +423,8 @@
     \end{theorem}
   \end{frame}
 
-  \begin{frame}{Curing linear Ostrogradskian instability with constrains}
-    As shown in~\cite{Chen13} linear Ostrogradskian instability can be cure by
+  \begin{frame}{Curing linear Ostrogradskian instability with constraints}
+    As shown in~\cite{Chen13} linear Ostrogradskian instability can be cured by
     imposition of constrains on the system. This can happen when the constrained
     Hamiltonian lives in phase space with lower dimensionality than the original
     phase space. \vspace{1.0em}
@@ -415,7 +440,7 @@
         \underbrace{
           4 \omega_1^2\omega_2^2 q^2 \lambda (1+ \lambda) +
           2 \sqrt{2} \omega_1\omega_2 \lambda q \ddot{q}
-        }_{\text{constrain}}
+        }_{\text{constraint}}
       \end{equation*}
       \vspace{0.2em}
       \begin{equation*}
