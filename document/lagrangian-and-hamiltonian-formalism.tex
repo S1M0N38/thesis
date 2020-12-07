@@ -335,6 +335,8 @@ while in the first one all terms cancel out, in the second one remains
 $\frac{\delta L}{\delta \bm{q}^{(0)}} = 0$, indeed the Euler-Lagrange equation
 of motion. \\
 
+
+
 An advantage of the Hamiltonian formalism is the wider choice of coordinates
 transformations. Unlike Lagrangian formalism, in the Hamiltonian description new
 coordinates can be define starting from the old one by mixing the corresponding
@@ -357,4 +359,108 @@ commutation relations} are preserved.
   \end{cases}
 \end{equation}
 
-These transformation are called \emph{canonical transformation}.
+These transformation are called \emph{canonical transformation}.\\
+
+Even though definition~\eqref{eq:def_canonical_coordinates} turns out to be a
+wise choice it is not obvious where it came from. Using a third order
+Lagrangian as example we try to give a
+\paragraph{Motivation about the definition of canonical variables}
+Consider the generic third order one-dimensional ($\mu=1$) Lagrangian
+\begin{equation*}
+  L\left( q, \dot{q}, \ddot{q}, q^{(3)} \right)
+\end{equation*}
+and the corresponding Euler-Lagrange equations
+\begin{equation} \label{eq:third_order_euler_lagrangian}
+  \frac{\partial L}{\partial q} -
+  \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} +
+  \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}} -
+  \frac{d^3}{dt^3}\frac{\partial L}{\partial q^{(3)}} +
+  \underbrace{
+  \frac{d^4}{dt^4}\frac{\partial L}{\partial q^{(4)}} - \ldots }_0 = 0
+\end{equation}
+
+Collecting time derivatives, equation~\eqref{eq:third_order_euler_lagrangian}
+can be written as
+\begin{equation} \label{eq:third_order_euler_lagrangian_with_parts}
+  \frac{\partial L}{\partial q} -
+  \frac{d}{dt} \left(
+  \frac{\partial L}{\partial \dot{q}} -
+  \frac{d}{dt} \left(
+  \frac{\partial L}{\partial \ddot{q}} -
+  \frac{d}{dt} \left(
+  \frac{\partial L}{\partial q^{(3)}}
+  \right)\right)\right) = 0
+\end{equation}
+
+In the above equation appear generalized coordinates with derivation up to sixth
+order (i.e. $q^{(6)}$). In order to translating Lagrangian formalism in the
+Hamiltonian one, we need a map from generalized coordinates to canonical
+variables~\footnote{
+  There is no need to map $q^{(6)}$ because it appears
+  in~\eqref{eq:third_order_euler_lagrangian} as a simple derivation of terms
+  depending on $q^{(5)}$. When the expression for $q^{(5)}$ in terms of
+  canonical variables is known, $q^{(6)}$ is also known.
+}:
+\begin{equation*}
+  q^{(i)} \quad i = 0, 1, 2, 3, 4, 5
+  \quad \longrightarrow \quad
+  (P_i , Q_i) \quad i = 1, 2, 3
+\end{equation*}
+
+First we map $q$, $\dot{q}$, $\ddot{q}$ into canonical variables $Q_1$, $Q_2$,
+$Q_3$
+\begin{equation}\label{eq:def_Q}
+  \begin{cases}
+    Q_1 := q \\
+    Q_2 := \dot{q} \\
+    Q_3 := \ddot{q} \\
+  \end{cases}
+\end{equation}
+
+Then we need to map $q^{(3)}$, $q^{(4)}$, $q^{(5)}$ into another set of
+canonical variables and to do so we use the conjugate momenta $P_1$, $P_2$,
+$P_3$. By looking at~\eqref{eq:third_order_euler_lagrangian_with_parts} we can
+observe the following:
+\begin{equation} \label{eq:third_order_euler_lagrangian_with_parts}
+  \frac{\partial L}{\partial q} -
+  \frac{d}{dt} \biggl(
+  \underbrace{
+  \frac{\partial L}{\partial \dot{q}} -
+  \frac{d}{dt} \biggl(
+  \underbrace{
+  \frac{\partial L}{\partial \ddot{q}} -
+  \frac{d}{dt} \biggl(
+  \overbrace{
+  \frac{\partial L}{\partial q^{(3)}}
+  }^{\text{depends on } q^{(3)}} \biggr)
+  }_{\text{depends on } q^{(4)}} \biggr)
+  }_{\text{depends on } q^{(5)}} \biggr)
+  = 0
+\end{equation}
+
+So it is convenient to define
+\begin{equation}\label{eq:def_P}
+  \begin{cases}
+    P_3 := \text{part that depends on } q^{(3)}
+         = \frac{\partial L}{\partial q^{(3)}} \\
+    P_2 := \text{part that depends on } q^{(4)}
+         = \frac{\partial L}{\partial \ddot{q}} -
+           \frac{d}{dt} \left(
+             \frac{\partial L}{\partial q^{(3)}}
+           \right) \\
+    P_1 := \text{part that depends on } q^{(5)}
+         = \frac{\partial L}{\partial \dot{q}} -
+           \frac{d}{dt} \left(
+             \frac{\partial L}{\partial \ddot{q}} -
+             \frac{d}{dt} \left(
+               \frac{\partial L}{\partial q^{(3)}}
+              \right)
+            \right) \\
+  \end{cases}
+\end{equation}
+
+Definitions in~\eqref{eq:def_P} can be rewritten in a more compact notation
+employing the variational derivative~\eqref{eq:functional_derivative_y_i}.
+Combining~\eqref{eq:def_Q} with~\eqref{eq:def_P} and generalizing to the
+multidimensional case ($\mu > 1$) we obtain the
+definition~\eqref{eq:def_canonical_coordinates} of canonical coordinates.
