@@ -17,10 +17,21 @@
 % For importing tikz figures
 \usepackage{tikzscale}
 
+% Handle appendix numbering
+\usepackage{appendixnumberbeamer}
+
+% math stuff
+\usepackage{amsthm}
+
 
 % --------------------------------Caption config------------------------------ %
 
 \captionsetup[figure]{labelformat=empty}
+
+
+% --------------------------------amsthm config------------------------------- %
+
+\newtheorem*{remark}{Remark}
 
 
 % ---------------------------------Tkiz config-------------------------------- %
@@ -59,8 +70,6 @@
 \title{Higher-Order Lagrangians in classical and quantum systems}
 \date{\today}
 \author{Simone Bertolotto\\{\small Supervisor: Prof.\ Igor Pesando}}
-%\author{Simone Bertolotto}
-%\author[Supervisor]{Prof.\ Igor Pesando}
 \institute{Università degli studi di Torino --- Fisica}
 
 \begin{document}
@@ -258,7 +267,141 @@
   \end{frame}
   \end{enumerate}
 
-  %\section{First order vs Second order Lagrangian}
+  \begin{frame}{Motivation behind the definition of canonical variables}
+    \begin{alertblock}{Motivation behind the definition of canonical variables}
+      \vspace{0.5em}
+      Consider a third-order one-dimensional Lagrangian as example
+      \begin{equation*}
+        L\left( q, \dot{q}, \ddot{q}, q^{(3)} \right)
+      \end{equation*}
+      and the corresponding Euler-Lagrange equation
+      \begin{equation*} \label{eq:third_order_euler_lagrangian}
+        \frac{\partial L}{\partial q} -
+        \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} +
+        \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}} -
+        \frac{d^3}{dt^3}\frac{\partial L}{\partial q^{(3)}} +
+        \underbrace{
+        \frac{d^4}{dt^4}\frac{\partial L}{\partial q^{(4)}} - \ldots }_0 = 0
+      \end{equation*}
+
+      Collecting time derivatives, Euler-Lagrange equation can be written as
+      \begin{equation*} \label{eq:third_order_euler_lagrangian_with_parts}
+        \frac{\partial L}{\partial q} -
+        \frac{d}{dt} \left(
+        \frac{\partial L}{\partial \dot{q}} -
+        \frac{d}{dt} \left(
+        \frac{\partial L}{\partial \ddot{q}} -
+        \frac{d}{dt} \left(
+        \frac{\partial L}{\partial q^{(3)}}
+        \right)\right)\right) = 0
+      \end{equation*}
+      in which generalized coordinates appear up to sixth-derivation order.
+    \end{alertblock}
+  \end{frame}
+
+  \begin{frame}{Motivation behind the definition of canonical variables}
+    \begin{alertblock}{}
+      In order to translating Lagrangian formalism in the Hamiltonian one, we
+      need a \emph{map}~\footnote{
+        There is no need to map $q^{(6)}$ because it appears in Euler-Lagrange
+        equation as a simple derivation of terms depending on $q^{(5)}$. When
+        the expression for $q^{(5)}$ in terms of canonical variables is known,
+        $q^{(6)}$ is also known.
+      }:
+      \begin{equation*}
+        q^{(i)} \quad i = 0, 1, 2, 3, 4, 5
+        \quad \longrightarrow \quad
+        (P_i , Q_i) \quad i = 1, 2, 3
+      \end{equation*}
+      We choose to map $q$, $\dot{q}$, $\ddot{q}$ into $Q_1$, $Q_2$, $Q_3$
+      \begin{equation*}\label{eq:def_Q}
+        \begin{cases}
+          Q_1 := q \\
+          Q_2 := \dot{q} \\
+          Q_3 := \ddot{q} \\
+        \end{cases}
+      \end{equation*}
+    \end{alertblock}
+  \end{frame}
+
+  \begin{frame}{Motivation behind the definition of canonical variables}
+    \begin{alertblock}{}
+      To map $q^{(3)}$, $q^{(4)}$, $q^{(5)}$ we observe that
+      \begin{equation*} \label{eq:third_order_euler_lagrangian_h_with_parts}
+        \frac{\partial L}{\partial q} -
+        \frac{d}{dt} \biggl(
+        \underbrace{
+        \frac{\partial L}{\partial \dot{q}} -
+        \frac{d}{dt} \biggl(
+        \underbrace{
+        \frac{\partial L}{\partial \ddot{q}} -
+        \frac{d}{dt} \biggl(
+        \overbrace{
+        \frac{\partial L}{\partial q^{(3)}}
+        }^{\text{depends on } q^{(3)}} \biggr)
+        }_{\text{depends on } q^{(4)}} \biggr)
+        }_{\text{depends on } q^{(5)}} \biggr)
+        = 0
+      \end{equation*}
+
+      So it is convenient to define
+      \begin{equation*}\label{eq:def_P}
+        \begin{cases}
+          P_3 := \text{part that depends on } q^{(3)}
+               = \frac{\partial L}{\partial q^{(3)}} \\
+          P_2 := \text{part that depends on } q^{(4)}
+               = \frac{\partial L}{\partial \ddot{q}} -
+                 \frac{d}{dt} \left(
+                   \frac{\partial L}{\partial q^{(3)}}
+                 \right) \\
+          P_1 := \text{part that depends on } q^{(5)}
+               = \frac{\partial L}{\partial \dot{q}} -
+                 \frac{d}{dt} \left(
+                   \frac{\partial L}{\partial \ddot{q}} -
+                   \frac{d}{dt} \left(
+                     \frac{\partial L}{\partial q^{(3)}}
+                    \right)
+                  \right) \\
+        \end{cases}
+      \end{equation*}
+    \end{alertblock}
+  \end{frame}
+
+  \begin{frame}{Motivation behind the definition of canonical variables}
+    \begin{alertblock}{}
+      Definition for $P_i$ can be rewritten in a more compact notation employing
+      the \emph{functional derivative}
+      \begin{equation*}
+        \begin{cases}
+          P_3  = \frac{\partial L}{\partial q^{(3)}}
+               = \frac{\delta L}{\delta q^{(3)}} \\
+          P_2  = \frac{\partial L}{\partial \ddot{q}} -
+                 \frac{d}{dt} \left(
+                   \frac{\partial L}{\partial q^{(3)}}
+                 \right)
+               = \frac{\delta L}{\delta \ddot{q}} \\
+          P_1  = \frac{\partial L}{\partial \dot{q}} -
+                 \frac{d}{dt} \left(
+                   \frac{\partial L}{\partial \ddot{q}} -
+                   \frac{d}{dt} \left(
+                     \frac{\partial L}{\partial q^{(3)}}
+                    \right)
+                  \right)
+               = \frac{\delta L}{\delta \dot{q}} \\
+        \end{cases}
+      \end{equation*}
+
+      Generalizing to the nth-order Lagrangian we obtain the previous definition
+      of canonical variables
+      \begin{equation*}
+        Q_{(i)} := q^{(i-1)} = \frac{d^{\, i-1} q}{dt^{\, i-1}}
+        \quad \leftrightarrow \quad
+        P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
+        \qquad i = 1, \ldots, n
+      \end{equation*}
+    \end{alertblock}
+  \end{frame}
+
   \section{First order vs Second order system}
 
   \begin{frame}{First order vs Second order Lagrangian}
@@ -516,6 +659,61 @@
 
   \begin{frame}[standout]
     Thank you!
+  \end{frame}
+
+  % Backup slides
+  \appendix
+
+  \section{Constraints}
+
+  \begin{frame}{Constraints classification}
+    \begin{definition} \vspace{0.3em}
+      In Hamiltonian mechanics, \emph{constraints} are relation between
+      coordinates and conjugate momenta.
+    \end{definition}
+    \begin{alertblock}{First classification}
+      \begin{itemize}
+        \item \emph{First class constraints}, the ``physical'' ones (e.g.\ train
+          on a railway, particle on a plane).
+        \item \emph{Second class constraints}, related to gauge freedom.
+      \end{itemize}
+    \end{alertblock}
+    \begin{remark} \vspace{0.3em}
+      The Poisson Bracket of a first class constraint with all the
+      other constraints vanishes on the constraints surface in the phase space
+      (i.e.\ the surface where all constraints are satisfied).
+    \end{remark}
+  \end{frame}
+
+  \begin{frame}{Constraints classification}
+    \begin{alertblock}{Second classification}
+      \begin{itemize}
+        \item \emph{Primary constraints}, holds independently from the equations
+          of motion.
+        \begin{equation*} \label{eq:constraint}
+          \phi_1(Q, P) = 0
+        \end{equation*}
+        \item \emph{secondary constraints}, derived from the primary one
+          imposing the preservation of the constraints during the evolution of
+          the system.
+      \end{itemize}
+      This generate a series of constraints where the constraints relations are
+      called \emph{consistency relations}~\footnote{
+        The weak equality symbol ``$\approx$'' highlight the fact that these
+        relations vanish only on the hypersurface where all constraints are
+        satisfied.
+      }.
+      \begin{equation*} \label{eq:consistency_relations}
+        \phi_1 = 0 \quad \Rightarrow \quad
+        \left\{ \phi_1 , H \right\} =: \phi_2 \approx 0 \quad \Rightarrow \quad
+        \left\{ \phi_2 , H \right\} =: \phi_3 \approx 0 \quad \Rightarrow \quad
+        \ldots
+      \end{equation*}
+    \end{alertblock}
+  \end{frame}
+
+  \begin{frame}{Introducing constraints in the Hamiltonian}
+
   \end{frame}
 
   \begin{frame}[allowframebreaks]{References}
