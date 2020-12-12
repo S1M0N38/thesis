@@ -1,17 +1,17 @@
 In this section the quantum counterpart of the previous classical system will be
-studied. In the following, the process of \emph{canonical quantization} is used
+studied. In the following the process of \emph{canonical quantization} is used
 to go from the classical world to the quantum one and a brief summary is given
 in the Appendix~\ref{appendix:canonical_quantization}. This procedures will be
 used to derive the Quantum Pais-Uhlenbeck (QPU) oscillator starting
 from~\eqref{eq:lagrangian_PU}. The quantum version of the Ostrogradsky theorem
-will be proved and lastly more example of ghost-ridden theories are given.
+will be proved and lastly more examples of ghost-ridden theories are given.
 
 \subsection{Ghosts}\label{section:ghosts}
 As said previously in Section~\ref{subsection:
 linear_ostrogradskian_instability}, in quantum mechanics \emph{linear
-Ostrogradskian instability} goes under the name ``\emph{ghost}''.  Just like
+Ostrogradskian instability} goes under the name ``\emph{ghost}''. Just like
 classical HD theories, quantum HD theories have the spectrum of the Hamiltonian
-unbounded. Theorem~\ref{th:ostrogradsky_classical} have its quantum counterpart:
+unbounded. Theorem~\ref{th:ostrogradsky_classical} has its quantum counterpart:
 
 \begin{theorem}\label{th:ostrogradsky_quantum}~\cite{Smilga17}
   The quantum counterpart of Hamiltonian~\eqref{eq:general_hamiltonian_1dim}
@@ -109,7 +109,7 @@ $L_{PU} \rightarrow H_{PU} \xrightarrow{\wedge} \hat{H}_{QPU}$
   - \omega_1^2\omega_2^2 \frac{\hat{x}^2}{2}
 \end{equation}
 
-\subsubsection{non-degenerate frequencies: $\omega_1 \neq \omega_2$}
+\subsubsection{Non-degenerate frequencies: $\omega_1 \neq \omega_2$}
 
 Consider the following canonical transformation and then canonically quantize
 the new canonical variables $\tilde{Q}$ and $\tilde{P}$
@@ -205,11 +205,11 @@ $n$ and $m$. But the wave function of all eigenstate are normalizable, so the
 spectrum is not continuous but rather pure point.
 
 
-\subsubsection{degenerate frequencies: $\omega_1 = \omega_2$}
+\subsubsection{Degenerate frequencies: $\omega_1 = \omega_2$}
 If frequencies $\omega_1$ and $\omega_2$ are the same, the previous
-transformation can not be perform due to the vanishing denominator. Nevertheless
-a solution can be obtain following the procedure describe in~\cite{PU50,
-Bolonek06}. Let $\psi$ be written as
+transformation can not be performed due to the vanishing denominator.
+Nevertheless a solution can be obtain following the procedure described
+in~\cite{PU50, Bolonek06}. Let $\psi$ be written as
 
 \begin{equation*}
   \psi(x, v) = e^{-i\omega^2xv}\phi(x,v)
@@ -225,7 +225,7 @@ So $\hat{H}$ acts on such $\psi$ as
   \frac{\hat{p}_v^2}{2} + v\hat{p}_x - \omega^2x\hat{p}_v
 \end{equation*}
 
-Now, on $\hat{H}_{\phi}$ are apply a scale transformation and then a unitary
+Now, on $\hat{H}_{\phi}$ we can apply a scale transformation and then a unitary
 transformation\footnote{
   During the calculation of $\hat{H}'_{\phi}$ was useful swapping
   two non-commuting operators (e.g. $v$ and $e^{\lambda \hat{p}_v}$)
@@ -243,13 +243,15 @@ transformation\footnote{
   \qquad \text{unitary} \;
   \U = \exp\left\{ - \frac{\hat{p}_x \hat{p}_v}{4}\right\}
 \end{equation*}
+to get
 
 \begin{equation*}
   \hat{H}'_{\phi} = \, \U^{\dagger}
-  \hat{H}_{\phi} \left(x/\omega,\ v,\ \omega \hat{p}_x,\ \hat{p}_v\right)
-  \ \U \qquad
+  \hat{H}_{\phi} \left(x/\omega,\ v,\ \omega \hat{p}_x,\ \hat{p}_v\right) \ \U
+  \quad \text{with} \quad
   \phi'(x, v) = \U \phi\left(x/\omega, v\right)
 \end{equation*}
+so that
 
 \begin{equation} \label{eq:ham_phi_PU}
   \hat{H}'_{\phi} = \frac{\hat{p}^2_x \, + \, \hat{p}^2_{v}}{4}
@@ -275,6 +277,6 @@ Going in polar coordinates and reverting back to the original $\psi$, we obtain
 \end{align}
 
 Wave functions~\eqref{eq:sol_ham_degen_PU} are not normalizable hence the
-spectrum is continuous. Moreover each energy level infinitely degenerate:
+spectrum is continuous. Moreover each energy level is infinitely degenerate:
 $\psi_{l+1, \, k}$ and $\psi_{l, \, \sqrt{k^2 + 4 \omega}}$ have same
 eigenvalue.
