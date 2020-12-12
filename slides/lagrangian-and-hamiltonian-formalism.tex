@@ -1,0 +1,266 @@
+\begin{frame}{Functional derivative}
+  Define the \emph{action functional} as
+  \begin{equation*}
+    S[q] := \int_{t_1}^{t_2} dt \,
+    L \left(q, \dot{q}, \ddot{q}, \ldots, q^{(n)} \right)
+    \qquad \text{where} \qquad q^{(k)} := \frac{d^k q(t)}{dt^k}
+  \end{equation*}
+
+  Produce the \emph{k-th order perturbation on $q^{(k)}$}
+  \begin{equation*}
+    q^{(k)} \rightarrow \frac{d^k q(t)}{dt^k} + \frac{d^k \delta q(t)}{dt^k} =
+    q^{(k)} + \delta q^{(k)}
+  \end{equation*}
+
+  and define the \emph{variation of the action functional} as
+  \begin{equation*}
+    \delta S[q] := S[q + \delta q] - S[q]
+  \end{equation*}
+
+  Considering $\delta q$ infinitesimal and keeping the ends points fixed we
+  get % \\ (i.e. $\delta y^{k}(t_1) = \delta y^{k}(t_2) = 0$ for all k)
+  \begin{equation*}
+    \delta S[q] = \int_{t_1}^{t_2} dt \,
+    \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
+    \left(\frac{\partial L}{\partial q^{(k)}}\right) \delta q
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Functional derivative}
+  Noting the similarities with the differential in multi-variable calculus
+  \begin{equation*}
+    df(x) = \sum_{k=1}^{n}
+    \left\{\frac{\partial f(x)}{\partial x_k} dx_k\right\}
+    \quad \longleftrightarrow \quad
+    \delta S[q] = \int_{t_1}^{t_2} dt \,
+    \left\{ \frac{\delta S[q]}{\delta q} \delta q \right\}
+  \end{equation*}
+
+  the \emph{functional derivative with respect to $q$} can be define
+  \begin{equation*}
+    \frac{\delta S[q]}{\delta q}:=
+    \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
+    \left(\frac{\partial L}{\partial q^{(k)}}\right)
+  \end{equation*}
+
+  Generalization and abuse of notation lead to writing
+  \metroset{block=fill}
+  \begin{block}{Functional derivative with respect to $q^{(i)}$}
+    \begin{equation*}
+      \frac{\delta L}{\delta q^{(i)}}:=
+      \sum_{k=0}^{n} {(-1)}^k \frac{d^k}{dt^k}
+      \left(\frac{\partial L}{\partial q^{(i+k)}}\right)
+    \end{equation*}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Lagrangian formalism}
+  \begin{alertblock}{Hamilton's principle}
+    \vspace{0.5em}
+    The motion of the system is a stationary point of the action
+    functional~\cite{Goldstein11_Ham_principle}
+    \begin{equation*}
+      \frac{\delta S[q]}{\delta q} = 0
+    \end{equation*}
+  \end{alertblock}
+  \begin{alertblock}{Euler-Lagrange equation}
+    \vspace{0.5em}
+    \begin{equation*}
+      \Rightarrow \qquad
+      \frac{\delta S[q]}{\delta q} =
+      \frac{\partial L}{\partial q} -
+      \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} +
+      \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}} -
+      \ldots = 0
+    \end{equation*}
+  \end{alertblock}
+\end{frame}
+
+\begin{enumerate}
+\begin{frame}{Hamiltonian formalism}
+  \begin{alertblock}{From Lagrange to Hamilton in 3 step}
+    \vspace{0.5em}
+    \item Define i-th \emph{canonical coordinates as}
+      \begin{equation*} \label{eq:def_canonical_coordinates}
+        Q_{(i)} := q^{(i-1)} = \frac{d^{\, i-1} q}{dt^{\, i-1}}
+        \quad \leftrightarrow \quad
+        P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
+        \qquad i = 1, \ldots, n
+      \end{equation*}
+    \item Define $\tilde{H}$ as
+      \begin{equation*} \label{eq:Ham_in_q}
+        \tilde{H}(q, \dot{q}, \ldots, q^{(n)}) :=
+        \sum_{i=1}^{n} \frac{\delta L}{\delta q^{(i)}} q^{(i)} -
+        L(q, \dot{q}, \ldots, q^{(n)})
+      \end{equation*}
+      Under the hypothesis of regular Lagrangian, relation for $q^{(n)}$ can
+      be inverted
+      \begin{equation*} \label{eq:qn=h}
+        \frac{\delta L}{\delta q^{(n)}} = P_n
+        \quad \Rightarrow \quad
+        q^{(n)} = h(Q_{(1)}, \ldots, Q_{(n)}, P_{(n)}) \equiv h
+      \end{equation*}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Hamiltonian formalism}
+  \begin{alertblock}{}
+      Substituting in the expression for $\tilde{H}$ we get the
+      \emph{Hamiltonian}
+      \begin{equation*} \label{eq:general_hamiltonian}
+        H = P_n h + P_{n-1} Q_n + \cdots +
+            P_1 Q_2 - L(Q_1, Q_2, \ldots, h)
+      \end{equation*}
+    \item The Hamiltonian generates the time evolution of any function of
+      canonical variables $F(Q_i, P_i)$ via the \emph{Poisson
+      Brackets}~\cite{Chen13}
+      \begin{equation*} \label{eq:poisson_bracket_evolution}
+        \dot{F}(Q_i, P_i) = \left\{ F(Q_i, P_i), H \right\}
+      \end{equation*}
+      Poisson Brackets, in canonical coordinates, are defined as
+      \begin{equation*} \label{eq:possion_braket}
+        \left\{ f, g \right\} := \sum_{i=1}^{n} \left(
+          \frac{\partial f}{\partial Q_{(i)}}
+          \frac{\partial g}{\partial P_{(i)}} -
+          \frac{\partial f}{\partial P_{(i)}}
+          \frac{\partial g}{\partial Q_{(i)}}
+        \right)
+      \end{equation*}
+  \end{alertblock}
+\end{frame}
+\end{enumerate}
+
+\begin{frame}{Motivation behind the definition of canonical variables}
+  \begin{alertblock}{Motivation behind the definition of canonical variables}
+    \vspace{0.5em}
+    Consider a third-order one-dimensional Lagrangian as example
+    \begin{equation*}
+      L\left( q, \dot{q}, \ddot{q}, q^{(3)} \right)
+    \end{equation*}
+    and the corresponding Euler-Lagrange equation
+    \begin{equation*} \label{eq:third_order_euler_lagrangian}
+      \frac{\partial L}{\partial q} -
+      \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} +
+      \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}} -
+      \frac{d^3}{dt^3}\frac{\partial L}{\partial q^{(3)}} +
+      \underbrace{
+      \frac{d^4}{dt^4}\frac{\partial L}{\partial q^{(4)}} - \ldots }_0 = 0
+    \end{equation*}
+
+    Collecting time derivatives, Euler-Lagrange equation can be written as
+    \begin{equation*} \label{eq:third_order_euler_lagrangian_with_parts}
+      \frac{\partial L}{\partial q} -
+      \frac{d}{dt} \left(
+      \frac{\partial L}{\partial \dot{q}} -
+      \frac{d}{dt} \left(
+      \frac{\partial L}{\partial \ddot{q}} -
+      \frac{d}{dt} \left(
+      \frac{\partial L}{\partial q^{(3)}}
+      \right)\right)\right) = 0
+    \end{equation*}
+    in which generalized coordinates appear up to sixth-derivation order.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Motivation behind the definition of canonical variables}
+  \begin{alertblock}{}
+    In order to translating Lagrangian formalism in the Hamiltonian one, we
+    need a \emph{map}~\footnote{
+      There is no need to map $q^{(6)}$ because it appears in Euler-Lagrange
+      equation as a simple derivation of terms depending on $q^{(5)}$. When
+      the expression for $q^{(5)}$ in terms of canonical variables is known,
+      $q^{(6)}$ is also known.
+    }:
+    \begin{equation*}
+      q^{(i)} \quad i = 0, 1, 2, 3, 4, 5
+      \quad \longrightarrow \quad
+      (P_i , Q_i) \quad i = 1, 2, 3
+    \end{equation*}
+    We choose to map $q$, $\dot{q}$, $\ddot{q}$ into $Q_1$, $Q_2$, $Q_3$
+    \begin{equation*}\label{eq:def_Q}
+      \begin{cases}
+        Q_1 := q \\
+        Q_2 := \dot{q} \\
+        Q_3 := \ddot{q} \\
+      \end{cases}
+    \end{equation*}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Motivation behind the definition of canonical variables}
+  \begin{alertblock}{}
+    To map $q^{(3)}$, $q^{(4)}$, $q^{(5)}$ we observe that
+    \begin{equation*} \label{eq:third_order_euler_lagrangian_h_with_parts}
+      \frac{\partial L}{\partial q} -
+      \frac{d}{dt} \biggl(
+      \underbrace{
+      \frac{\partial L}{\partial \dot{q}} -
+      \frac{d}{dt} \biggl(
+      \underbrace{
+      \frac{\partial L}{\partial \ddot{q}} -
+      \frac{d}{dt} \biggl(
+      \overbrace{
+      \frac{\partial L}{\partial q^{(3)}}
+      }^{\text{depends on } q^{(3)}} \biggr)
+      }_{\text{depends on } q^{(4)}} \biggr)
+      }_{\text{depends on } q^{(5)}} \biggr)
+      = 0
+    \end{equation*}
+
+    So it is convenient to define
+    \begin{equation*}\label{eq:def_P}
+      \begin{cases}
+        P_3 := \text{part that depends on } q^{(3)}
+             = \frac{\partial L}{\partial q^{(3)}} \\
+        P_2 := \text{part that depends on } q^{(4)}
+             = \frac{\partial L}{\partial \ddot{q}} -
+               \frac{d}{dt} \left(
+                 \frac{\partial L}{\partial q^{(3)}}
+               \right) \\
+        P_1 := \text{part that depends on } q^{(5)}
+             = \frac{\partial L}{\partial \dot{q}} -
+               \frac{d}{dt} \left(
+                 \frac{\partial L}{\partial \ddot{q}} -
+                 \frac{d}{dt} \left(
+                   \frac{\partial L}{\partial q^{(3)}}
+                  \right)
+                \right) \\
+      \end{cases}
+    \end{equation*}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Motivation behind the definition of canonical variables}
+  \begin{alertblock}{}
+    Definition for $P_i$ can be rewritten in a more compact notation employing
+    the \emph{functional derivative}
+    \begin{equation*}
+      \begin{cases}
+        P_3  = \frac{\partial L}{\partial q^{(3)}}
+             = \frac{\delta L}{\delta q^{(3)}} \\
+        P_2  = \frac{\partial L}{\partial \ddot{q}} -
+               \frac{d}{dt} \left(
+                 \frac{\partial L}{\partial q^{(3)}}
+               \right)
+             = \frac{\delta L}{\delta \ddot{q}} \\
+        P_1  = \frac{\partial L}{\partial \dot{q}} -
+               \frac{d}{dt} \left(
+                 \frac{\partial L}{\partial \ddot{q}} -
+                 \frac{d}{dt} \left(
+                   \frac{\partial L}{\partial q^{(3)}}
+                  \right)
+                \right)
+             = \frac{\delta L}{\delta \dot{q}} \\
+      \end{cases}
+    \end{equation*}
+
+    Generalizing to the nth-order Lagrangian we obtain the previous definition
+    of canonical variables
+    \begin{equation*}
+      Q_{(i)} := q^{(i-1)} = \frac{d^{\, i-1} q}{dt^{\, i-1}}
+      \quad \leftrightarrow \quad
+      P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
+      \qquad i = 1, \ldots, n
+    \end{equation*}
+  \end{alertblock}
+\end{frame}

@@ -1,0 +1,169 @@
+\begin{frame}{First order vs Second order Lagrangian}
+  We would like to find the differences between systems that can be
+  describe by these two Lagrangians:
+  \vspace{0.5em}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{center}
+        \alert{First order system}
+        \begin{equation*}
+          L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
+        \end{equation*}
+      \end{center}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{center}
+        \alert{Second order system}
+        \begin{equation*}
+          L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+        \end{equation*}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{First order Lagrangian}
+  \begin{equation*}
+    L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
+  \end{equation*}
+  \vspace{0.2em}
+  \begin{equation*} \label{eq: first-order_motion_eq_lagr}
+    \frac{\partial L_1}{\partial q} -
+    \frac{d}{dt}\frac{\partial L_1}{\partial \dot{q}} +
+    \underbrace{
+    \frac{d^2}{dt^2}\frac{\partial L_1}{\partial \ddot{q}} - \ldots }_0 = 0
+    \qquad \Rightarrow \qquad
+    \ddot{q} = - \frac{d\alpha(q)}{dq}
+  \end{equation*}
+  \begin{equation*}
+    \begin{cases}
+      Q_1 := q \\
+      P_1 := \frac{\delta L_1}{\delta \dot{q}} = \dot{q}
+    \end{cases}
+    \qquad
+    \tilde{H}_1(q, \dot{q}) :=
+    \frac{\delta L_1}{\delta \dot{q}} \dot{q} - L_1(q, \dot{q})
+  \end{equation*}
+  \metroset{block=fill}
+  \begin{block}{First order Hamiltonian}
+    \begin{equation*} \label{eq: first-order_motion_eq_ham}
+      H_1(Q_1, P_1) = \frac{P_1^2}{2} + \alpha(Q_1) \qquad
+    \end{equation*}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Second order Lagrangian}
+  \begin{equation*}
+    L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+  \end{equation*}
+  \vspace{0.2em}
+  \begin{equation*} \label{eq: second-order_motion_eq_lagr}
+    \frac{\partial L_2}{\partial q} -
+    \frac{d}{dt}\frac{\partial L_2}{\partial \dot{q}} +
+    \frac{d^2}{dt^2}\frac{\partial L_2}{\partial \ddot{q}} -
+    \underbrace{
+      \frac{d^3}{dt^3}\frac{\partial L_2}{\partial q^{(3)}} + \ldots
+    }_0 = 0
+    \quad \Rightarrow \quad
+    q^{(4)} = - \frac{d\alpha(q)}{dq}
+  \end{equation*}
+  \begin{equation*}
+    \begin{cases}
+      Q_1 := q \\
+      P_1 := \frac{\delta L_2}{\delta \dot{q}}
+           = \frac{\partial L_2}{\partial \dot{q}} -
+             \frac{d}{dt} \left( \frac{\partial L_2}{\partial \ddot{q}} \right)
+           = 0 - \frac{d}{dt} \left( \ddot{q} \right) = -q^{(3)}
+    \end{cases}
+    \begin{cases}
+      Q_2 := \dot{q} \\
+      P_2 := \frac{\delta L_2}{\delta \ddot{q}}
+           = \frac{\partial L_2}{\partial \ddot{q}} = \ddot{q}
+    \end{cases}
+  \end{equation*}
+
+  Therefore
+  \begin{equation*}
+    \begin{cases}
+      q        = Q_1 \\
+      \dot{q}  = Q_2 \\
+      \ddot{q} = P_2
+    \end{cases}
+    \qquad
+    \begin{cases}
+      \frac{\delta L_2}{\delta \dot{q}}  = P_1 \\
+      \frac{\delta L_2}{\delta \ddot{q}} = P_2
+    \end{cases}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \begin{equation}\label{eq:canonical_variable_second_order}
+    \begin{cases}
+      q        = Q_1 \\
+      \dot{q}  = Q_2 \\
+      \ddot{q} = P_2
+    \end{cases}
+    \qquad
+    \begin{cases}
+      \frac{\delta L_2}{\delta \dot{q}}  = P_1 \\
+      \frac{\delta L_2}{\delta \ddot{q}} = P_2
+    \end{cases}
+  \end{equation}
+  \begin{equation}\label{eq:h_tilda_second_order}
+    \tilde{H}_2(q, \dot{q}) :=
+      \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
+      \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
+      L_2(q, \ddot{q})
+      = \frac{\delta L_2}{\delta \dot{q}} \dot{q} +
+      \frac{\delta L_2}{\delta \ddot{q}} \ddot{q} -
+      \frac{\ddot{q}^2}{2} + \alpha(q)
+  \end{equation}
+
+  Substituting~\eqref{eq:canonical_variable_second_order}
+  in~\eqref{eq:h_tilda_second_order} we get the Hamiltonian
+  \begin{align*} \label{eq: second-order_motion_eq_ham}
+    H_2(Q_1, Q_2, P_1, P_2)
+      &= P_1 Q_2 + P_2 P_2 - \frac{P_2^2}{2} + \alpha(Q_1) \\
+      &= P_1 Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+  \end{align*}
+
+  \metroset{block=fill}
+  \begin{block}{Second order Hamiltonian}
+    \begin{equation*} \label{eq: second-order_motion_eq_ham}
+      H_2(Q_1, Q_2, P_1, P_2) = P_1Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+    \end{equation*}
+  \end{block}
+\end{frame}
+
+\begin{frame}{First order vs Second order Hamiltonian}
+  \vspace{0.5em}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \alert{First order system} \vspace{0.1em}
+        \begin{equation*}
+          L_1(q, \dot{q}) = \frac{\dot{q}^2}{2} - \alpha(q)
+        \end{equation*}
+        \begin{equation*} \label{eq: first-order_motion_eq_ham}
+          H_1(Q_1, P_1) = \frac{P_1^2}{2} + \alpha(Q_1) \qquad
+        \end{equation*}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \alert{Second order system} \vspace{0.1em}
+        \begin{equation*}
+          L_2(q, \ddot{q}) = \frac{\ddot{q}^2}{2} - \alpha(q)
+        \end{equation*}
+        \begin{equation*} \label{eq: second-order_motion_eq_ham}
+          H_2(Q_1, Q_2, P_1, P_2) = P_1Q_2 + \frac{P_2^2}{2} + \alpha(Q_1)
+        \end{equation*}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \vspace{2.0em}
+  There is a significant difference between the two spectra of $H_1$ and
+  $H_2$: the first is bounded from below while the latter is not (and both are
+  not bounded from above).
+\end{frame}

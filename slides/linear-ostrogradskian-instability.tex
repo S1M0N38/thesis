@@ -1,0 +1,164 @@
+\begin{frame}{Linear Ostrogradskian instability}
+  \begin{alertblock}{$H_2$ system isolated}
+    \vspace{0.5em}
+    If the energy is conserve even though the spectra is not bounded the
+    energy stay constant.
+  \end{alertblock}
+  \vspace{2.0em}
+  \begin{alertblock}{$H_2$ interacting with $H_1$}
+    \vspace{0.5em}
+    $H_2$ system try to reach the minimum of the Hamiltonian $H_2$ by giving
+    energy to $H_1$ system. This is behaviour goes on endlessly. This is the
+    so called \alert{Linear Ostrogradskian instability}~\cite{Kallosh08,
+    Eliezer89}.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Ostrogradsky Theorem}
+  \begin{theorem}[Ostrogradsky] \vspace{0.5em}
+    If in a second (or higher) order Lagrangian the canonical momentum $P_n$
+    does not vanish, the corresponding Hamiltonian may acquire an arbitrary
+    real value~\cite{Smilga17}.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{Curing linear Ostrogradskian instability with constraints}
+  As shown in~\cite{Chen13} linear Ostrogradskian instability can be cured by
+  imposition of constrains on the system. This can happen when the constrained
+  Hamiltonian lives in phase space with lower dimensionality than the original
+  phase space. \vspace{1.0em}
+  \begin{block}{Example: classical Pais-Uhlenbeck oscillator}
+    \vspace{0.2em}
+    \begin{equation*}
+      L =
+      \underbrace{
+        \frac{1}{2} \left[
+        \ddot{q}^2 - (\omega_1^2 + \omega_2^2) \dot{q}^2 +
+        \omega_1^2 \omega_2^2 q^2 \right]
+      }_{\text{Lagrangian of the system}} +
+      \underbrace{
+        4 \omega_1^2\omega_2^2 q^2 \lambda (1+ \lambda) +
+        2 \sqrt{2} \omega_1\omega_2 \lambda q \ddot{q}
+      }_{\text{constraint}}
+    \end{equation*}
+    \vspace{0.2em}
+    \begin{equation*}
+      H =\ \frac{\omega_1^2\omega_2^2}{2} Q_1^2 +
+      \frac{\omega_1\omega_2}{\sqrt{2} {\left(\sqrt{2} \omega_1\omega_2 -
+      \omega_1^2 - \omega_2^2 \right)}^2} P_1^2
+    \end{equation*}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Quantum counterpart}
+  In quantum mechanics \emph{linear Ostrogradskian instability} goes under the
+  name ``\emph{ghost}''. Just like classical HD theories, quantum HD theories
+  have the spectrum of the Hamiltonian unbounded. The previous Theorem have
+  its quantum counterpart:
+  \vspace{2.0em}
+  \begin{theorem} \vspace{0.5em}
+    The quantum counterpart of Hamiltonian derived from higher order
+    Lagrangian of a non-degenerate higher-derivative system has no ground
+    state~\cite{Smilga17}.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}{Quantum Pais-Uhlenbeck oscillator}
+  \begin{block}{Example: quantum Pais-Uhlenbeck oscillator}
+    \vspace{0.2em}
+    \begin{equation*}
+      \hat{H} = \hat{p}_x \hat{v} + \frac{\hat{p}_v^2}{2}
+      + \left(\omega_1^2 + \omega_2^2\right)\frac{\hat{v}^2}{2}
+      - \omega_1^2\omega_2^2 \frac{\hat{x}^2}{2}
+    \end{equation*}
+    where the quantum operators act on $\psi(x, v)$ as follows
+    \begin{align*}
+      \hat{x}\psi(x, v) &= x \psi(x, v) &
+      \hat{v}\psi(x, v) &= v \psi(x, v) \\
+      \hat{p}_x\psi(x, v) &= -i\partial_x \psi(x, v) &
+      \hat{p}_v\psi(x, v) &= -i\partial_v \psi(x, v)
+    \end{align*}
+    Performing this quantum canonical transformation~\cite{Mannheim05}
+    \begin{align*}
+      \hat{X}_1 &= \frac{1}{\omega_1}
+        \frac{\hat{p}_x \, + \,  \omega_1^2 v} {\sqrt{\omega_1^2-\omega_2^2}} &
+      \hat{P}_1 & \equiv -i \partial_{X_1} = \omega_1
+        \frac{\hat{p}_v \, + \,  \omega_2^2 x} {\sqrt{\omega_1^2-\omega_2^2}} \\
+      \hat{X}_2 &=
+        \frac{\hat{p}_v \, + \,  \omega_1^2 x} {\sqrt{\omega_1^2-\omega_2^2}} &
+      \hat{P}_2 & \equiv -i \partial_{X_2} =
+        \frac{\hat{p}_x \, + \,  \omega_2^2 v} {\sqrt{\omega_1^2-\omega_2^2}}
+    \end{align*}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Quantum Pais-Uhlenbeck oscillator}
+  one obtain
+  \begin{equation*}
+    \hat{H} =
+    \frac{\hat{P}_1^2 \, + \, \omega_1^2 \hat{X}_1^2}{2} -
+    \frac{\hat{P}_2^2 \, + \, \omega_2^2 \hat{X}_2^2}{2} \equiv
+    \hat{H}_1 - \hat{H}_2
+  \end{equation*}
+  which is the difference of two independent quantum harmonic oscillators.
+  \vspace{1.5em}
+  \metroset{block=fill}
+  \begin{block}{Energy spectrum}
+    \begin{equation*}
+      E_{mn} =
+      \omega_1 \left( \frac{1}{2} + n \right) -
+      \omega_2 \left( \frac{1}{2} + m \right)
+      \qquad m,n = 0,1,2,\ldots
+    \end{equation*}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Ghosts}
+  Ghosts (i.e quantum states with negatives norms) appear if we try to get rid
+  of negatives energies.
+
+  First rewrite the Hamiltonian operator using
+  \begin{equation*}
+    \hat{a}_j = \frac{1}{\sqrt{2\omega_j}}
+      \left(i \hat{P}_j + \omega_j \hat{X}_j\right) \quad
+    \hat{a}_j^{\dagger} = \frac{1}{\sqrt{2\omega_j}}
+      \left(-i \hat{P}_j + \omega_j \hat{X}_j\right)
+    \quad \text{where} \quad
+    \left[ \hat{a}_j, \hat{a}_j^{\dagger} \right] = 1
+  \end{equation*}
+  \begin{align*}
+    \hat{H} &=
+      \omega_1 \left( \hat{a}_1 \hat{a}_1^{\dagger} - \frac{1}{2} \right) -
+      \omega_2 \left( \hat{a}_2 \hat{a}_2^{\dagger} - \frac{1}{2} \right) \\
+            &=
+      \omega_1 \hat{a}_1 \hat{a}_1^{\dagger} -
+      \omega_2 \hat{a}_2 \hat{a}_2^{\dagger} +
+      \frac{\omega_2 - \omega_1}{2}
+  \end{align*}
+
+  Observe that the second term produce exited states with decreasing negatives
+  energies. We can stop this behavior by \emph{formally} define a state
+  $\phi(X_2)$ such that $\hat{a}_2^{\dagger} \phi(X_2) = 0$
+\end{frame}
+
+\begin{frame}{Ghosts}
+  \begin{alertblock}{Properties of $\phi$}
+    \begin{itemize}
+      \item $\phi(X_2) \propto \exp \left\{ \frac{\omega_2}{2} X_2^2\right\}$
+      \item its norm is positive
+      \item formally have the lowest energy.
+      \item $\hat{a}_2$ acts on it as creation operator.
+      \item $\hat{a}_2^{\dagger}$ acts on it as annihilation operator.
+    \end{itemize}
+  \end{alertblock}
+
+  $\Rightarrow$ Exited states of $\phi$ have negatives norms
+  \begin{equation*}
+    {\Big| \hat{a}_2 \ket{\phi} \Big|}^2 =
+    \bra{\phi} \hat{a}_2^{\dagger} \hat{a}_2 \ket{\phi} =
+    \underbrace{
+      \bra{\phi} \hat{a}_2 \hat{a}_2^{\dagger} \ket{\phi}
+    }_{0} - \bra{\phi} \ket{\phi} < 0
+  \end{equation*}
+\end{frame}

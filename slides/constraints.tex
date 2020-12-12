@@ -1,0 +1,101 @@
+\begin{frame}{Constraints classification}
+  \begin{definition} \vspace{0.3em}
+    In Hamiltonian mechanics, \emph{constraints} are relation between
+    coordinates and conjugate momenta.
+  \end{definition}
+  \begin{alertblock}{First classification}
+    \begin{itemize}
+      \item \emph{First class constraints}: the ``physical'' ones (e.g.\ train
+        on a railway, particle on a plane).
+      \item \emph{Second class constraints}: related to gauge freedom.
+    \end{itemize}
+  \end{alertblock}
+  \begin{remark} \vspace{0.3em}
+    The Poisson Bracket of a first class constraint with all the
+    other constraints vanishes on the constraints surface in the phase space
+    (i.e.\ the surface where all constraints are satisfied).
+  \end{remark}
+\end{frame}
+
+\begin{frame}{Constraints classification}
+  \begin{alertblock}{Second classification}
+    \begin{itemize}
+      \item \emph{Primary constraints}: holds independently from the equations
+        of motion.
+      \begin{equation*} \label{eq:constraint}
+        \phi_1(Q, P) = 0
+      \end{equation*}
+      \item \emph{Secondary constraints}: derived from the primary one
+        imposing the preservation of the constraints during the evolution of
+        the system.
+    \end{itemize}
+    This generate a series of constraints called \emph{consistency
+      relations}~\footnote{
+      The weak equality symbol ``$\approx$'' highlight the fact that these
+      relations vanish only on the hypersurface where all constraints are
+      satisfied.
+    }
+    \begin{equation*} \label{eq:consistency_relations}
+      \phi_1 = 0 \quad \Rightarrow \quad
+      \left\{ \phi_1 , H \right\} =: \phi_2 \approx 0 \quad \Rightarrow \quad
+      \left\{ \phi_2 , H \right\} =: \phi_3 \approx 0 \quad \Rightarrow \quad
+      \ldots
+    \end{equation*}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Constrained Hamiltonians}
+  \begin{alertblock}{Introducing m-constraints in n-th order Hamiltonian}
+  \end{alertblock}
+  Constraints can be imposed in the Hamiltonian with the usage of
+  auxiliary variables $\lambda_i$ in the corresponding Lagrangian
+  \begin{equation*}
+    L = L(q, \dot{q}, \ddot{q}, \ldots, q^{(n)},
+      \lambda_1, \lambda_2, \ldots, \lambda_m)
+    \quad \text{where} \quad
+    \frac{\partial L}{\partial \lambda_i} = 0 \quad i=1, 2, \ldots, m
+  \end{equation*}
+
+  Canonical coordinates has to be chosen also for $\lambda_i$
+  \begin{equation*} \label{eq:def_canonical_coordinates_lambda}
+    \Lambda_{i}:= \lambda_{i}
+    \quad \leftrightarrow \quad
+    \Pi_{i} := \frac{\delta L}{\delta \dot{\lambda_{i}}} = 0
+    \qquad i = 1, 2, \ldots, m
+  \end{equation*}
+  where
+  \begin{equation*}
+    \phi_{1, i}: \Pi_i = 0
+  \end{equation*}
+  are indeed the primary constraints.
+\end{frame}
+
+\begin{frame}{Constrained Hamiltonians}
+  To the unconstrained $\tilde{H}$ are now added the auxiliary
+  variables terms becoming
+  \begin{equation*}
+    \tilde{H} :=
+    \sum_{j=1}^{n} \frac{\delta L}{\delta q^{(j)}} q^{(j)} +
+    \sum_{i=1}^{m} \frac{\delta L}{\delta \dot{\lambda_i}} \dot{\lambda_i} -
+    L(q, \ldots, q^{(n)}, \lambda_1, \ldots, \lambda_m)
+  \end{equation*}
+
+  Depending on the explicit form of the constraints in the Lagrangian,
+  different number of secondary constraints can be found using the consistency
+  relations.
+
+  Finally, constraints relation can be organize as follows
+  \begin{equation*}
+    \begin{cases}
+      \Lambda_i =\ f_i(Q_1, \ldots, Q_n, P_n) \\
+      \Pi_i =\ 0
+    \end{cases}
+    \qquad i = 1, 2, \ldots, m
+  \end{equation*}
+  and substitute in $\tilde{H}$ obtaining the \emph{constrained
+  Hamiltonian}
+  \begin{equation*}
+    H =\ P_n h + P_{n-1} Q_n + \cdots + P_1 Q_2
+       - L ( Q_1, Q_2, \ldots, h, f_1, \ldots, f_m)
+  \end{equation*}
+\end{frame}
