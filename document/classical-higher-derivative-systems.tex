@@ -206,20 +206,20 @@ $\{\phi, \tilde{\phi}\} \approx 0$, see later for the notation used).
 
 Another independent classification can be made for constraints (and not confused
 with the previous one): \emph{primary constraints} and \emph{secondary
-constrains}.  Primary constraints are relation between $Q$s and $P$s which holds
-independently from the equations of motion.
+constrains}. Primary constraints are relation between $Q$s and $P$s which are
+given at the beginning.
 
 \begin{equation} \label{eq:constraint}
   \phi_1(Q, P) = 0
 \end{equation}
 
-As the name suggests, secondary constraints are derived from the primary one
-imposing the preservation of the constraints during the evolution of the system.
-This generate a series of constraints where the constraints relations are called
-\emph{consistency relations}.
+As the name suggests, secondary constraints are derived from the primary ones
+imposing the conservations of the constraints during the evolution of the
+system. This generates a series of constraints where the constraints relations
+are called \emph{consistency relations}.
 
 \begin{equation} \label{eq:consistency_relations}
-  \phi_1 = 0 \quad \Rightarrow \quad
+  \phi_1 \approx 0 \quad \Rightarrow \quad
   \left\{ \phi_1 , H \right\} =: \phi_2 \approx 0 \quad \Rightarrow \quad
   \left\{ \phi_2 , H \right\} =: \phi_3 \approx 0 \quad \Rightarrow \quad
   \ldots
@@ -227,12 +227,12 @@ This generate a series of constraints where the constraints relations are called
 
 The weak equality symbol ``$\approx$'' has been used to highlight the fact that
 these relations vanish only on the hypersurface where all constraints are
-satisfied. When we will be said that a constrain $\phi_i$ \emph{vanish} it is to
-be intended in this weak sense.
+satisfied. When we will be said that a constrain $\phi_i$ \emph{vanishes} it is
+to be intended in this weak sense.
 
 \subsubsection{Lagrangian and Hamiltonian with $m$ auxiliary variables}
-Constraints in Hamiltonian mechanics can be imposed with the usage of auxiliary
-variables $\lambda_i$ in the underlying Lagrangian:
+Constraints in Hamiltonian mechanics can be imposed with the help of auxiliary
+variables $\lambda_i$ in the Lagrangian:
 
 \begin{equation*}
   L = L(
@@ -241,13 +241,13 @@ variables $\lambda_i$ in the underlying Lagrangian:
   )
 \end{equation*}
 
-And the Lagrangian, besides the equations of motion~\eqref{eq:euler-lagrange},
+So the Lagrangian, besides the equations of motion~\eqref{eq:euler-lagrange},
 need to satisfy the constraints equation
 \begin{equation}
   \frac{\partial L}{\partial \lambda_i} = 0 \qquad i=1, 2, \ldots, m
 \end{equation}
 
-Canonical coordinates has to be chosen also for $\lambda_i$ and the following
+Canonical coordinates have to be given also for $\lambda_i$ and the following
 choice can be done
 \begin{equation} \label{eq:def_canonical_coordinates_lambda}
   \Lambda_{i}:= \lambda_{i}
@@ -257,7 +257,7 @@ choice can be done
 \end{equation}
 so the primary constraints in~\eqref{eq:constraint} simply become
 $\phi_{1, i}: \Pi_i = 0$. To the Hamiltonian~\eqref{eq:Ham_in_q} are now added
-the auxiliaries variables terms becoming
+the auxiliary variables terms and it becomes
 \begin{equation} \label{eq:Ham_constraints_in_q}
   \tilde{H} :=
   \sum_{j=1}^{n} \frac{\delta L}{\delta q^{(j)}} q^{(j)} +
@@ -265,10 +265,12 @@ the auxiliaries variables terms becoming
   L(q, \ldots, q^{(n)}, \lambda_1, \ldots, \lambda_m)
 \end{equation}
 
-The $\dot{\lambda_i}$ can be obtain later by the consistency
-relations~\eqref{eq:consistency_relations} and will be some $u_i$ function of
-canonical coordinates. Expressing Hamiltonian~\eqref{eq:Ham_constraints} in
-canonical coordinates we obtain
+The $\dot{\lambda_i}$ can be obtain by the consistency
+relations~\eqref{eq:consistency_relations} but there is no need to explicitly
+calculate them. $\dot{\lambda_i}$ can be written as functions of canonical
+coordinates: $\dot{\lambda_i} = u_i(Q_1, \ldots, Q_n,  P_1, \ldots, P_n)$.
+Expressing the Hamiltonian~\eqref{eq:Ham_constraints_in_q} using canonical
+coordinates we obtain
 
 \begin{align} \label{eq:Ham_constraints}
   H =\ & P_n h + P_{n-1} Q_n + \cdots + P_1 Q_2 \nonumber \\
@@ -277,7 +279,8 @@ canonical coordinates we obtain
 \end{align}
 
 
-After calculating secondary constraints with~\eqref{eq:consistency_relations}
+After calculating the secondary constraints
+with~\eqref{eq:consistency_relations}
 
 \begin{equation*}
   \phi_{2, i} := \left\{ \phi_{1,i}, H \right\} =
@@ -286,7 +289,6 @@ After calculating secondary constraints with~\eqref{eq:consistency_relations}
   \frac{\partial L}{\partial \lambda_i} \Big|_{\lambda_i = \Lambda_i}
   \approx 0
 \end{equation*}
-
 two cases are possible:
 
 \begin{enumerate}
@@ -294,12 +296,14 @@ two cases are possible:
     both second-class constraints thus there are no further constraints
     derivable from consistency relations.
   \item $\{\phi_{1,i}, \phi_{2,j}\} \approx 0$: $\phi_{1,i}$, $\phi_{2,j}$ are
-    not second-class constraints end further constraints can be found employing
-    the chain~\eqref{eq:consistency_relations} until \emph{case 1} is reach.
+    not second-class constraints then further constraints can be found employing
+    the chain~\eqref{eq:consistency_relations} until either \emph{case 1} is
+    reached or the new constraint can be expressed using those found previously.
 \end{enumerate}
 
-After all constraints have been found, one can use these equation to wrote the
-auxiliary canonical variables in terms of the ``usual'' canonical variables
+After all constraints have been found and the gauge symmetries are fixed, one
+can use these equations to write the auxiliary canonical variables in terms of
+the ``usual'' canonical variables
 \begin{equation} \label{eq:constraints_in_terms_of_canonical_vars}
   \begin{cases}
     \Lambda_i =\ f_i(Q_1, \ldots, Q_n, P_n) \\
@@ -313,13 +317,13 @@ and then substitute in the Hamiltonian~\eqref{eq:Ham_constraints}
      - L ( Q_1, Q_2, \ldots, h, f_1, \ldots, f_m)
 \end{equation*}
 
-To recap, we started form a phase space of dimension $2n$ (n$Q$ + n$P$),
-then enlarge it by adding $2m$ auxiliary variables (m$\Lambda$ + m$\Pi$) so
-the total phase space is $2(n+m)$. Then associated with every pair of canonical
-auxiliary variables two constraints (\emph{case 1}) or more (\emph{case 2}) have
-been found.  During the last substitution the dimension of phase space is bring
-down to it's original dimensions (\emph{case 1}: $2(n+m) - 2m = 2n$) or further
-reduced (\emph{case 2}: e.g. $2(n+m) - 3m < 2n$).
+To recap, we started form a phase space of dimension $2n$ (n$Q$ + n$P$), then we
+enlarged it by adding $2m$ auxiliary variables (m$\Lambda$ + m$\Pi$) so the
+total phase space dimension is $2(n+m)$. Then we associated with every pair of
+canonical auxiliary variables two constraints (\emph{case 1}) or more
+(\emph{case 2}) have been found. During the last substitution the dimension of
+phase space is bring down to it's original dimensions (\emph{case 1}: $2(n+m) -
+2m = 2n$) or further reduced (\emph{case 2}: e.g. $2(n+m) - 3m < 2n$).
 
 \subsubsection{Example of non-stable system with constraints}
 We introduce here a widely studied HD Lagrangian: the
@@ -331,14 +335,14 @@ We introduce here a widely studied HD Lagrangian: the
 \end{equation}
 
 According to Ostrogradsky Theorem~\ref{th:ostrogradsky_classical} this system
-shows a problematic instability. When can try to cure that introducing a
-constraints such as $\ddot{q}^2 - \dot{q}^2 = 0$ and see if the Hamiltonian
+shows a problematic instability. Then we can try to cure that by introducing a
+constraint such as $\ddot{q}^2 - \dot{q}^2 = 0$ and see if the Hamiltonian is
 still two-side unbounded. Using the auxiliary variable $\lambda$ one can write
 the constraint version of~\eqref{eq:lagrangian_PU}:
 \begin{equation} \label{eq:lagrangian_PUC}
   L_{PUC} = L_{PU} + \frac{\lambda}{2} \left(\ddot{q}^2 - \dot{q}^2\right)
 \end{equation}
-and from it derive the Hamiltonian following the given prescription.
+and from it we derive the Hamiltonian following the given prescription.
 \begin{align*}
   & \begin{cases}
     Q_1 := q \\
@@ -355,7 +359,7 @@ and from it derive the Hamiltonian following the given prescription.
   & \begin{cases}
     \Lambda := \lambda \\
     \Pi := \frac{\delta L_{PUC}}{\delta \lambda} = 0
-        \quad  \Rightarrow \quad \phi_1: \Pi = 0
+        \quad  \Rightarrow \quad \phi_1: \Pi \approx 0
   \end{cases}
 \end{align*}
 \begin{equation} \label{eq:ham_PUC_with_aux_vars}
@@ -372,10 +376,10 @@ and from it derive the Hamiltonian following the given prescription.
   \approx 0
 \end{equation}
 
-In secondary constraint equation~\eqref{eq:secondary_constraint_PU}, in order
-to vanish, one of the square bracket must vanish. The two square bracket
+The secondary constraint equation~\eqref{eq:secondary_constraint_PU}
+vanish if one of the factors in square brackets vanish. The two square bracket
 represent two hypersurfaces and one solution is chosen instead of the other
-based on initial conditions. In the following, we chose the bracket with the
+based on initial conditions. In the following, we choose the bracket with the
 minus sign. Moreover note that $\phi_1$ and $\phi_2$ are already second-class
 constraints, indeed
 \begin{equation*}
@@ -388,11 +392,11 @@ constraints, indeed
   \frac{\partial\phi_1}{\partial\Pi} \frac{\partial\phi_2}{\partial\Lambda} =
   \frac{P_2}{{(\Lambda + 1)}^2} \not\approx 0
 \end{equation*}
-so no further constraints can be found (\emph{case 1}). The equation for
+so no further constraints are needed (\emph{case 1}). The equation for
 $\phi_1$ (trivial) and for $\phi_2$ can be locally
 inverted~\eqref{eq:constraints_in_terms_of_canonical_vars} obtaining that
 $\Pi = 0$ and $\Lambda = P_2/Q_2 - 1$. Substituting them
-in~\eqref{eq:ham_PUC_with_aux_vars} the final Hamiltonian of the system appears
+in~\eqref{eq:ham_PUC_with_aux_vars} we get the final Hamiltonian of the system
 but unfortunately the Ostrogradsky instability persists.
 \begin{equation} \label{eq:ham_PUC_instable}
    H_{PUC} =\ P_1 Q_2 + P_2 Q_2
@@ -427,7 +431,7 @@ $H_{PUC}$ can be derived in similar fashion
   & \begin{cases}
     \Lambda := \lambda \\
     \Pi := 0
-    \quad  \Rightarrow \quad \phi_1: \Pi = 0
+    \quad  \Rightarrow \quad \phi_1: \Pi \approx 0
   \end{cases}
 \end{align*}
 \begin{align} \label{eq:ham_PUC_with_aux_vars_stable}
@@ -465,7 +469,7 @@ into~\eqref{eq:ham_PUC_with_aux_vars_stable} obtaining
   \omega_1^2 - \omega_2^2 \right)}^2} P_1^2
 \end{equation}
 
-The Hamiltonian~\eqref{eq:ham_PUC_stable} it's bounded from below (and not from
+The Hamiltonian~\eqref{eq:ham_PUC_stable} is bounded from below (and not from
 above, just like an harmonic oscillator) and hence this system does not suffer
 of Ostrogradsky instability unlike the previous example. \\
 
