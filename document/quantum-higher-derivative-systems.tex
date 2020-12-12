@@ -150,7 +150,7 @@ the new canonical variables $\tilde{Q}$ and $\tilde{P}$
 Using $\hat{X}$ and $\hat{P}$, the Hamiltonian~\eqref{eq:hamiltonian_QPU}
 becomes the difference of two independent quantum harmonic oscillators.
 
-\begin{equation}
+\begin{equation} \label{eq:Ham-QPU-HO}
   \hat{H} =
   \frac{\hat{P}_1^2 \, + \, \omega_1^2 \hat{X}_1^2}{2} -
   \frac{\hat{P}_2^2 \, + \, \omega_2^2 \hat{X}_2^2}{2} \equiv
@@ -198,12 +198,76 @@ rational number $k$; the spectrum can be written as
 \begin{equation*}
   E_{mn} = \omega_1 \left( \frac{1-k}{2} + n + mk \right)
 \end{equation*}
-
 so the spectrum is discrete. On the other hand if the frequencies are
 incommensurable the every real number can be hit by an appropriate choice of
 $n$ and $m$. But the wave function of all eigenstate are normalizable, so the
-spectrum is not continuous but rather pure point.
+spectrum is not continuous but rather pure point. \\
 
+In theoretical physics, \emph{ghosts} are quantum states with negatives norms.
+Negative norm means ``negative probability'' which does not make sense, so
+these states does not have a physical meaning. Nevertheless they appears in a
+well established theories (e.g. QED) during the quantization procedure and in
+such contest they turn out to be harmless~\cite{Smilga01}.
+
+Ghosts appears in the quantum Pais-Uhlenbeck oscillator when we try to get rid
+of negatives energies (i.e.\ make the energy spectrum bounded from below).
+First we define the usual creation and the annihilation operators for the
+quantum harmonic oscillators
+\begin{equation} \label{a_operators}
+  \hat{a}_j := \frac{1}{\sqrt{2\omega_j}}
+    \left(\partial_{X_j} + \omega_j X_j\right) \quad
+  \hat{a}_j^{\dagger} := \frac{1}{\sqrt{2\omega_j}}
+    \left(-\partial_{X_j} + \omega_j X_j\right)
+\end{equation}
+where the commutator is
+\begin{equation} \label{a_commutator}
+  \left[ \hat{a}_j, \hat{a}_j^{\dagger} \right] = 1
+\end{equation}
+
+Using~\eqref{a_operators} can rewrite the Hamiltonian~\eqref{eq:Ham-QPU-HO} as
+\begin{align} \label{eq:Ham_a_operators}
+  \hat{H} &=
+    \omega_1 \left( \hat{a}_1 \hat{a}_1^{\dagger} - \frac{1}{2} \right) -
+    \omega_2 \left( \hat{a}_2 \hat{a}_2^{\dagger} - \frac{1}{2} \right) \notag
+    \\    &=
+    \omega_1 \hat{a}_1 \hat{a}_1^{\dagger} -
+    \omega_2 \hat{a}_2 \hat{a}_2^{\dagger} +
+    \frac{\omega_2 - \omega_1}{2}
+\end{align}
+
+Observe that the second term in~\eqref{eq:Ham_a_operators} produce exited states
+with decreasing negatives energies. We can stop this behavior by \emph{formally}
+define a state $\phi(X_2)$ such that
+
+\begin{equation*}
+  \hat{a}_2^{\dagger} \ \phi(X_2) = 0
+\end{equation*}
+
+The wave function of such state is~\cite{Ilhan13}
+\begin{equation*}
+  \phi(X_2) \propto \exp \left\{ \frac{\omega_2}{2} X_2^2\right\}
+\end{equation*}
+indeed
+\begin{align*}
+  \hat{a}_2^{\dagger} \ \phi(X_2)
+  &= \frac{1}{\sqrt{2\omega_2}}
+    \left(-\partial_{X_2} + \omega_2 X_2\right)
+    \exp \left\{ \frac{\omega_2}{2} X_2^2\right\} \\
+  &= \frac{1}{\sqrt{2\omega_2}}
+    \left(-\frac{\omega_2}{2} \, 2 \, X_2 + \omega_2 X_2\right)
+    \exp \left\{ \frac{\omega_2}{2} X_2^2\right\}
+  = 0
+\end{align*}
+
+The $\phi$ state have positive norm and have the lowest energy by definition.
+The operator $\hat{a}_2$ acts on it as creation operator while
+$\hat{a}_2^{\dagger}$ acts on it as annihilation operator (this behavior it's
+the opposite of the usual one). The consequences of defining such state $\phi$
+is that \emph{exited states of $\phi$ have negatives norms (i.e.\ are ghosts)}.
+Starting from $\phi$ we can obtain exited states with the action of the creation
+operator $\hat{a}_2$
+
+% TODO add eq. exited state <0
 
 \subsubsection{Degenerate frequencies: $\omega_1 = \omega_2$}
 If frequencies $\omega_1$ and $\omega_2$ are the same, the previous
