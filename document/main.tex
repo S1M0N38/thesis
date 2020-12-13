@@ -46,6 +46,8 @@
 % bra-ket notation
 \usepackage{physics}
 
+% add images (university logo)
+\usepackage{graphicx}
 
 % ------------------------------Bibliography---------------------------------- %
 
@@ -81,7 +83,55 @@
 
 \begin{document}
 
-  \maketitle
+  \begin{titlepage}
+  \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+  \center
+  \textsc{\textbf{\LARGE Università degli Studi di Torino}}\\[0.5cm]
+  \textsc{\textbf{\Large Dipartimento di Fisica }}\\[1cm]
+
+
+  \HRule\\[0.4cm]
+  {\Large\bfseries Higher-Order Lagrangians in classical and quantum systems}
+  \\[0.1cm] % Title of your document
+  \HRule\\[0.4cm]
+
+  \vfill
+  \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.15]{logo.png}
+  \end{figure}
+  \vfill
+
+  \begin{figure}[h]
+  \centering
+  \begin{minipage}{0.4\textwidth}
+
+  \Large
+  \textbf{\textit{Author}\\
+    Simone\\ \textsc{Bertolotto}} % Author's name
+
+  \end{minipage}
+  \qquad \qquad \qquad
+  \begin{minipage}{0.4\textwidth}
+
+  \begin{flushright}
+  \Large
+  \textbf{\textit{Supervisor}\\
+    Prof.\ Igor\\ \textsc{Pesando}} % Supervisor's name
+  \end{flushright}
+
+  \end{minipage}
+  \end{figure}
+
+  \vfill
+  \textbf{{\Large December 2020}}
+
+  \end{titlepage}
+
+  \tableofcontents
+
+  \newpage
 
   \begin{abstract}
     Usually Lagrangians depends on $q$ and $\dot{q}$ but higher order Lagrangian
@@ -92,9 +142,9 @@
     instability is presented in Section~\ref{section: classical higher
     derivative systems}. Finally the quantum counter part of the
     previous classical systems are explore.
-  \end{abstract}
+  \end{abstract}\vspace{5em}
 
-  \newpage
+  % \newpage
 
   \section{Introduction}\label{section: introduction}
   \subfile{introduction}
