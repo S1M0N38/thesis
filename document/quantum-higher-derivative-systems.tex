@@ -45,38 +45,39 @@ unbounded. Theorem~\ref{th:ostrogradsky_classical} has its quantum counterpart:
     L (\hat{x}, \hat{v}, h)
   \end{equation}
 
-  Moreover suppose that the spectrum of the Hamiltonian is discrete. If was
-  continuous, normalize it in a box so the range of $x$ and $v$ is finite which
-  make the spectrum discrete. At the end remove regularization sending the box
-  size to infinity.
-  Let $\psi_0(x, v)$ be the normalized ground state of the system with the
-  associated eigenvalue $E_0$, i.e. $\hat{H}\psi_0(x, v) = E_0 \psi_0(x, v)$.
-  To seek for an energy value close to $E_0$ we use the \emph{variational
-  method}~\footnote{
-    Variational methods must not be confused with variational calculus, they
-    are totally different things.
+  Moreover suppose that the spectrum of the Hamiltonian is discrete. If it were
+  continuous, we can put the system in a box so the range of $x$ and $v$ is
+  finite which makes the spectrum discrete. At the end we can remove the
+  regularization by sending the box size to infinity. Let $\psi_0(x, v)$ be the
+  normalized ground state of the system with the associated eigenvalue $E_0$,
+  i.e. $\hat{H}\psi_0(x, v) = E_0 \psi_0(x, v)$. To seek for an energy value
+  close to $E_0$ we use the \emph{variational method}~\footnote{
+    Variational methods must not be confused with variational calculus, they are
+    totally different things.
   } with the following variational ansatz:
-
   \begin{equation}
     \psi_c(x, v) = e^{icx}\psi_0(x,v)
   \end{equation}
 
-  Observe that $\psi_c(x,v)$ is not an eigenfunction of the
-  Hamiltonian~\eqref{eq:ham_operator_2nd_order} and neither linear combination
-  $\psi_f(x,v)$ of $\psi_c(x,v)$ are.
+  A generic linear combination of state $\psi_c$ is
+  \begin{equation}
+    \psi_f = \int f(c) \psi_c \, dc = \psi_0 \int f(c) e^{icx} \, dc =
+    \psi_0 \tilde{f}(x)
+  \end{equation}
+  where $\tilde{f}(x)$ is the Fourier transform of $f(c)$.
 
+  Notice that neither $\psi_c$ nor $\psi_f$ are eigenfunction of the
+  Hamiltonian~\eqref{eq:ham_operator_2nd_order}
   \begin{align*}
     &\hat{H} \psi_c(x,v) = E_0\psi_c(x, v) + cv \psi_c(x,v)
-    \neq \lambda \psi_c(x,v) \\ \\
-    &\psi_f = \int f(c) \psi_c \, dc = \psi_0 \int f(c) e^{icx} \, dc =
-    \psi_0 \tilde{f}(x) \\
+    \neq \lambda \psi_c(x,v) \\
     &\hat{H} \psi_f(x,v) = E_0\psi_f(x, v) -
     iv \frac{\partial \tilde{f}(x)}{\partial x} \psi_c(x,v)
     \neq \lambda \psi_c(x,v)
   \end{align*}
 
-  So $\psi_c$ and $\psi_f$ does not vanish of exited state and variational
-  energy must not exceed $E_0$ and can be obtain by direct calculation.
+  Since $\psi_c$ and $\psi_f$ do not vanish their expectation value
+  must not be lower than $E_0$ and can be obtain by direct calculation.
 
   \begin{equation*}
     E_0 \leq E_c = \int \psi_c^* \hat{H} \psi_c \, dx \, dv =
@@ -84,10 +85,9 @@ unbounded. Theorem~\ref{th:ostrogradsky_classical} has its quantum counterpart:
   \end{equation*}
 
   If the integral $\int v \left|\psi_0 \right| ^2 \, dx \, dv$ does not vanish
-  arbitrarily negative energies can be reach by an appropriate choice of $c$.
+  then arbitrarily negative energies can be reach by an appropriate choice of $c$.
   Otherwise if the integral vanish, $E_c$ does not depend on $c$ and does not
-  grow, as it should if $\psi_0$ would be a ground state~\cite{Smilga17}. Thus,
-  $\psi_0$ is not a ground state as it was postulated. \\
+  grow. Thus, the system does not have a non-degenerate ground state. \\
 \end{proof}
 
 
