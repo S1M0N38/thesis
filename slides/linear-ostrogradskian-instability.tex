@@ -94,7 +94,7 @@
 \end{frame}
 
 \begin{frame}{Quantum Pais-Uhlenbeck oscillator}
-  one obtain
+  we obtain
   \begin{equation*}
     \hat{H} =
     \frac{\hat{P}_1^2 \, + \, \omega_1^2 \hat{X}_1^2}{2} -
@@ -120,10 +120,10 @@
 
   First rewrite the Hamiltonian operator using
   \begin{equation*}
-    \hat{a}_j = \frac{1}{\sqrt{2\omega_j}}
-      \left(i \hat{P}_j + \omega_j \hat{X}_j\right) \quad
-    \hat{a}_j^{\dagger} = \frac{1}{\sqrt{2\omega_j}}
-      \left(-i \hat{P}_j + \omega_j \hat{X}_j\right)
+    \hat{a}_j := \frac{1}{\sqrt{2\omega_j}}
+      \left(\partial_{X_j} + \omega_j X_j\right) \quad
+    \hat{a}_j^{\dagger} := \frac{1}{\sqrt{2\omega_j}}
+      \left(-\partial_{X_j} + \omega_j X_j\right)
     \quad \text{where} \quad
     \left[ \hat{a}_j, \hat{a}_j^{\dagger} \right] = 1
   \end{equation*}
@@ -137,8 +137,8 @@
       \frac{\omega_2 - \omega_1}{2}
   \end{align*}
 
-  Observe that the second term produce exited states with decreasing negatives
-  energies. We can stop this behavior by \emph{formally} define a state
+  Notice that the second term produces exited states with decreasing negatives
+  energies. We can stop this behavior by \emph{formally} defining a state
   $\phi(X_2)$ such that $\hat{a}_2^{\dagger} \ \phi(X_2) = 0$
 \end{frame}
 
