@@ -211,7 +211,7 @@ such contests they turn out to be harmless~\cite{Smilga01}.
 
 Ghosts appear in the quantum Pais-Uhlenbeck oscillator when we try to get rid
 of negatives energies (i.e.\ make the energy spectrum bounded from below).
-First we define the usual creation and the annihilation operators for the
+First we define the usual creation and annihilation operators for the
 quantum harmonic oscillators
 \begin{equation} \label{eq:a_operators}
   \hat{a}_j := \frac{1}{\sqrt{2\omega_j}}
@@ -219,10 +219,10 @@ quantum harmonic oscillators
   \hat{a}_j^{\dagger} := \frac{1}{\sqrt{2\omega_j}}
     \left(-\partial_{X_j} + \omega_j X_j\right)
 \end{equation}
-where the commutator is
+where their commutator is
 \begin{equation} \label{eq:a_commutator}
   \left[ \hat{a}_j, \hat{a}_j^{\dagger} \right] =
-  \hat{a}_j \ \hat{a}_j^{\dagger} - \hat{a}_j \ \hat{a}_j^{\dagger} = 1
+  \hat{a}_j \ \hat{a}_j^{\dagger} - \hat{a}_j^{\dagger} \ \hat{a}_j = 1
 \end{equation}
 
 Using~\eqref{eq:a_operators} can rewrite the Hamiltonian~\eqref{eq:Ham-QPU-HO} as
@@ -236,7 +236,7 @@ Using~\eqref{eq:a_operators} can rewrite the Hamiltonian~\eqref{eq:Ham-QPU-HO} a
     \frac{\omega_2 - \omega_1}{2}
 \end{align}
 
-Observe that the second term in~\eqref{eq:Ham_a_operators} produce exited states
+Notice that the second term in~\eqref{eq:Ham_a_operators} produce exited states
 with decreasing negatives energies. We can stop this behavior by \emph{formally}
 define a state $\phi(X_2)$ such that
 \begin{equation*}
@@ -259,7 +259,7 @@ indeed
   = 0
 \end{align*}
 
-The $\phi$ state have positive norm and have the lowest energy by definition.
+The $\phi$ state has positive norm and have the lowest energy by definition.
 The operator $\hat{a}_2$ acts on it as creation operator while
 $\hat{a}_2^{\dagger}$ acts on it as annihilation operator (this behavior it's
 the opposite of the usual one). The consequences of defining such state $\phi$
