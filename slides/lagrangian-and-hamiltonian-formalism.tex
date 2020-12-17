@@ -73,6 +73,10 @@
       \frac{d^2}{dt^2}\frac{\partial L}{\partial \ddot{q}} -
       \ldots = 0
     \end{equation*}
+
+    Notice that in the Euler-Lagrange equation for a n-th order Lagrangian, the
+    generalized coordinates ($q$) appear to be derived up to the 2n-th order
+    $\left(\frac{d^n}{dt^n} \frac{\partial L}{\partial q^{(n)}}\right)$.
   \end{alertblock}
 \end{frame}
 
@@ -80,12 +84,16 @@
 \begin{frame}{Hamiltonian formalism}
   \begin{alertblock}{From Lagrange to Hamilton in 3 step}
     \vspace{0.5em}
-    \item Define i-th \emph{canonical coordinates as}
+    \item Define i-th \emph{canonical coordinates as} $(i = 1, \ldots, n)$
       \begin{equation*} \label{eq:def_canonical_coordinates}
-        Q_{(i)} := q^{(i-1)} = \frac{d^{\, i-1} q}{dt^{\, i-1}}
-        \quad \leftrightarrow \quad
-        P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
-        \qquad i = 1, \ldots, n
+        \begin{cases}
+          Q_{(i)} := q^{(i-1)} = \frac{d^{\, i-1} q}{dt^{\, i-1}} \\
+          P_{(i)} := \frac{\delta L}{\delta q^{(i)}}
+            = \frac{\partial L}{\partial q^{(i)}}
+            - \frac{d}{dt} \frac{\partial L}{\partial q^{(i + 1)}}
+            + \frac{d^2}{dt^2} \frac{\partial L}{\partial q^{(i + 2)}} - \dots
+        \end{cases}
+        \text{with } i = 1, 2, \ldots, n
       \end{equation*}
     \item Define $\tilde{H}$ as
       \begin{equation*} \label{eq:Ham_in_q}
@@ -129,4 +137,3 @@
   \end{alertblock}
 \end{frame}
 \end{enumerate}
-

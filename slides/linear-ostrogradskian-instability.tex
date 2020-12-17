@@ -26,7 +26,11 @@
   As shown in~\cite{Chen13} linear Ostrogradskian instability can be cured by
   imposition of constrains on the system. This can happen when the constrained
   Hamiltonian lives in phase space with lower dimensionality than the original
-  phase space. \vspace{1.0em}
+  phase space.\\\vspace{0.3em}
+  Constraints have been introduced in the Lagrangian using auxiliary variables
+  $\lambda$, then they have been studied using the Dirac formalism for
+  constraints.\vspace{0.7em}
+
   \begin{block}{Example: classical Pais-Uhlenbeck oscillator}
     \vspace{0.2em}
     \begin{equation*}
@@ -52,10 +56,10 @@
 
 
 \begin{frame}{Quantum counterpart}
-  In quantum mechanics \emph{linear Ostrogradskian instability} goes under the
-  name ``\emph{ghost}''. Just like classical HD theories, quantum HD theories
-  have the spectrum of the Hamiltonian unbounded. The previous Theorem have
-  its quantum counterpart:
+  In quantum mechanics \emph{linear Ostrogradskian instability} implies the
+  existence of ``\emph{ghosts}''. Just like classical HD theories, quantum HD
+  theories have the spectrum of the Hamiltonian unbounded. The previous Theorem
+  have its quantum counterpart:
   \vspace{2.0em}
   \begin{theorem} \vspace{0.5em}
     The quantum counterpart of Hamiltonian derived from higher order
@@ -129,15 +133,15 @@
   \end{equation*}
   \begin{align*}
     \hat{H} &=
-      \omega_1 \left( \hat{a}_1 \hat{a}_1^{\dagger} - \frac{1}{2} \right) -
+      \omega_1 \left( \hat{a}_1^{\dagger} \hat{a}_1 + \frac{1}{2} \right) -
       \omega_2 \left( \hat{a}_2 \hat{a}_2^{\dagger} - \frac{1}{2} \right) \\
             &=
-      \omega_1 \hat{a}_1 \hat{a}_1^{\dagger} -
+      \omega_1 \hat{a}_1^{\dagger} \hat{a}_1 -
       \omega_2 \hat{a}_2 \hat{a}_2^{\dagger} +
-      \frac{\omega_2 - \omega_1}{2}
+      \frac{\omega_2 + \omega_1}{2}
   \end{align*}
 
-  Notice that the second term produces exited states with decreasing negatives
+  Notice that the second term produces excited states with decreasing negatives
   energies. We can stop this behavior by \emph{formally} defining a state
   $\phi(X_2)$ such that $\hat{a}_2^{\dagger} \ \phi(X_2) = 0$
 \end{frame}
@@ -146,14 +150,16 @@
   \begin{alertblock}{Properties of $\phi$}
     \begin{itemize}
       \item $\phi(X_2) \propto \exp \left\{ \frac{\omega_2}{2} X_2^2\right\}$
-      \item its norm is positive
-      \item formally have the lowest energy.
+      \item its norm is positive.
+      \item is not normalizable.
+      \item formally has the lowest energy.
       \item $\hat{a}_2$ acts on it as creation operator.
       \item $\hat{a}_2^{\dagger}$ acts on it as annihilation operator.
     \end{itemize}
   \end{alertblock}
 
-  $\Rightarrow$ Exited states of $\phi$ have negatives norms
+  $\Rightarrow$ Excited states of $\phi$ have negatives norms assuming
+  $\bra{\phi} \ket{\phi} > 0$
   \begin{equation*}
     {\Big| \hat{a}_2 \ket{\phi} \Big|}^2 =
     \bra{\phi} \hat{a}_2^{\dagger} \hat{a}_2 \ket{\phi} =
