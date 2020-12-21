@@ -20,8 +20,7 @@
 \begin{frame}{Constraints classification}
   \begin{alertblock}{Second classification}
     \begin{itemize}
-      \item \emph{Primary constraints}: holds independently from the equations
-        of motion.
+      \item \emph{Primary constraints}: are the original constraints.
       \begin{equation*} \label{eq:constraint}
         \phi_1(Q, P) = 0
       \end{equation*}
@@ -47,7 +46,7 @@
 \begin{frame}{Constrained Hamiltonians}
   \begin{alertblock}{Introducing m-constraints in n-th order Hamiltonian}
   \end{alertblock}
-  Constraints can be imposed in the Hamiltonian with the usage of
+  Constraints can be imposed on the Hamiltonian using
   auxiliary variables $\lambda_i$ in the corresponding Lagrangian
   \begin{equation*}
     L = L(q, \dot{q}, \ddot{q}, \ldots, q^{(n)},
@@ -56,7 +55,7 @@
     \frac{\partial L}{\partial \lambda_i} = 0 \quad i=1, 2, \ldots, m
   \end{equation*}
 
-  Canonical coordinates has to be chosen also for $\lambda_i$
+  Canonical coordinates have to be chosen also for $\lambda_i$
   \begin{equation*} \label{eq:def_canonical_coordinates_lambda}
     \Lambda_{i}:= \lambda_{i}
     \quad \leftrightarrow \quad
@@ -84,7 +83,7 @@
   different number of secondary constraints can be found using the consistency
   relations.
 
-  Finally, constraints relation can be organize as follows
+  Finally, constraints relations can be organized as follows
   \begin{equation*}
     \begin{cases}
       \Lambda_i =\ f_i(Q_1, \ldots, Q_n, P_n) \\
@@ -92,7 +91,7 @@
     \end{cases}
     \qquad i = 1, 2, \ldots, m
   \end{equation*}
-  and substitute in $\tilde{H}$ obtaining the \emph{constrained
+  and substituted into $\tilde{H}$ obtaining the \emph{constrained
   Hamiltonian}
   \begin{equation*}
     H =\ P_n h + P_{n-1} Q_n + \cdots + P_1 Q_2
