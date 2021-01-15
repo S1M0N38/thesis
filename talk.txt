@@ -1,0 +1,135 @@
+01 Buongiorno, La tesi si intitola: Lagrangiane di ordine superiore nei
+sistemi classici e qunatistici.  Io sono Simone Bertolotto e il relatore della
+tesi e' il professor Igor Pesando.
+
+02 Nell' introduzione viene descrito un ambito dove Lagrangiane di
+ordine superiore compaiono.
+
+03 Il fine ultimo della fisica toria e' la formulazione di una teoria
+che descriva tutto l'universo: una teoria del tutto. La teoria qunatistica dei
+campi descrive i fenomi su piccola scala metre la relativita' generale quelli
+su larga scala.
+
+04 Tuttavia una unificazione delle due in un unica teoria della strighe non e'
+stata fino ad ora soddisfacente in quanto non sono conosciuti esperimenti
+fattibili per corroborarla. Altre strade sono state esplorate.
+
+05 Una di queste si basa sull'idea che la teoria del tutto e' un ordinaria
+teoria di campo formulata in uno spazio di dimensione maggiore dove il nostro
+universo 3+1 dimensionale non e' che una sottile pellicola immersa in tale
+spazio. L'intuizione dell'universo come una membrana e' direttamenete presa
+dalla teoria delle stringhe. Proprio in questo contesto emergono le Lagrangiane
+di ordine superiore.
+
+06 Vediamo ora la matematica necessaria allo studio di questo tipo Lagrangiane.
+
+07 Una Lagrangiana di ordine n e' una lagrangiana che contiene le
+derivate delle q rispetto al tempo fino all'ordine n. Per ricavare le equazioni
+di Eulero Lagrange per questo tipo di Lagrangiane definiamo prima di tutto il
+funzionale d'azione S. Andiamo a perturbare il funzionale con pertubazioni fino
+all'oridine n e definiamo la varazine del fuzionale come il fuzionale
+perturbato meno il funzionale imperturbato. Considerando le perturbazioni
+infinitesime e tenendo gli estremi fissati ottieniamo l'equatione dell'ultima
+riga.
+
+08 Osservando la somiglianza il differenziale del calcolo multivariabile
+definiamo formalmente la derivata del funzionale S e sottointendendo la
+relazione tra funzionale e lagrangiana definiamo la Derivata funzionale di L
+rispetto alle q(i).
+
+09 Applicando ora il principio di Hamilton e usano la deifinizione di derivata
+fuzionale arrivamo alle equazioni di Eulero Lagrange per una Lagrangiana di
+ordine superiore. Nelle equazioni di Eulero Lagrange per una derivata di ordine
+n, abbiamo le q derivate rispetto al tempo fino all'ordine 2n.
+
+10 Per passare del formalismo lagrangiano a quello Hamiltoniano definiamo le
+coordinate canoniche Q e P (sempre usando la derivata fuzionale). Definiamo la
+fuzione H tilda come nella seconda riga. Sotto l'ipotesi di lagrangiana
+regolare possiamo scrivere le q(n) come una fuzione h delle coordiate
+canoniche.
+
+11 Sostistuendo tutto in H tilda otteniamo l'hamiltoniana H. L'evoluzione nel
+tempo di una fuzione delle coordinate canonitche e' data mediante il formalimo
+delle parentasi di Poisson.
+
+12 Vediamo degli esempi di lagrangiane di ordine superiore
+
+13 Controntiamo una lagragina del primo ordine con una lagrangiana del secondo
+ordine e studiamo gli spettri energetici delle corrispondenti Hamiltoniane.
+
+14 L1 e' una tradizionale lagrangiana della fisica classica. Le equazione di
+Eulero Lagrange sono troncate al secodo termine. L'Hamiltoniana e' quella che
+ci aspettiamo: energia cinetica piu' potenziale.
+
+15 Per L2 le equazioni di Eulero Lagrange sono troncate al 3 termine. Occorre
+in base a qunato detto prima definiamo Q1 P1 e Q2 P2.
+
+16 Sostituiamo l'equazione 1 nell definizione di H2 tilda e otteiano
+l'Hamiltonina riquadrata in grigio.
+
+17 C'e' una significativa differenza tra gli spettri di H1 e di H2. Il primo e'
+limitato dal basso mentre il secondo non lo e'. Entrambi non hanno limite
+superiore.
+
+18
+
+19 Consideriamo il sistema H2 isolato; se l'energia si conserva anche se lo
+spettro non e' limitato l'energia rimane costante. Se invece per esempio H2
+interagisce con H1, il sistema H2 cerca di raggiungere un minimo di energia
+tramettendo parte della sua energia ad H1 e questo comportamento continua
+indefinitivamente. Questa e' la cosiddeta instabilita' lineare di Ostrogradsky.
+
+20 Segue il teorema di Ostrogradky. Se in una lagrangiana del secondo ordine o
+superiore il momento canonico Pn non si annulla, la corrispondente Hamiltoniana
+puo' assumere una arbitario valore reale.
+
+21 Un modo di curare l'instabilita' di Ostrogradsky nei sistemi classici e'
+imponendo dei vincoli. Per intrudurre i vincoli nei sistemi, si sono usate le
+variabili ausiliarie labmda e successivamente i vincoli sono stati studiati con
+il formalismo di Dirac. L'esempio proposto e' studiato l-oscillatore di Pais
+Uhlenbeck al quale e' stato applicato il segeunte vincolo. Il vincolo ha
+permesso di ridurre la dimensionalita' dello spazio delle fasi e eliminato
+l'instabilita' di Ostrogradsky. L'Hamiltoniana risulatante dipende da 2
+varabili canoniche, non da 4 ed ha una forma di un paraboloide quindi e'
+limitata inferiormente.
+
+22 Se proviamo a quantizzare i sistemi classici descritti da Lagrangiane di
+ordine superiore otteiamo che la controparte quantistica soggetta alle stesse
+problematiche e' in questo contesto l'instabilita' di ostrgradsky implica la
+creazione di ghosts ovvero stati quantisitici a norma negativa.
+
+23 Consideriamo l'oscillatore qunatistico Pais-Unlenbeck definito dal'operatore
+H nel quale compaiono gli operatori x v px e pv. Se omega1 e' diverso da w2 si
+puo' effettuare la segeuente trasformazione canonica quantistica
+
+24 e ottenere l'operatore hamiltoniamo in una forma piu' famigliare. Questo e'
+la differenza di due oscillatori armonici qunatistici indipendenti dai abbiamo
+lo spettro energetico.
+
+25 Con il temine ghost si indicano stati quantistici con norma
+negativa. Possimo vedere che questi compaiono se si cerca di eleminare le
+energie negative dallo spettro energetico. Riscriviamo l'operatore hamiltoniano
+con gli usuali operatori di creazione e distruzione di oscillatori qunatistici
+e osserviamo che il secondo termine produce stati eccitati con energie negative
+decrescenti. Mettimo fine a questo comportamento definendo formalmente uno
+stato psi tale che l'azione di a2croce si psi dia zero. Vediamo le proprieta'
+di tale stato
+
+26 E' proporzionale ad un esponziale, ha quindi norma negativa e rappresenta
+per definizione lo stato di minor energia. A2 agisce su esso come opeatore di
+creazione e a2croce come operatore di distruzione. Calcolando la norma di uno
+stato eccitato, ottenuto agnedo con a2 si psi osserviamo che questo ha norma
+negativa. Nell'ultimo passaggio si e' scabiato a con acroce usando la relazione
+di commutazione.
+
+27 Venimo alle conclusioni.
+
+28 Si e' visto che le lagrangiane di ordine superiore compaiono nella
+formulazione di teorie di campo in spazi di dimesione maggiore. La maggior
+parte di queste teorie soffre dell'instabilita' di ostrogradsky ed e' proprio a
+causa delle conseguenze di tale teorema che in passato tali teorie sono state
+scarte a priori. Un modo di curare l'instabilta' di Ostrogradsky e' impoendo dei
+vincoli. Le teorie di ordine superiore dovrebbero essere studiate in modo piu'
+approfondito con particolare attenzione allo spettro enegetico del sistema.
+
+29 Grazie.
